@@ -1,0 +1,9 @@
+{
+"mob.hellsheep.say": {
+    "category": "master",
+    "sounds": [
+      "mob/hellsheep/say1",
+	  "mob/hellsheep/say2"
+    ]
+  }
+}

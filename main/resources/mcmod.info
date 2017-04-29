@@ -1,0 +1,16 @@
+[
+{
+  "modid": "zaneextras",
+  "name": "Zane Extras",
+  "description": "Extras from a mod by master_zane",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["master_zane","alphawolf918"],
+  "credits": "Zollern Wolf and Master Zane",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
