@@ -14,6 +14,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
@@ -36,6 +37,7 @@ public class CFurnaceBlock extends BlockContainer {
 		super(Material.rock);
 		this.setHardness(3.0F);
 		this.setBlockName(ModInfo.MODID + "_customeFurnace");
+		this.setStepSound(soundTypeStone);
 		isBurning2 = isActive;
 		// Mikey is a doo doo head
 	}
@@ -94,59 +96,65 @@ public class CFurnaceBlock extends BlockContainer {
 	
 	private void direction(World world, int x, int y, int z) {
 		if (!world.isRemote) {
-			Block direction = world.getBlock(x, y, z - 1);
-			Block direction1 = world.getBlock(x, y, z + 1);
-			Block direction2 = world.getBlock(x - 1, y, z);
-			Block direction3 = world.getBlock(x + 1, y, z);
-			
-			byte directional = 3;
-			
-			if (direction.func_149730_j() && !direction.func_149730_j()) {
-				directional = 3;
-			}
-			
-			if (direction1.func_149730_j() && !direction1.func_149730_j()) {
-				directional = 2;
-			}
-			
-			if (direction2.func_149730_j() && !direction2.func_149730_j()) {
-				directional = 5;
-			}
-			
-			if (direction3.func_149730_j() && !direction3.func_149730_j()) {
-				directional = 4;
-			}
-			
-			world.setBlockMetadataWithNotify(x, y, z, directional, 2);
+            Block block = world.getBlock(x, y, z - 1);
+            Block block1 = world.getBlock(x, y, z + 1);
+            Block block2 = world.getBlock(x - 1, y, z);
+            Block block3 = world.getBlock(x + 1, y, z);
+            byte b0 = 3;
+
+            if (block.func_149730_j() && !block1.func_149730_j())
+            {
+                b0 = 3;
+            }
+
+            if (block1.func_149730_j() && !block.func_149730_j())
+            {
+                b0 = 2;
+            }
+
+            if (block2.func_149730_j() && !block3.func_149730_j())
+            {
+                b0 = 5;
+            }
+
+            if (block3.func_149730_j() && !block2.func_149730_j())
+            {
+                b0 = 4;
+            }
+
+            world.setBlockMetadataWithNotify(x, y, z, b0, 2);
 		}
 	}
 	
 	@Override
 	public void onBlockPlacedBy(World world, int x, int y, int z,
 			EntityLivingBase entity, ItemStack itemstack) {
-		int direction = MathHelper.floor_double(
-				(double) (entity.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
-		
-		if (direction == 0) {
-			world.setBlockMetadataWithNotify(x, y, z, 2, 2);
-		}
-		
-		if (direction == 1) {
-			world.setBlockMetadataWithNotify(x, y, z, 5, 2);
-		}
-		
-		if (direction == 2) {
-			world.setBlockMetadataWithNotify(x, y, z, 3, 2);
-		}
-		
-		if (direction == 3) {
-			world.setBlockMetadataWithNotify(x, y, z, 4, 2);
-		}
-		
-		if (itemstack.hasDisplayName()) {
-			((TileEntityCFurnace) world.getTileEntity(x, y, z))
-					.furnaceName(itemstack.getDisplayName());
-		}
+		 int l = MathHelper.floor_double((double)(entity.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+
+	        if (l == 0)
+	        {
+	            world.setBlockMetadataWithNotify(x, y, z, 2, 2);
+	        }
+
+	        if (l == 1)
+	        {
+	        	world.setBlockMetadataWithNotify(x, y, z, 5, 2);
+	        }
+
+	        if (l == 2)
+	        {
+	        	world.setBlockMetadataWithNotify(x, y, z, 3, 2);
+	        }
+
+	        if (l == 3)
+	        {
+	        	world.setBlockMetadataWithNotify(x, y, z, 4, 2);
+	        }
+
+	        if (itemstack.hasDisplayName())
+	        {
+	            ((TileEntityCFurnace)world.getTileEntity(x, y, z)).furnaceName(itemstack.getDisplayName());
+	        }
 	}
 	
 	public static void updateBlockState(boolean burning, World world, int x,

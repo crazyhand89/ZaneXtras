@@ -22,7 +22,6 @@ public class CheeseBlock extends BlockCake {
 	public CheeseBlock() {
 		this.setHardness(1.2F);
 		this.setResistance(0.1F);
-		this.setStepSound(soundTypeStone);
 		this.setBlockTextureName(ModInfo.MODID + ":cheesewheel");
 		this.setBlockName(ModInfo.MODID + "_cheesewheel");
 		this.setCreativeTab(ZaneTabs.zTab);

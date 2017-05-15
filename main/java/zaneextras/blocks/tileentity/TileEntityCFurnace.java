@@ -12,11 +12,11 @@ import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import zaneextras.blocks.CFurnaceBlock;
+import zaneextras.recipes.CurstomFurnaceRecipes;
 
 public class TileEntityCFurnace extends TileEntity implements ISidedInventory {
 
@@ -216,7 +216,7 @@ public class TileEntityCFurnace extends TileEntity implements ISidedInventory {
 		if (this.furnaceItemStacks[0] == null) {
 			return false;
 		} else {
-			ItemStack itemstack = FurnaceRecipes.smelting().getSmeltingResult(this.furnaceItemStacks[0]);
+			ItemStack itemstack = CurstomFurnaceRecipes.smelting().getSmeltingResult(this.furnaceItemStacks[0]);
 			if (itemstack == null) return false;
 			if (this.furnaceItemStacks[2] == null) return true;
 			if (!this.furnaceItemStacks[2].isItemEqual(itemstack)) return false;
@@ -227,7 +227,7 @@ public class TileEntityCFurnace extends TileEntity implements ISidedInventory {
 
 	public void smeltItem() {
 		if (this.canSmelt()) {
-			ItemStack itemstack = FurnaceRecipes.smelting().getSmeltingResult(this.furnaceItemStacks[0]);
+			ItemStack itemstack = CurstomFurnaceRecipes.smelting().getSmeltingResult(this.furnaceItemStacks[0]);
 
 			if (this.furnaceItemStacks[2] == null) {
 				this.furnaceItemStacks[2] = itemstack.copy();
