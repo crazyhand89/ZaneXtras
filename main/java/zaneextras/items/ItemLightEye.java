@@ -17,7 +17,7 @@ public class ItemLightEye extends ZaneItem {
 	
 	public ItemLightEye() {
 		super("lighteye");
-		this.setMaxDamage(100);
+		this.setMaxDamage(500);
 		this.setMaxStackSize(1);
 	}
 	

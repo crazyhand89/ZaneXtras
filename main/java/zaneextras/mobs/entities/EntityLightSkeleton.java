@@ -1,6 +1,8 @@
 package zaneextras.mobs.entities;
 
 import java.util.Calendar;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -54,7 +56,23 @@ public class EntityLightSkeleton extends EntityMob implements IRangedAttackMob {
 		if (p_i1741_1_ != null && !p_i1741_1_.isRemote) {
 			this.setCombatTask();
 		}
+		
+		this.isImmuneToFire = true;
 	}
+	
+	 /**
+     * Gets how bright this entity is.
+     */
+    public float getBrightness(float p_70013_1_)
+    {
+        return 1.0F;
+    }
+    
+    @SideOnly(Side.CLIENT)
+    public int getBrightnessForRender(float p_70070_1_)
+    {
+        return 15728880;
+    }
 	
 	@Override
 	protected void applyEntityAttributes() {
@@ -114,7 +132,7 @@ public class EntityLightSkeleton extends EntityMob implements IRangedAttackMob {
 	 */
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.UNDEAD;
+		return EnumCreatureAttribute.UNDEFINED;
 	}
 	
 	/**
@@ -154,18 +172,6 @@ public class EntityLightSkeleton extends EntityMob implements IRangedAttackMob {
 		}
 		
 		super.onLivingUpdate();
-	}
-	
-	@Override
-	protected boolean isValidLightLevel() {
-		
-		int i = MathHelper.floor_double(this.posX);
-		int j = MathHelper.floor_double(this.boundingBox.minY);
-		int k = MathHelper.floor_double(this.posZ);
-		
-		int l = this.worldObj.getBlockLightValue(i, j, k);
-		
-		return l >= this.rand.nextInt(8);
 	}
 	
 	@Override

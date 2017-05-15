@@ -15,6 +15,7 @@ public class ToolRecipes {
 		ButterToolCraftingRecipes.init();
 		EmeraldToolCraftingRecipes.init();
 		SkyiumToolCraftingRecipes.init();
+		FoolStariaToolCraftingRecipes.init();
 	}
 	
 	public static class StariaToolCraftingRecipes {
@@ -191,6 +192,30 @@ public class ToolRecipes {
 			
 			GameRegistry.addRecipe(skyiumShovel, new Object[] { " E ", " S ",
 					" S ", 'E', ItemList.skyium, 'S', ItemList.glowStick });
+		}
+	}
+	
+	public static class FoolStariaToolCraftingRecipes {
+		
+		public static void init() {
+			
+			// Dat hoe, Butter
+			addHoeRecipe(new ItemStack(ItemList.foolStariaHoe, 1),
+					ItemList.foolStaria, Items.stick);
+			
+			// Axey Axe, Butter
+			addAxeRecipe(new ItemStack(ItemList.foolStariaAxe, 1),
+					ItemList.foolStaria, Items.stick);
+			
+			// Harden Pick, Butter
+			GameRegistry.addRecipe(new ItemStack(ItemList.foolStariaPickaxe, 1),
+					new Object[] { "RRR", " S ", " S ", 'R',
+							ItemList.foolStaria, 'S', Items.stick });
+			
+			// Slippery Spade, Butter
+			GameRegistry.addRecipe(new ItemStack(ItemList.foolStariaShovel, 1),
+					new Object[] { " R ", " S ", " S ", 'R',
+							ItemList.foolStaria, 'S', Items.stick });
 		}
 	}
 	

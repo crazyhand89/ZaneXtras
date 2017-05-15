@@ -20,8 +20,8 @@ import zaneextras.interfaces.IZaneExtendedReach;
 import zaneextras.items.ItemList;
 import zaneextras.items.tool.ZaneToolMaterials;
 import zaneextras.lib.ModInfo;
-import zaneextras.lib.ZaneKeyHelper;
 import zaneextras.lib.ZaneTabs;
+import zaneextras.lib.helpers.ZaneKeyHelper;
 
 public class ItemWeaponZograditeScythe extends ItemSword
 		implements IZaneExtendedReach {

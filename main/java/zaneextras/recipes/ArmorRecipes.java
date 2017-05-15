@@ -212,6 +212,26 @@ public class ArmorRecipes {
 			
 			GameRegistry.addRecipe(raditeBoots, new Object[] { "   ", "S S",
 					"S S", 'S', ItemList.raditeIngot });
+			
+			// Hard Hat, Fool Staria
+			GameRegistry.addRecipe(new ItemStack(ItemList.foolStariaHelmet, 1),
+					new Object[] { "RRR", "R R", "   ", 'R',
+							ItemList.foolStaria });
+						
+			// Popping Chest, Fool Staria
+			GameRegistry.addRecipe(new ItemStack(ItemList.foolStariaChestPlate, 1),
+					new Object[] { "R R", "RRR", "RRR", 'R',
+							ItemList.foolStaria });
+			
+			// Smooth Leggings, Fool Staria
+			GameRegistry.addRecipe(new ItemStack(ItemList.foolStariaLeggings, 1),
+					new Object[] { "RRR", "R R", "R R", 'R',
+							ItemList.foolStaria });
+						
+			// Dem bootys, Fool Staria		
+			GameRegistry.addRecipe(new ItemStack(ItemList.foolStariaBoots, 1),
+					new Object[] { "   ", "R R", "R R", 'R',
+							ItemList.foolStaria });
 		}
 	}
 }

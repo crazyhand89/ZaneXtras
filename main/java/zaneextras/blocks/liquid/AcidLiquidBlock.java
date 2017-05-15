@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 import zaneextras.lib.ModInfo;
-import zaneextras.lib.ZaneDSource;
+import zaneextras.lib.helpers.ZaneDSource;
 
 public class AcidLiquidBlock extends BlockFluidClassic {
 	@SideOnly(Side.CLIENT)

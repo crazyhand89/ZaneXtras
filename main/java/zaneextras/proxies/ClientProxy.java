@@ -3,6 +3,7 @@ package zaneextras.proxies;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.common.MinecraftForge;
 import zaneextras.events.ZaneClientEvents;
 import zaneextras.items.arrow.EntityEmeraldArrow;
@@ -13,14 +14,18 @@ import zaneextras.items.render.RenderEmeraldArrow;
 import zaneextras.items.render.RenderEnderArrow;
 import zaneextras.items.render.RenderGoldenArrow;
 import zaneextras.items.render.RenderLightArrow;
+import zaneextras.lib.helpers.ModHelper;
+import zaneextras.mobs.entities.EntityAngel;
 import zaneextras.mobs.entities.EntityHellSheep;
 import zaneextras.mobs.entities.EntityLightSkeleton;
 import zaneextras.mobs.entities.EntityLightZombie;
 import zaneextras.mobs.entities.EntitySkeletonKing;
+import zaneextras.mobs.models.ModelAngel;
 import zaneextras.mobs.models.ModelHellSheep;
 import zaneextras.mobs.models.ModelLightSkeleton;
 import zaneextras.mobs.models.ModelLightZombie;
 import zaneextras.mobs.models.ModelSkeletonKing;
+import zaneextras.mobs.renders.RenderAngel;
 import zaneextras.mobs.renders.RenderHellSheep;
 import zaneextras.mobs.renders.RenderLightSkeleton;
 import zaneextras.mobs.renders.RenderLightZombie;
@@ -62,6 +67,10 @@ public class ClientProxy extends CommonProxy {
 		RenderingRegistry.registerEntityRenderingHandler(
 				EntityLightZombie.class,
 				new RenderLightZombie(new ModelLightZombie(), 0.5F));
+		
+		RenderingRegistry.registerEntityRenderingHandler(
+				EntityAngel.class,
+				new RenderAngel(new ModelAngel(), 0.5F));
 	}
 	
 	@Override
@@ -74,5 +83,12 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public Minecraft getMinecraft() {
 		return this.mc;
+	}
+	
+	@Override
+	public void sendChatMessage(EntityPlayer player, String message) {
+		if (!player.worldObj.isRemote) {
+			ModHelper.addChatMessage(player, message);
+		}
 	}
 }

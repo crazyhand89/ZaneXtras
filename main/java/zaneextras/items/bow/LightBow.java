@@ -20,8 +20,8 @@ import net.minecraftforge.event.entity.player.ArrowNockEvent;
 import zaneextras.items.ItemList;
 import zaneextras.items.arrow.EntityLightArrow;
 import zaneextras.lib.ModInfo;
-import zaneextras.lib.ZaneKeyHelper;
 import zaneextras.lib.ZaneTabs;
+import zaneextras.lib.helpers.ZaneKeyHelper;
 
 public class LightBow extends Item {
 	public static final String[] bowPullIconNameArray = new String[] {

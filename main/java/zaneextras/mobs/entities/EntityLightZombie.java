@@ -1,5 +1,7 @@
 package zaneextras.mobs.entities;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -53,7 +55,22 @@ public class EntityLightZombie extends EntityMob {
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this,
 				EntityPlayer.class, 0, true));
+		this.isImmuneToFire = true;
 	}
+	
+	 /**
+     * Gets how bright this entity is.
+     */
+    public float getBrightness(float p_70013_1_)
+    {
+        return 1.0F;
+    }
+    
+    @SideOnly(Side.CLIENT)
+    public int getBrightnessForRender(float p_70070_1_)
+    {
+        return 15728880;
+    }
 	
 	@Override
 	protected void applyEntityAttributes() {
@@ -196,7 +213,7 @@ public class EntityLightZombie extends EntityMob {
 	 */
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.UNDEAD;
+		return EnumCreatureAttribute.UNDEFINED;
 	}
 	
 	@Override
@@ -231,17 +248,5 @@ public class EntityLightZombie extends EntityMob {
 				this.setCurrentItemOrArmor(0, new ItemStack(Items.iron_shovel));
 			}
 		}
-	}
-	
-	@Override
-	protected boolean isValidLightLevel() {
-		
-		int i = MathHelper.floor_double(this.posX);
-		int j = MathHelper.floor_double(this.boundingBox.minY);
-		int k = MathHelper.floor_double(this.posZ);
-		
-		int l = this.worldObj.getBlockLightValue(i, j, k);
-		
-		return l >= this.rand.nextInt(8);
 	}
 }

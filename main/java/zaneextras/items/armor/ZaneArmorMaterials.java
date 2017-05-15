@@ -19,4 +19,6 @@ public class ZaneArmorMaterials {
 			150, new int[] { 6, 12, 9, 5 }, 95);
 	public static ArmorMaterial RADITE = EnumHelper.addArmorMaterial("Radite",
 			150, new int[] { 6, 12, 9, 5 }, 95);
+	public static ArmorMaterial FOOL_STARIA = EnumHelper.addArmorMaterial("Fool Staria",
+			15, new int[] { 2, 7, 6, 2 }, 11);
 }

@@ -42,6 +42,8 @@ public class ZaneConfig {
 	public static int oreStariaLightD;
 	public static int potionBarrierID;
 	public static boolean butterIsYellorite;
+	public static int oreFoolStaria;
+	public static int oreLightStaria;
 	
 	public static Configuration config;
 	
@@ -62,12 +64,13 @@ public class ZaneConfig {
 						+ System.lineSeparator() + "Skyium: 1"
 						+ System.lineSeparator() + "Zogite: 7"
 						+ System.lineSeparator() + "Radite: 7"
-						+ System.lineSeparator() + "Light Diamond: 5"
+						+ System.lineSeparator() + "Light Diamond: 6"
 						+ System.lineSeparator() + "Light Redstone: 7"
 						+ System.lineSeparator() + "Light Iron: 10"
 						+ System.lineSeparator() + "Light Gold: 7"
 						+ System.lineSeparator() + "Light Lapis: 7"
-						+ System.lineSeparator() + "Light Emerald: 3"
+						+ System.lineSeparator() + "Light Emerald: 4"
+						+ System.lineSeparator() + "Light Staria: 2"
 						+ System.lineSeparator()
 						+ "Staria in Light Dimension: 5");
 		config.addCustomCategoryComment(CATEGORY_CROPS,
@@ -83,7 +86,7 @@ public class ZaneConfig {
 		config.addCustomCategoryComment(CATEGORY_STRUCTURES,
 				"Change the spawn Rate of Structures here. Spawn rate 2 MUST BE less than Spawn rate 3 or it will BREAK!"
 						+ System.lineSeparator()
-						+ "Spawn Rate 1 Defualt Value: 500"
+						+ "Spawn Rate 1 Defualt Value: 100"
 						+ System.lineSeparator()
 						+ "Spawn Rate 2 Default Value: 7"
 						+ System.lineSeparator()
@@ -128,17 +131,19 @@ public class ZaneConfig {
 				.getInt();
 		oreSkyiumSpawnRate = config.get(CATEGORY_ORES, "oreSkyiumSpawnRate", 1)
 				.getInt();
-		oreZogiteSpawnRate = config.get(CATEGORY_ORES, "oreZogiteSpawnRate", 7)
+		oreZogiteSpawnRate = config.get(CATEGORY_ORES, "oreZogiteSpawnRate", 10)
 				.getInt();
-		oreRaditeSpawnRate = config.get(CATEGORY_ORES, "oreRaditeSpawnRate", 7)
+		oreRaditeSpawnRate = config.get(CATEGORY_ORES, "oreRaditeSpawnRate", 10)
 				.getInt();
-		oreLightDiamond = config.get(CATEGORY_ORES, "lightDiamond", 5).getInt();
+		oreLightDiamond = config.get(CATEGORY_ORES, "lightDiamond", 6).getInt();
 		oreLightRedstone = config.get(CATEGORY_ORES, "lightRedstone", 7)
 				.getInt();
 		oreLightIron = config.get(CATEGORY_ORES, "lightIron", 10).getInt();
 		oreLightGold = config.get(CATEGORY_ORES, "lightGold", 7).getInt();
 		oreLightLapis = config.get(CATEGORY_ORES, "lightLapis", 7).getInt();
-		oreLightEmerald = config.get(CATEGORY_ORES, "lightEmerald", 3).getInt();
+		oreLightEmerald = config.get(CATEGORY_ORES, "lightEmerald", 4).getInt();
+		oreLightStaria = config.get(CATEGORY_ORES, "lightStaria", 2).getInt();
+		oreFoolStaria = config.get(CATEGORY_ORES, "oreFoolStaria", 8).getInt();
 		
 		// Crop Spawn Rates
 		cropSpawnRate = config.get(CATEGORY_CROPS, "cropSpawnRate", 20)
@@ -154,9 +159,9 @@ public class ZaneConfig {
 		
 		// Structures Spawn Rates
 		skyCastleSpawnRate1 = config
-				.get(CATEGORY_STRUCTURES, "skyCasteSpawnRate1", 50).getInt();
+				.get(CATEGORY_STRUCTURES, "skyCasteSpawnRate1", 70).getInt();
 		skyCastleSpawnRate2 = config
-				.get(CATEGORY_STRUCTURES, "skyCasteSpawnRate2", 7).getInt();
+				.get(CATEGORY_STRUCTURES, "skyCasteSpawnRate2", 5).getInt();
 		skyCastleSpawnRate3 = config
 				.get(CATEGORY_STRUCTURES, "skyCasteSpawnRate3", 100).getInt();
 		meteroiteChance1 = config
@@ -165,7 +170,7 @@ public class ZaneConfig {
 				.get(CATEGORY_STRUCTURES, "meteroiteChance2", 1000).getInt();
 		
 		// Potions IDs
-		potionBarrierID = config.get(CATEGORY_POTIONS, "potionBarrierID", 1)
+		potionBarrierID = config.get(CATEGORY_POTIONS, "potionBarrierID", 26)
 				.getInt();
 		
 		// Toggle butter to fuel

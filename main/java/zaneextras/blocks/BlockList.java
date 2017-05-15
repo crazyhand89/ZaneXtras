@@ -15,13 +15,18 @@ import zaneextras.blocks.crops.CropSpinach;
 import zaneextras.blocks.crops.CropSweetPotato;
 import zaneextras.blocks.crops.LettuceStem;
 import zaneextras.blocks.crops.TomatoStem;
+import zaneextras.blocks.furnaces.HFurnaceBlock;
+import zaneextras.blocks.furnaces.SFurnaceBlock;
+import zaneextras.blocks.furnaces.StarFurnaceBlock;
 import zaneextras.blocks.liquid.AcidLiquidBlock;
 import zaneextras.blocks.liquid.ChlorineLiquidBlock;
 import zaneextras.blocks.liquid.RaditeLiquidBlock;
+import zaneextras.blocks.ore.FoolStariaOreBlock;
 import zaneextras.blocks.ore.SkyiumOreBlock;
 import zaneextras.blocks.ore.SodiumOreBlock;
 import zaneextras.blocks.ore.StariaOreBlock;
 import zaneextras.blocks.ore.ZaneOreBlock;
+import zaneextras.blocks.ore.ZaneOreLightBlock;
 import zaneextras.blocks.ore.ZaniumOreBlock;
 import zaneextras.blocks.trees.LightLeaves;
 import zaneextras.blocks.trees.LightLog;
@@ -49,18 +54,19 @@ public class BlockList {
 			"raditeore", 3.0F, 3.0F, Block.soundTypeStone, 5);
 	public static final Block zogiteOre = new ZaneOreBlock(Material.rock,
 			"zogiteore", 3.0F, 3.0F, Block.soundTypeStone, 5);
-	public static final Block lightRedstoneOre = new ZaneOreBlock(Material.rock,
+	public static final Block lightRedstoneOre = new ZaneOreLightBlock(Material.rock,
 			"lightredstoneore", 3.0F, 3.0F, Block.soundTypeStone, 2);
-	public static final Block lightLapisOre = new ZaneOreBlock(Material.rock,
+	public static final Block lightLapisOre = new ZaneOreLightBlock(Material.rock,
 			"lightlapisore", 3.0F, 3.0F, Block.soundTypeStone, 2);
-	public static final Block lightDiamondOre = new ZaneOreBlock(Material.rock,
+	public static final Block lightDiamondOre = new ZaneOreLightBlock(Material.rock,
 			"lightdiamondore", 3.0F, 3.0F, Block.soundTypeStone, 2);
-	public static final Block lightGoldOre = new ZaneOreBlock(Material.rock,
+	public static final Block lightGoldOre = new ZaneOreLightBlock(Material.rock,
 			"lightgoldore", 3.0F, 3.0F, Block.soundTypeStone, 2);
-	public static final Block lightEmeraldOre = new ZaneOreBlock(Material.rock,
+	public static final Block lightEmeraldOre = new ZaneOreLightBlock(Material.rock,
 			"lightemeraldore", 3.0F, 3.0F, Block.soundTypeStone, 2);
-	public static final Block lightIronOre = new ZaneOreBlock(Material.rock,
+	public static final Block lightIronOre = new ZaneOreLightBlock(Material.rock,
 			"lightironore", 3.0F, 3.0F, Block.soundTypeStone, 2);
+	public static final Block foolStaria = new FoolStariaOreBlock();
 	
 	// Crops
 	public static final Block sweetPotatoCrop = new CropSweetPotato();
@@ -129,8 +135,17 @@ public class BlockList {
 	public static final Block lightSapling = new LightSapling();
 	
 	// Furnace
-	public static final Block cFurnace = new CFurnaceBlock(false).setCreativeTab(ZaneTabs.zTab);
-	public static final Block cFurnaceActive = new CFurnaceBlock(true);
+	public static final Block hFurnace = new HFurnaceBlock(false).setCreativeTab(ZaneTabs.zTab);
+	public static final Block hFurnaceActive = new HFurnaceBlock(true);
+	
+	public static final Block sFurnace = new SFurnaceBlock(false).setCreativeTab(ZaneTabs.zTab);
+	public static final Block sFurnaceActive = new SFurnaceBlock(true);
+	
+	public static final Block starFurnace = new StarFurnaceBlock(false).setCreativeTab(ZaneTabs.zTab);
+	public static final Block starFurnaceActive = new StarFurnaceBlock(true);
+	
+	//Boss Blocks
+	public static final Block skeletonBlock = new SkeletonBossBlock(Material.iron, "skeletonblock", 1.0F, 1.0F, Block.soundTypePiston).setCreativeTab(null);
 	
 	public static void init() {
 		addBlock(dhbBlock, "b1");
@@ -180,8 +195,14 @@ public class BlockList {
 		addBlock(lightPlank, "b45");
 		addBlock(lightLeaves, "b46");
 		addBlock(lightSapling, "b47");
-		addBlock(cFurnace, "b48");
-		addBlock(cFurnaceActive, "b49");
+		addBlock(hFurnace, "b48");
+		addBlock(hFurnaceActive, "b49");
+		addBlock(sFurnace, "b50");
+		addBlock(sFurnaceActive, "b51");
+		addBlock(skeletonBlock, "b52");
+		addBlock(starFurnace, "b53");
+		addBlock(starFurnaceActive, "b54");
+		addBlock(foolStaria, "b55");
 	}
 	
 	public static void addBlock(Block block, String name) {

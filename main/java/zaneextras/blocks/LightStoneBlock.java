@@ -18,7 +18,6 @@ public class LightStoneBlock extends Block {
 		this.setBlockTextureName(ModInfo.MODID + ":lightstone");
 		this.setCreativeTab(ZaneTabs.zTab);
 		this.setTickRandomly(true);
-		this.setLightLevel(1.0F);
 		this.setHardness(1.0F);
 		this.setResistance(3.0F);
 		this.setStepSound(soundTypeStone);

@@ -28,7 +28,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.stats.AchievementList;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.EnumDifficulty;
@@ -84,7 +83,7 @@ public class EntitySkeletonKing extends EntityMob
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth)
 				.setBaseValue(750.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed)
-				.setBaseValue(0.25D);
+				.setBaseValue(0.025D);
 	}
 	
 	/**
@@ -219,16 +218,6 @@ public class EntitySkeletonKing extends EntityMob
 			Treasures.spawnChest(this.worldObj, rand, (int) this.posX,
 					(int) this.posY, (int) this.posZ, false,
 					ZaneChestGenHooks.ZANE_SKELETON_KING);
-		}
-		if (p_70645_1_.getSourceOfDamage() instanceof EntityGoldenArrow
-				&& p_70645_1_.getEntity() instanceof EntityPlayer) {
-			EntityPlayer entityplayer = (EntityPlayer) p_70645_1_.getEntity();
-			double d0 = entityplayer.posX - this.posX;
-			double d1 = entityplayer.posZ - this.posZ;
-			
-			if (d0 * d0 + d1 * d1 >= 2500.0D) {
-				entityplayer.triggerAchievement(AchievementList.snipeSkeleton);
-			}
 		}
 	}
 	

@@ -18,7 +18,7 @@ public class WorldGenLightTree extends WorldGenerator {
 	}
 	
 	protected Block[] GetValidSpawnBlockList() {
-		return new Block[] { BlockList.lightDirt, BlockList.lightGrassDirt };
+		return new Block[] { BlockList.lightDirt, BlockList.lightGrassDirt, Blocks.grass, Blocks.dirt };
 	}
 	
 	public boolean LocationIsValidSpawn(World world, int i, int j, int k) {

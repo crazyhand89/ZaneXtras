@@ -2,6 +2,8 @@ package zaneextras.recipes;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import zaneextras.blocks.BlockList;
@@ -13,6 +15,7 @@ public class BlockRecipes {
 		BrickRecipes.init();
 		MaterialToBrickRecipes.init();
 		WoodRecipes.init();
+		FurnaceRecipes.init();
 	}
 	
 	public static class WoodRecipes {
@@ -45,6 +48,21 @@ public class BlockRecipes {
 			materialToBrick(BlockList.zograditeBlock, ItemList.zograditeIgnot);
 		}
 		
+	}
+	
+public static class FurnaceRecipes {
+		
+		public static void init() {
+			// Hard Furnace
+			GameRegistry.addRecipe(new ItemStack(BlockList.hFurnace),
+					new Object[] { "I I", " F ", "I I", 'I', Items.iron_ingot, 'F', Blocks.furnace });
+			//Solid Furnace
+			GameRegistry.addRecipe(new ItemStack(BlockList.sFurnace),
+					new Object[] { "I I", " F ", "I I", 'I', Blocks.redstone_block, 'F', BlockList.hFurnace });
+			//Star Furnace
+			GameRegistry.addRecipe(new ItemStack(BlockList.starFurnace),
+					new Object[] { "I I", " F ", "I I", 'I', ItemList.staria, 'F', BlockList.sFurnace });
+		}
 	}
 	
 	// Material to Block and the Reverse

@@ -34,31 +34,6 @@ public class ZaneWorldGen implements IWorldGenerator {
 		}
 	}
 	
-	public void generateLightWorld(World world, Random random, int x, int z) {
-		int y = world.getHeightValue(x, z);
-		if (random.nextInt(200) <= 25) {
-			this.spawnStructure(10, 100, world, random, x, y, z,
-					new WorldGenLightTree());
-			
-			// Light Ores
-			addLightOreSpawn(BlockList.lightDiamondOre, world, random, x, z, 16,
-					16, 2 + random.nextInt(6), ZaneConfig.oreLightDiamond, 4,
-					32);
-			addLightOreSpawn(BlockList.lightEmeraldOre, world, random, x, z, 16,
-					16, 0 + random.nextInt(3), ZaneConfig.oreLightEmerald, 6,
-					10);
-			addLightOreSpawn(BlockList.lightGoldOre, world, random, x, z, 16,
-					16, 2 + random.nextInt(4), ZaneConfig.oreLightGold, 6, 16);
-			addLightOreSpawn(BlockList.lightIronOre, world, random, x, z, 16,
-					16, 3 + random.nextInt(5), ZaneConfig.oreLightIron, 6, 16);
-			addLightOreSpawn(BlockList.lightLapisOre, world, random, x, z, 6,
-					16, 2 + random.nextInt(5), ZaneConfig.oreLightLapis, 6, 16);
-			addLightOreSpawn(BlockList.lightRedstoneOre, world, random, x, z,
-					16, 16, 2 + random.nextInt(5), ZaneConfig.oreLightRedstone,
-					6, 16);
-		}
-	}
-	
 	private void generateSurface(World world, Random random, int x, int z) {
 		// Grab Biome
 		currentBiome = world.getBiomeGenForCoords(x, z);
@@ -66,7 +41,7 @@ public class ZaneWorldGen implements IWorldGenerator {
 		
 		// Sky Castle of Nope
 		
-		if (random.nextInt(ZaneConfig.skyCastleSpawnRate1) <= 3)
+		if (random.nextInt(ZaneConfig.skyCastleSpawnRate1) <= 5)
 			this.spawnStructure(ZaneConfig.skyCastleSpawnRate2,
 					ZaneConfig.skyCastleSpawnRate3, world, random, x, y, z,
 					new WorldGenCastle());
@@ -86,6 +61,8 @@ public class ZaneWorldGen implements IWorldGenerator {
 				1 + random.nextInt(3), ZaneConfig.oreZogiteSpawnRate, 5, 20);
 		addOreSpawn(BlockList.raditeOre, world, random, x, z, 16, 16,
 				1 + random.nextInt(3), ZaneConfig.oreRaditeSpawnRate, 5, 20);
+		addOreSpawn(BlockList.raditeOre, world, random, x, z, 16, 16,
+				1 + random.nextInt(3), ZaneConfig.oreFoolStaria, 10, 18);
 		
 		Random r = new Random();
 		
@@ -96,6 +73,17 @@ public class ZaneWorldGen implements IWorldGenerator {
 					205);
 		}
 		
+		//Light Trees
+		if (random.nextInt(150) <= 5) {
+			if(currentBiome.equals(BiomeGenBase.birchForest) || 
+					currentBiome.equals(BiomeGenBase.birchForestHills) || 
+					currentBiome.equals(BiomeGenBase.forest) || 
+					currentBiome.equals(BiomeGenBase.forestHills) ||
+							currentBiome.equals(BiomeGenBase.plains)){
+			this.spawnStructure(10, 100, world, random, x, y, z,
+					new WorldGenLightTree());
+			}
+		}
 		// Crops
 		if (r.nextInt(100) <= 55) {
 			if (currentBiome.equals(BiomeGenBase.plains)
@@ -175,6 +163,35 @@ public class ZaneWorldGen implements IWorldGenerator {
 					random, Xcoord, Ycoord, Zcoord);
 		}
 	}
+	
+	public void generateLightWorld(World world, Random random, int x, int z) {
+		int y = world.getHeightValue(x, z);
+		if (random.nextInt(200) <= 25) {
+			this.spawnStructure(10, 100, world, random, x, y, z,
+					new WorldGenLightTree());
+		}
+		
+		// Light Ores
+		addLightOreSpawn(BlockList.lightDiamondOre, world, random, x, z, 16,
+				16, 2 + random.nextInt(6), ZaneConfig.oreLightDiamond, 4,
+				16);
+		addLightOreSpawn(BlockList.lightEmeraldOre, world, random, x, z, 16,
+				16, 0 + random.nextInt(3), ZaneConfig.oreLightEmerald, 6,
+				12);
+		addLightOreSpawn(BlockList.lightGoldOre, world, random, x, z, 16,
+				16, 2 + random.nextInt(4), ZaneConfig.oreLightGold, 6, 25);
+		addLightOreSpawn(BlockList.lightIronOre, world, random, x, z, 16,
+				16, 3 + random.nextInt(5), ZaneConfig.oreLightIron, 6, 40);
+		addLightOreSpawn(BlockList.lightLapisOre, world, random, x, z, 6,
+				16, 2 + random.nextInt(5), ZaneConfig.oreLightLapis, 6, 25);
+		addLightOreSpawn(BlockList.lightRedstoneOre, world, random, x, z,
+				16, 16, 2 + random.nextInt(5), ZaneConfig.oreLightRedstone,
+				6, 25);
+		addLightOreSpawn(BlockList.stariaOre, world, random, x, z, 16,
+				16, 2 + random.nextInt(6), ZaneConfig.oreLightStaria, 4,
+				16);
+	}
+	
 	
 	public void addOreSpawn(Block block, World world, Random random,
 			int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize,

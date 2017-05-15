@@ -67,6 +67,11 @@ public class WeaponRecipes {
 					new Object[] { "ZZS", "ZS ", "S  ", 'Z',
 							ItemList.zograditeIgnot, 'S',
 							ItemList.raditeInfusedStick });
+			
+			// Swordy sword, Fool Staria
+			GameRegistry.addRecipe(new ItemStack(ItemList.foolStariaSword, 1),
+					new Object[] { " R ", " R ", " S ", 'R',
+							ItemList.foolStaria, 'S', Items.stick });
 		}
 	}
 	

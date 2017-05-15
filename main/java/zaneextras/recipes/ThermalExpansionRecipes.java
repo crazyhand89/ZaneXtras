@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 import zaneextras.blocks.BlockList;
 import zaneextras.items.ItemList;
-import zaneextras.lib.ModHelper;
+import zaneextras.lib.helpers.ModHelper;
 import zollernextras.blocks.ZollernBlocks;
 
 public class ThermalExpansionRecipes {

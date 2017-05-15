@@ -112,6 +112,15 @@ public class FoodRecipes {
 					new Object[] { "VB ", "Ss ", "G  ", 'V', ItemList.vinegar,
 							'S', Items.sugar, 'G', Items.glass_bottle, 'B',
 							ItemList.blackPepper, 's', ItemList.salt });
+			
+			//Barrier Apple
+			GameRegistry.addRecipe(new ItemStack(ItemList.barrierApple, 4),
+			new Object[] { "   ", " A ", "ZRZ", 'A', Items.golden_apple,
+					'Z', ItemList.zogiteIngot, 'R', ItemList.raditeIngot});
+			
+			//Radiated Coal
+			GameRegistry.addRecipe(new ItemStack(ItemList.radiatedCoal, 8),
+					new Object[] { "ZZZ", "ZCZ", "ZZZ", 'C', Items.coal, 'Z', ItemList.zogiteIngot});
 		}
 	}
 }

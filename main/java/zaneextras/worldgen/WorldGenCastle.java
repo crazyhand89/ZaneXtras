@@ -6,10 +6,10 @@ import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntityMobSpawner;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import zaneextras.lib.ModHelper;
+import zaneextras.blocks.BlockList;
+import zaneextras.lib.helpers.ModHelper;
 import zaneextras.lib.treasure.Treasures;
 import zaneextras.lib.treasure.ZaneChestGenHooks;
-import zaneextras.mobs.entities.EntitySkeletonKing;
 
 public class WorldGenCastle extends WorldGenerator {
 	
@@ -5533,12 +5533,7 @@ public class WorldGenCastle extends WorldGenerator {
 		world.setBlock(i + 12, j + 6, k + 7, Blocks.wooden_door, 8, 3);
 		world.setBlock(i + 5, j + 9, k + 5, Blocks.wooden_door, 0, 3);
 		world.setBlock(i + 5, j + 10, k + 5, Blocks.wooden_door, 8, 3);
-		
-		// if (!world.isRemote) {
-		EntitySkeletonKing king = new EntitySkeletonKing(world);
-		king.setLocationAndAngles(i + 10, j + 13, k + 7, 0, 0);
-		world.spawnEntityInWorld(king);
-		// }
+		world.setBlock(i + 10, j + 13, k + 7, BlockList.skeletonBlock);
 		
 		return true;
 	}

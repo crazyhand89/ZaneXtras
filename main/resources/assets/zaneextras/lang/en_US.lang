@@ -55,6 +55,12 @@ tile.zaneextras_planks_light.name=Light Plank
 tile.zaneextras_light_log.name=Light Log
 tile.zaneextras_lightleaves.name=Light Leaves
 tile.zaneextras_lightsapling.name=Light Sapling
+tile.zaneextras_lightsapling.name=Light Sapling
+tile.zaneextras_hardFurnace.name=Hard Furnace
+tile.zaneextras_starFurnace.name=Star Furnace
+tile.zaneextras_solidFurnace.name=Solid Furnace
+tile.zaneextras_skeletonblock.name=Skeleton King Spawner
+tile.zaneextras_foolstaria.name=Fool StariaOre
 
 fluid.zaneextrasraditefluid=Molten Radite
 
@@ -191,6 +197,17 @@ item.zaneextras_glowingflesh.name=Glowing Flesh
 item.zaneextras_lightbonemeal.name=Light Bonemeal
 item.zaneextras_lightstick.name=Light Stick
 item.zaneextras_barrierapples.name=Barrier Apples
+item.zaneextras_radiatedcoal.name=Radiated Coal
+item.zaneextras_foolstaria.name=Fool Staria
+item.zaneextras_foolstariahelmet.name=Fool Staria Helmet
+item.zaneextras_foolstariachestplate.name=Fool Staria ChestPlate
+item.zaneextras_foolstarialeggings.name=Fool Staria Leggings
+item.zaneextras_foolstariaboots.name=Fool Staria Boots
+item.zaneextras_foolstariahoe.name=Fool Staria Hoe
+item.zaneextras_foolstariaaxe.name=Fool Staria Axe
+item.zaneextras_foolstariapickaxe.name=Fool Staria Pickaxe
+item.zaneextras_foolstariashovel.name=Fool Staria Shovel
+item.zaneextras_foolstariasword.name=Fool Staria Rapier
 
 entity.zaneextras_hellsheep.name=Hell Sheep
 entity.zaneextras_skeletonking.name=Skeleton King

@@ -5,9 +5,11 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import zaneextras.ZaneExtrasMain;
-import zaneextras.blocks.tileentity.TileEntityCFurnace;
+import zaneextras.blocks.tileentity.TileEntityHFurnace;
+import zaneextras.blocks.tileentity.TileEntitySFurnace;
+import zaneextras.blocks.tileentity.TileEntityStarFurnace;
 import zaneextras.lib.ModInfo;
-import zaneextras.lib.ZaneGuiHandler;
+import zaneextras.lib.helpers.ZaneGuiHandler;
 
 public class CommonProxy {
 	
@@ -16,6 +18,10 @@ public class CommonProxy {
 	}
 	
 	public void initClientEvents() {
+		
+	}
+	
+public void sendChatMessage(EntityPlayer player, String message) {
 		
 	}
 	
@@ -33,7 +39,11 @@ public class CommonProxy {
 	}
 	
 	public void registerTileEntities() {
-		GameRegistry.registerTileEntity(TileEntityCFurnace.class,
-				ModInfo.MODID + "TileEntityCFurnace");
+		GameRegistry.registerTileEntity(TileEntityHFurnace.class,
+				ModInfo.MODID + "TileEntityHFurnace");
+		GameRegistry.registerTileEntity(TileEntitySFurnace.class,
+				ModInfo.MODID + "TileEntitySFurnace");
+		GameRegistry.registerTileEntity(TileEntityStarFurnace.class,
+				ModInfo.MODID + "TileEntityStarFurnace");
 	}
 }

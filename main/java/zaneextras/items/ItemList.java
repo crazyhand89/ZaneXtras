@@ -9,6 +9,7 @@ import zaneextras.blocks.BlockList;
 import zaneextras.items.armor.ZaneArmorMaterials;
 import zaneextras.items.armor.butter.ButterArmor;
 import zaneextras.items.armor.emerald.EmeraldArmor;
+import zaneextras.items.armor.foolstaria.FoolStariaArmor;
 import zaneextras.items.armor.radite.RaditeArmor;
 import zaneextras.items.armor.skyium.SkyiumArmor;
 import zaneextras.items.armor.staria.StariaArmor;
@@ -37,6 +38,10 @@ import zaneextras.items.tool.emerald.ItemToolEmeraldAxe;
 import zaneextras.items.tool.emerald.ItemToolEmeraldHoe;
 import zaneextras.items.tool.emerald.ItemToolEmeraldPickaxe;
 import zaneextras.items.tool.emerald.ItemToolEmeraldShovel;
+import zaneextras.items.tool.foolstaria.ItemToolFoolStariaAxe;
+import zaneextras.items.tool.foolstaria.ItemToolFoolStariaHoe;
+import zaneextras.items.tool.foolstaria.ItemToolFoolStariaPickaxe;
+import zaneextras.items.tool.foolstaria.ItemToolFoolStariaShovel;
 import zaneextras.items.tool.skyium.ItemToolSkyiumAxe;
 import zaneextras.items.tool.skyium.ItemToolSkyiumHoe;
 import zaneextras.items.tool.skyium.ItemToolSkyiumPickaxe;
@@ -51,6 +56,7 @@ import zaneextras.items.tool.zanium.ItemToolZaniumPickaxe;
 import zaneextras.items.tool.zanium.ItemToolZaniumShovel;
 import zaneextras.items.weapon.ItemWeaponDamnHardButterSword;
 import zaneextras.items.weapon.ItemWeaponEmeraldSword;
+import zaneextras.items.weapon.ItemWeaponFoolStariaSword;
 import zaneextras.items.weapon.ItemWeaponSkyiumSword;
 import zaneextras.items.weapon.ItemWeaponStariaSword;
 import zaneextras.items.weapon.ItemWeaponZaniumSword;
@@ -64,6 +70,7 @@ public class ItemList {
 	public static final Item lightBone = new ZaneItem("lightbone");
 	public static final Item lightFlesh = new ItemFoodGlowingFlesh();
 	public static final Item lightBoneMeal = new ZaneItem("lightbonemeal");
+	public static final Item radiatedCoal = new ZaneItem("radiatedcoal");
 	
 	// ignots
 	public static final Item butterItem = new ItemRarity("damnhardbutteringot",
@@ -84,6 +91,7 @@ public class ItemList {
 			"charged_staria", EnumRarity.epic);
 	public static final Item chargedZanium = new ZaneAnimatedItem(
 			"charged_zanium", EnumRarity.epic);
+	public static final Item foolStaria = new ZaneItem("foolstaria");
 	
 	// Dust
 	public static final Item butterDust = new ZaneItem("butterdust");
@@ -333,6 +341,23 @@ public class ItemList {
 	public static final Item lightArrow = new ItemRarity("lightarrow",
 			EnumRarity.rare);
 	
+	//Fool Staria Armor Set
+	public static final Item foolStariaHelmet = new FoolStariaArmor(
+			ZaneArmorMaterials.FOOL_STARIA, "foolstariahelmet", 0);
+	public static final Item foolStariaChestPlate = new FoolStariaArmor(
+			ZaneArmorMaterials.FOOL_STARIA, "foolstariachestplate", 1);
+	public static final Item foolStariaLeggings = new FoolStariaArmor(
+			ZaneArmorMaterials.FOOL_STARIA, "foolstarialeggings", 2);
+	public static final Item foolStariaBoots = new FoolStariaArmor(
+			ZaneArmorMaterials.FOOL_STARIA, "foolstariaboots", 3);
+	
+	// Fool Staria Tools and Sword
+	public static final Item foolStariaHoe = new ItemToolFoolStariaHoe();
+	public static final Item foolStariaAxe = new ItemToolFoolStariaAxe();
+	public static final Item foolStariaShovel = new ItemToolFoolStariaShovel();
+	public static final Item foolStariaPickaxe = new ItemToolFoolStariaPickaxe();
+	public static final Item foolStariaSword = new ItemWeaponFoolStariaSword();
+	
 	public static void init() {
 		addItem(butterItem, "i1");
 		addItem(butterFood, "i2");
@@ -466,6 +491,17 @@ public class ItemList {
 		addItem(lightBoneMeal, "i130");
 		addItem(lightStick, "i131");
 		addItem(barrierApple, "i132");
+		addItem(radiatedCoal, "i133");
+		addItem(foolStaria, "i134");
+		addItem(foolStariaHelmet, "i135");
+		addItem(foolStariaChestPlate, "i136");
+		addItem(foolStariaLeggings, "i137");
+		addItem(foolStariaBoots, "i138");
+		addItem(foolStariaHoe, "i139");
+		addItem(foolStariaShovel, "i140");
+		addItem(foolStariaPickaxe, "i141");
+		addItem(foolStariaAxe, "i142");
+		addItem(foolStariaSword, "i143");
 	}
 	
 	public static void addItem(Item item, String name) {

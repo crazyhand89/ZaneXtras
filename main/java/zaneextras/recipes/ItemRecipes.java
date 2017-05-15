@@ -6,7 +6,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import zaneextras.blocks.BlockList;
 import zaneextras.items.ItemList;
-import zaneextras.lib.ModHelper;
+import zaneextras.lib.helpers.ModHelper;
 
 public class ItemRecipes {
 	

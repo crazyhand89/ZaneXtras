@@ -8,7 +8,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MovingObjectPosition;
 import zaneextras.interfaces.IZaneExtendedReach;
-import zaneextras.lib.ZaneExtendedReachHelper;
+import zaneextras.lib.helpers.ZaneExtendedReachHelper;
 
 /**
  * Events to define weapons with greater than default reach, which is 3.0 Credit

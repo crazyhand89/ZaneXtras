@@ -25,7 +25,7 @@ import zaneextras.items.armor.emerald.EmeraldArmor;
 import zaneextras.items.armor.skyium.SkyiumArmor;
 import zaneextras.items.armor.staria.StariaArmor;
 import zaneextras.items.armor.zanium.ZaniumArmor;
-import zaneextras.lib.ZaneDSource;
+import zaneextras.lib.helpers.ZaneDSource;
 import zaneextras.mobs.entities.EntityHellSheep;
 import zaneextras.potions.ZanePotion;
 

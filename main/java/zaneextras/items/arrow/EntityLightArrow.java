@@ -39,7 +39,7 @@ public class EntityLightArrow extends EntityArrow
 	private int ticksInAir;
 	private double damage = 5.0D;
 	/** The amount of knockback an arrow applies when it hits a mob. */
-	private int knockbackStrength = 10;
+	private int knockbackStrength = 3;
 	private static final String __OBFID = "CL_00001715";
 	
 	public EntityLightArrow(World p_i1753_1_) {
