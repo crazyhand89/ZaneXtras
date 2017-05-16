@@ -14,7 +14,7 @@ public class ZaneOreDict {
 		
 		// Blocks
 		registerOre("blockZogradite", BlockList.zograditeBlock);
-		registerOre("blockCheese", BlockList.cheeseBlock);
+		registerOre("blockCheese", BlockList.cheeseWheelBlock);
 		registerOre("blockDamnHardButter", BlockList.dhbBlock);
 		registerOre("blockRadite", BlockList.raditeBlock);
 		registerOre("blockSkyium", BlockList.skyiumBlock);

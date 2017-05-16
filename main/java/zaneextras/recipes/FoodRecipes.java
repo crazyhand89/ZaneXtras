@@ -54,7 +54,7 @@ public class FoodRecipes {
 									ItemList.sweetPotato });
 			
 			// Cheese Wheel
-			GameRegistry.addRecipe(new ItemStack(BlockList.cheeseBlock, 1),
+			GameRegistry.addRecipe(new ItemStack(BlockList.cheeseWheelBlock, 1),
 					new Object[] { "CCC", "CCC", "CCC", 'C', ItemList.cheese });
 			
 			// Butter

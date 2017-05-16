@@ -111,6 +111,11 @@ public class ItemRecipes {
 					new Object[] { "ZZZ", "SES", "RRR", 'Z',
 							ItemList.zogiteIngot, 'R', ItemList.raditeIngot,
 							'S', ItemList.staria, 'E', Items.ender_eye });
+			
+			//Angel Key
+			GameRegistry.addRecipe(new ItemStack(ItemList.angelKey, 1),
+					new Object[] { " A ", "AHA", " A ", 'A',
+							ItemList.pureFeather, 'H', ItemList.angelHalo});
 		}
 	}
 }

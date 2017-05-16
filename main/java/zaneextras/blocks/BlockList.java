@@ -122,7 +122,8 @@ public class BlockList {
 	public static final Block lightGrassDirt = new BlockLightGrass();
 	
 	// Food blocks
-	public static final Block cheeseBlock = new CheeseBlock();
+	public static final Block cheeseWheelBlock = new CheeseBlock();
+	public static final Block cheeseBlock = new ZaneBlock(Material.gourd, "cheeseblock", 1.0F, 2.0F, Block.soundTypeStone);
 	
 	// Torches
 	public static final Block redTorch = new RedTorch();
@@ -163,7 +164,7 @@ public class BlockList {
 		addBlock(redTorch, "b13");
 		addBlock(zaniumOre, "b14");
 		addBlock(zaniumBlock, "b15");
-		addBlock(cheeseBlock, "b16");
+		addBlock(cheeseWheelBlock, "b16");
 		addBlock(acidFluidBlock, "b17");
 		addBlock(tomatoBlock, "b18");
 		addBlock(tomatoStem, "b19");
@@ -203,6 +204,7 @@ public class BlockList {
 		addBlock(starFurnace, "b53");
 		addBlock(starFurnaceActive, "b54");
 		addBlock(foolStaria, "b55");
+		addBlock(cheeseBlock, "b56");
 	}
 	
 	public static void addBlock(Block block, String name) {

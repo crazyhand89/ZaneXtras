@@ -71,6 +71,9 @@ public class ItemList {
 	public static final Item lightFlesh = new ItemFoodGlowingFlesh();
 	public static final Item lightBoneMeal = new ZaneItem("lightbonemeal");
 	public static final Item radiatedCoal = new ZaneItem("radiatedcoal");
+	public static final Item pureFeather = new ZaneItem("purefeather");
+	public static final Item angelHalo = new ZaneItem("angelhalo");
+	public static final Item angelKey = new ZaneItem("angelkey");
 	
 	// ignots
 	public static final Item butterItem = new ItemRarity("damnhardbutteringot",
@@ -502,6 +505,9 @@ public class ItemList {
 		addItem(foolStariaPickaxe, "i141");
 		addItem(foolStariaAxe, "i142");
 		addItem(foolStariaSword, "i143");
+		addItem(pureFeather, "i144");
+		addItem(angelHalo, "i145");
+		addItem(angelKey, "i146");
 	}
 	
 	public static void addItem(Item item, String name) {

@@ -29,6 +29,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
+import zaneextras.items.ItemList;
 
 public class EntityAngel extends EntityMob
 {
@@ -220,7 +221,7 @@ public class EntityAngel extends EntityMob
 
     protected Item getDropItem()
     {
-        return Items.rotten_flesh;
+        return Items.feather;
     }
 
     /**
@@ -228,22 +229,12 @@ public class EntityAngel extends EntityMob
      */
     public EnumCreatureAttribute getCreatureAttribute()
     {
-        return EnumCreatureAttribute.UNDEAD;
+        return EnumCreatureAttribute.UNDEFINED;
     }
 
     protected void dropRareDrop(int p_70600_1_)
     {
-        switch (this.rand.nextInt(3))
-        {
-            case 0:
-                this.dropItem(Items.iron_ingot, 1);
-                break;
-            case 1:
-                this.dropItem(Items.carrot, 1);
-                break;
-            case 2:
-                this.dropItem(Items.potato, 1);
-        }
+        this.dropItem(ItemList.pureFeather, 1);
     }
 
     /**

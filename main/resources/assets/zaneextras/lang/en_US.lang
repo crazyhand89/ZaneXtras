@@ -61,6 +61,7 @@ tile.zaneextras_starFurnace.name=Star Furnace
 tile.zaneextras_solidFurnace.name=Solid Furnace
 tile.zaneextras_skeletonblock.name=Skeleton King Spawner
 tile.zaneextras_foolstaria.name=Fool StariaOre
+tile.zaneextras_cheeseblock.name=Cheese Block
 
 fluid.zaneextrasraditefluid=Molten Radite
 
@@ -208,6 +209,9 @@ item.zaneextras_foolstariaaxe.name=Fool Staria Axe
 item.zaneextras_foolstariapickaxe.name=Fool Staria Pickaxe
 item.zaneextras_foolstariashovel.name=Fool Staria Shovel
 item.zaneextras_foolstariasword.name=Fool Staria Rapier
+item.zaneextras_angelhalo.name=Angel's Halo
+item.zaneextras_purefeather.name=Pure Feather
+item.zaneextras_angelkey.name=Angel's Key
 
 entity.zaneextras_hellsheep.name=Hell Sheep
 entity.zaneextras_skeletonking.name=Skeleton King
