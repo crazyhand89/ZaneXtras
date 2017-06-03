@@ -6,30 +6,41 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.common.MinecraftForge;
 import zaneextras.events.ZaneClientEvents;
+import zaneextras.items.arrow.EntityAngelArrow;
 import zaneextras.items.arrow.EntityEmeraldArrow;
 import zaneextras.items.arrow.EntityEnderArrow;
 import zaneextras.items.arrow.EntityGoldenArrow;
 import zaneextras.items.arrow.EntityLightArrow;
+import zaneextras.items.render.RenderAngelArrow;
 import zaneextras.items.render.RenderEmeraldArrow;
 import zaneextras.items.render.RenderEnderArrow;
 import zaneextras.items.render.RenderGoldenArrow;
 import zaneextras.items.render.RenderLightArrow;
 import zaneextras.lib.helpers.ModHelper;
 import zaneextras.mobs.entities.EntityAngel;
+import zaneextras.mobs.entities.EntityAngelArcher;
+import zaneextras.mobs.entities.EntityAngelWarrior;
 import zaneextras.mobs.entities.EntityHellSheep;
 import zaneextras.mobs.entities.EntityLightSkeleton;
 import zaneextras.mobs.entities.EntityLightZombie;
 import zaneextras.mobs.entities.EntitySkeletonKing;
+import zaneextras.mobs.entities.EntityUriel;
 import zaneextras.mobs.models.ModelAngel;
+import zaneextras.mobs.models.ModelAngelArcher;
+import zaneextras.mobs.models.ModelAngelWarrior;
 import zaneextras.mobs.models.ModelHellSheep;
 import zaneextras.mobs.models.ModelLightSkeleton;
 import zaneextras.mobs.models.ModelLightZombie;
 import zaneextras.mobs.models.ModelSkeletonKing;
+import zaneextras.mobs.models.ModelUriel;
 import zaneextras.mobs.renders.RenderAngel;
+import zaneextras.mobs.renders.RenderAngelArcher;
+import zaneextras.mobs.renders.RenderAngelWarrior;
 import zaneextras.mobs.renders.RenderHellSheep;
 import zaneextras.mobs.renders.RenderLightSkeleton;
 import zaneextras.mobs.renders.RenderLightZombie;
 import zaneextras.mobs.renders.RenderSkeletonKing;
+import zaneextras.mobs.renders.RenderUriel;
 
 public class ClientProxy extends CommonProxy {
 	
@@ -52,6 +63,9 @@ public class ClientProxy extends CommonProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityLightArrow.class,
 				new RenderLightArrow());
 		
+		RenderingRegistry.registerEntityRenderingHandler(EntityAngelArrow.class,
+				new RenderAngelArrow());
+		
 		// Mobs
 		RenderingRegistry.registerEntityRenderingHandler(EntityHellSheep.class,
 				new RenderHellSheep(new ModelHellSheep(), 0.5F));
@@ -68,9 +82,19 @@ public class ClientProxy extends CommonProxy {
 				EntityLightZombie.class,
 				new RenderLightZombie(new ModelLightZombie(), 0.5F));
 		
-		RenderingRegistry.registerEntityRenderingHandler(
-				EntityAngel.class,
+		RenderingRegistry.registerEntityRenderingHandler(EntityAngel.class,
 				new RenderAngel(new ModelAngel(), 0.5F));
+		
+		RenderingRegistry.registerEntityRenderingHandler(
+				EntityAngelWarrior.class,
+				new RenderAngelWarrior(new ModelAngelWarrior(), 0.5F));
+		
+		RenderingRegistry.registerEntityRenderingHandler(
+				EntityAngelArcher.class,
+				new RenderAngelArcher(new ModelAngelArcher(), 0.5F));
+		
+		RenderingRegistry.registerEntityRenderingHandler(EntityUriel.class,
+				new RenderUriel(new ModelUriel(), 0.5F));
 	}
 	
 	@Override

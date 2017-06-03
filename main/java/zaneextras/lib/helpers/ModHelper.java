@@ -6,14 +6,11 @@ import net.minecraft.util.ChatComponentText;
 
 public class ModHelper {
 	
-	public static boolean useCofh = false;
 	public static boolean useZollernExtras = false;
 	public static boolean useBigReactors = false;
 	
 	public static void detectMods() {
-		useZollernExtras = isModLoaded("zollernextras")
-				|| isModLoaded("Zollern Extras");
-		
+		useZollernExtras = isModLoaded("zollernextras");
 		useBigReactors = isModLoaded("BigReactors");
 	}
 	

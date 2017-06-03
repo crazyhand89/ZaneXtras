@@ -335,9 +335,6 @@ public class ChunkProviderLight extends ChunkProviderGenerate {
 			int i, int j, int k) {
 		if (par1EnumCreatureType == EnumCreatureType.monster) {
 			final List monsters = new ArrayList();
-			// monsters.add(
-			/// new SpawnListEntry(EntityShadowSkeleton.class, 2, 2, 3));
-			// monsters.add(new SpawnListEntry(EntityScorpion.class, 2, 2, 3));
 			monsters.add(
 					new SpawnListEntry(EntityLightSkeleton.class, 3, 0, 1));
 			monsters.add(new SpawnListEntry(EntityLightZombie.class, 3, 0, 1));

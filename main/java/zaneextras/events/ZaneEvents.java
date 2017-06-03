@@ -5,6 +5,7 @@ import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,6 +17,7 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.EntityStruckByLightningEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
+import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
 import zaneextras.blocks.BlockList;
 import zaneextras.config.ZaneConfig;
@@ -162,6 +164,17 @@ public class ZaneEvents {
 	}
 	
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void onAttackEntity(AttackEntityEvent event) {
+		EntityPlayer player = event.entityPlayer;
+		Entity entityHit = event.target;
+		
+		// TODO: Get code for specific arrow hit
+		if (entityHit instanceof EntityLiving) {
+			
+		}
+	}
+	
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void onEntityStruckByLightningEvent(
 			EntityStruckByLightningEvent event) {
 		Entity theEntity = event.entity;
@@ -227,4 +240,5 @@ public class ZaneEvents {
 		return null;
 		
 	}
+	
 }

@@ -8,6 +8,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.player.EntityPlayer;
@@ -20,8 +21,9 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
+import zaneextras.mobs.entities.EntityAngelArcher;
 
-public class EntityLightArrow extends EntityArrow
+public class EntityAngelArrow extends EntityArrow
 		implements IEntityAdditionalSpawnData, IThrowableEntity {
 	private int field_145791_d = -1;
 	private int field_145792_e = -1;
@@ -39,16 +41,16 @@ public class EntityLightArrow extends EntityArrow
 	private int ticksInAir;
 	private double damage = 5.0D;
 	/** The amount of knockback an arrow applies when it hits a mob. */
-	private int knockbackStrength = 1;
+	private int knockbackStrength;
 	private static final String __OBFID = "CL_00001715";
 	
-	public EntityLightArrow(World p_i1753_1_) {
+	public EntityAngelArrow(World p_i1753_1_) {
 		super(p_i1753_1_);
 		this.renderDistanceWeight = 10.0D;
 		this.setSize(0.5F, 0.5F);
 	}
 	
-	public EntityLightArrow(World p_i1754_1_, double p_i1754_2_,
+	public EntityAngelArrow(World p_i1754_1_, double p_i1754_2_,
 			double p_i1754_4_, double p_i1754_6_) {
 		super(p_i1754_1_);
 		this.renderDistanceWeight = 10.0D;
@@ -57,7 +59,7 @@ public class EntityLightArrow extends EntityArrow
 		this.yOffset = 0.0F;
 	}
 	
-	public EntityLightArrow(World p_i1755_1_, EntityLivingBase p_i1755_2_,
+	public EntityAngelArrow(World p_i1755_1_, EntityLivingBase p_i1755_2_,
 			EntityLivingBase p_i1755_3_, float p_i1755_4_, float p_i1755_5_) {
 		super(p_i1755_1_);
 		this.renderDistanceWeight = 10.0D;
@@ -88,7 +90,7 @@ public class EntityLightArrow extends EntityArrow
 		}
 	}
 	
-	public EntityLightArrow(World p_i1756_1_, EntityLivingBase p_i1756_2_,
+	public EntityAngelArrow(World p_i1756_1_, EntityLivingBase p_i1756_2_,
 			float p_i1756_3_) {
 		super(p_i1756_1_);
 		this.renderDistanceWeight = 10.0D;
@@ -163,7 +165,6 @@ public class EntityLightArrow extends EntityArrow
 			
 			if (block == this.field_145790_g && j == this.inData) {
 				++this.ticksInGround;
-				
 				if (this.ticksInGround == 1200) {
 					this.setDead();
 				}
@@ -323,6 +324,22 @@ public class EntityLightArrow extends EntityArrow
 						
 						this.playSound("random.bowhit", 1.0F,
 								1.2F / (this.rand.nextFloat() * 0.2F + 0.9F));
+						
+						if (movingobjectposition.entityHit instanceof EntityLiving) {
+							Entity shooter = this.getThrower();
+							int heal = 4;
+							
+							if (shooter instanceof EntityPlayer) {
+								EntityPlayer player = (EntityPlayer) shooter;
+								player.heal(heal);
+							}
+							
+							if (shooter instanceof EntityAngelArcher) {
+								EntityAngelArcher angel = (EntityAngelArcher) shooter;
+								
+								angel.heal(20.0F);
+							}
+						}
 						
 						if (!(movingobjectposition.entityHit instanceof EntityEnderman)) {
 							this.setDead();

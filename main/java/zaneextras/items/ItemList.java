@@ -15,6 +15,7 @@ import zaneextras.items.armor.skyium.SkyiumArmor;
 import zaneextras.items.armor.staria.StariaArmor;
 import zaneextras.items.armor.zanium.ZaniumArmor;
 import zaneextras.items.armor.zogite.ZogiteArmor;
+import zaneextras.items.bow.AngelBow;
 import zaneextras.items.bow.EmeraldBow;
 import zaneextras.items.bow.EnderBow;
 import zaneextras.items.bow.LightBow;
@@ -54,6 +55,7 @@ import zaneextras.items.tool.zanium.ItemToolZaniumAxe;
 import zaneextras.items.tool.zanium.ItemToolZaniumHoe;
 import zaneextras.items.tool.zanium.ItemToolZaniumPickaxe;
 import zaneextras.items.tool.zanium.ItemToolZaniumShovel;
+import zaneextras.items.weapon.ItemWeaponAngelSword;
 import zaneextras.items.weapon.ItemWeaponDamnHardButterSword;
 import zaneextras.items.weapon.ItemWeaponEmeraldSword;
 import zaneextras.items.weapon.ItemWeaponFoolStariaSword;
@@ -71,9 +73,6 @@ public class ItemList {
 	public static final Item lightFlesh = new ItemFoodGlowingFlesh();
 	public static final Item lightBoneMeal = new ZaneItem("lightbonemeal");
 	public static final Item radiatedCoal = new ZaneItem("radiatedcoal");
-	public static final Item pureFeather = new ZaneItem("purefeather");
-	public static final Item angelHalo = new ZaneItem("angelhalo");
-	public static final Item angelKey = new ZaneItem("angelkey");
 	
 	// ignots
 	public static final Item butterItem = new ItemRarity("damnhardbutteringot",
@@ -84,6 +83,7 @@ public class ItemList {
 			EnumRarity.uncommon);
 	public static final Item zograditeIgnot = new ZaneAnimatedItem(
 			"zograditeingot", EnumRarity.epic);
+	public static final Item lightIngot = new ZaneItem("lightingot");
 	
 	// Materials
 	public static final Item sodium = new ZaneItem("sodium");
@@ -95,6 +95,10 @@ public class ItemList {
 	public static final Item chargedZanium = new ZaneAnimatedItem(
 			"charged_zanium", EnumRarity.epic);
 	public static final Item foolStaria = new ZaneItem("foolstaria");
+	public static final Item empoweredStaria = new ItemRarity(
+			"empowered_staria", EnumRarity.epic);
+	public static final Item empoweredZanium = new ItemRarity(
+			"empowered_zanium", EnumRarity.epic);
 	
 	// Dust
 	public static final Item butterDust = new ZaneItem("butterdust");
@@ -344,7 +348,7 @@ public class ItemList {
 	public static final Item lightArrow = new ItemRarity("lightarrow",
 			EnumRarity.rare);
 	
-	//Fool Staria Armor Set
+	// Fool Staria Armor Set
 	public static final Item foolStariaHelmet = new FoolStariaArmor(
 			ZaneArmorMaterials.FOOL_STARIA, "foolstariahelmet", 0);
 	public static final Item foolStariaChestPlate = new FoolStariaArmor(
@@ -360,6 +364,18 @@ public class ItemList {
 	public static final Item foolStariaShovel = new ItemToolFoolStariaShovel();
 	public static final Item foolStariaPickaxe = new ItemToolFoolStariaPickaxe();
 	public static final Item foolStariaSword = new ItemWeaponFoolStariaSword();
+	
+	// Angel Items
+	public static final Item angelSword = new ItemWeaponAngelSword();
+	public static final Item angelArrow = new ItemRarity("angelarrow",
+			EnumRarity.uncommon);
+	public static final Item angelBow = new AngelBow();
+	public static final Item pureFeather = new ZaneItem("purefeather");
+	public static final Item angelHalo = new ItemRarity("angelhalo",
+			EnumRarity.epic);
+	public static final Item angelKey = new ZaneItem("angelkey");
+	public static final Item urielSword = new ZaneItem("urielsword");
+	public static final Item lightNugget = new ZaneItem("lightnugget");
 	
 	public static void init() {
 		addItem(butterItem, "i1");
@@ -508,6 +524,14 @@ public class ItemList {
 		addItem(pureFeather, "i144");
 		addItem(angelHalo, "i145");
 		addItem(angelKey, "i146");
+		addItem(urielSword, "i147");
+		addItem(angelBow, "i148");
+		addItem(angelArrow, "i149");
+		addItem(lightIngot, "i150");
+		addItem(angelSword, "i151");
+		addItem(lightNugget, "i152");
+		addItem(empoweredStaria, "i153");
+		addItem(empoweredZanium, "i154");
 	}
 	
 	public static void addItem(Item item, String name) {

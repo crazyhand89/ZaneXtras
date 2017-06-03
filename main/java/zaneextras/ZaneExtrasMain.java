@@ -21,6 +21,7 @@ import zaneextras.config.ZaneConfig;
 import zaneextras.dimensions.ZaneDimensionLoader;
 import zaneextras.events.ZaneEvents;
 import zaneextras.items.ItemList;
+import zaneextras.items.arrow.EntityAngelArrow;
 import zaneextras.items.arrow.EntityEmeraldArrow;
 import zaneextras.items.arrow.EntityEnderArrow;
 import zaneextras.items.arrow.EntityGoldenArrow;
@@ -83,6 +84,8 @@ public class ZaneExtrasMain {
 				3, INSTANCE, 64, 20, true);
 		EntityRegistry.registerModEntity(EntityLightArrow.class, "LightArrow",
 				4, INSTANCE, 64, 20, true);
+		EntityRegistry.registerModEntity(EntityAngelArrow.class, "AngelArrow",
+				5, INSTANCE, 64, 20, true);
 		Recipes.init();
 		MinecraftForge.EVENT_BUS.register(new ZaneEvents());
 		proxy.initClientEvents();

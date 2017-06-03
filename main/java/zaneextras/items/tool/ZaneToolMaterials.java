@@ -20,5 +20,8 @@ public class ZaneToolMaterials {
 			6244, 21.0F, 12.0F, 75);
 	public static ToolMaterial ZOGRADITE = EnumHelper
 			.addToolMaterial("Zogradite", 8, 12542, 35.0F, 25.0F, 120);
-	public static ToolMaterial FOOL_STARIA = EnumHelper.addToolMaterial("Fool Staria", 2, 250, 6.0F, 2.0F, 14);
+	public static ToolMaterial FOOL_STARIA = EnumHelper
+			.addToolMaterial("Fool Staria", 2, 250, 6.0F, 2.0F, 14);
+	public static ToolMaterial ANGEL = EnumHelper.addToolMaterial("Angel", 1,
+			1600, 8.0F, 5.0F, 40);
 }

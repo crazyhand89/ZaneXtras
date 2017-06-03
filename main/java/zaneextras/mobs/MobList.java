@@ -9,10 +9,13 @@ import net.minecraft.world.biome.BiomeGenBase;
 import zaneextras.biomes.ZaneBiomeList;
 import zaneextras.lib.ModInfo;
 import zaneextras.mobs.entities.EntityAngel;
+import zaneextras.mobs.entities.EntityAngelArcher;
+import zaneextras.mobs.entities.EntityAngelWarrior;
 import zaneextras.mobs.entities.EntityHellSheep;
 import zaneextras.mobs.entities.EntityLightSkeleton;
 import zaneextras.mobs.entities.EntityLightZombie;
 import zaneextras.mobs.entities.EntitySkeletonKing;
+import zaneextras.mobs.entities.EntityUriel;
 
 public class MobList {
 	
@@ -41,11 +44,25 @@ public class MobList {
 		registerEntity(EntitySkeletonKing.class, "skeletonking", 0xff555,
 				0xe2e2e2);
 		
-		//Angel
-		registerEntity(EntityAngel.class, "lightangel", 0xe7e6e6,
-				0xff3333);
+		// Angel
+		registerEntity(EntityAngel.class, "lightangel", 0xe7e6e6, 0xff3333);
 		EntityRegistry.addSpawn(EntityAngel.class, 11, 3, 5,
 				EnumCreatureType.monster, ZaneBiomeList.lightBiome);
+		
+		// Angel Warrior
+		registerEntity(EntityAngelWarrior.class, "angelwarrior", 0xe5e6e6,
+				0xff7333);
+		EntityRegistry.addSpawn(EntityAngelWarrior.class, 11, 3, 5,
+				EnumCreatureType.monster, ZaneBiomeList.lightBiome);
+		
+		// Angel Archer
+		registerEntity(EntityAngelArcher.class, "angelarcher", 0xe1e6e6,
+				0xff7733);
+		EntityRegistry.addSpawn(EntityAngelArcher.class, 11, 3, 5,
+				EnumCreatureType.monster, ZaneBiomeList.lightBiome);
+		
+		// Uriel
+		registerEntity(EntityUriel.class, "uriel", 0xe2e6e6, 0xff9733);
 	}
 	
 	public static void registerEntity(Class<? extends EntityLiving> entity,

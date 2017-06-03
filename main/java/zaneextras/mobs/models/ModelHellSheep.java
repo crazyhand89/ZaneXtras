@@ -87,30 +87,12 @@ public class ModelHellSheep extends ModelBase {
 	public void setRotationAngles(float par1, float par2, float par3,
 			float par4, float par5, float par6, Entity par7Entity) {
 		super.setRotationAngles(par1, par2, par3, par4, par5, par6, par7Entity);
-		float f6 = MathHelper.sin(this.onGround * (float) Math.PI);
-		float f7 = MathHelper
-				.sin((1.0F - (1.0F - this.onGround) * (1.0F - this.onGround))
-						* (float) Math.PI);
-		this.bipedRightArm.rotateAngleZ = 0.0F;
-		this.bipedLeftArm.rotateAngleZ = 0.0F;
-		this.bipedRightArm.rotateAngleY = -(0.1F - f6 * 0.6F);
-		this.bipedLeftArm.rotateAngleY = 0.1F - f6 * 0.6F;
-		this.bipedRightArm.rotateAngleX = -((float) Math.PI / 2F);
-		this.bipedLeftArm.rotateAngleX = -((float) Math.PI / 2F);
-		this.bipedRightArm.rotateAngleX -= f6 * 1.2F - f7 * 0.4F;
-		this.bipedLeftArm.rotateAngleX -= f6 * 1.2F - f7 * 0.4F;
-		this.bipedRightArm.rotateAngleZ += MathHelper.cos(par3 * 0.09F) * 0.05F
-				+ 0.05F;
-		this.bipedLeftArm.rotateAngleZ -= MathHelper.cos(par3 * 0.09F) * 0.05F
-				+ 0.05F;
-		this.bipedRightArm.rotateAngleX += MathHelper.sin(par3 * 0.067F)
-				* 0.05F;
-		this.bipedLeftArm.rotateAngleX -= MathHelper.sin(par3 * 0.067F) * 0.05F;
-		this.bipedBody.rotateAngleX = 0.0F;
-		this.bipedRightLeg.rotationPointZ = 0.1F;
-		this.bipedLeftLeg.rotationPointZ = 0.1F;
-		this.bipedRightLeg.rotationPointY = 12.0F;
-		this.bipedLeftLeg.rotationPointY = 12.0F;
+	    float f6 = (180F / (float)Math.PI);
+	    this.bipedBody.rotateAngleX = par5 / (180F / (float)Math.PI);
+	    this.bipedBody.rotateAngleY = par4 / (180F / (float)Math.PI);
+
+	    this.bipedRightLeg.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 1.4F * par2;
+	this.bipedLeftLeg.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.4F * par2;
 	}
 	
 }

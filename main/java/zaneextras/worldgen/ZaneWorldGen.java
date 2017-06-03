@@ -73,15 +73,15 @@ public class ZaneWorldGen implements IWorldGenerator {
 					205);
 		}
 		
-		//Light Trees
+		// Light Trees
 		if (random.nextInt(150) <= 5) {
-			if(currentBiome.equals(BiomeGenBase.birchForest) || 
-					currentBiome.equals(BiomeGenBase.birchForestHills) || 
-					currentBiome.equals(BiomeGenBase.forest) || 
-					currentBiome.equals(BiomeGenBase.forestHills) ||
-							currentBiome.equals(BiomeGenBase.plains)){
-			this.spawnStructure(10, 100, world, random, x, y, z,
-					new WorldGenLightTree());
+			if (currentBiome.equals(BiomeGenBase.birchForest)
+					|| currentBiome.equals(BiomeGenBase.birchForestHills)
+					|| currentBiome.equals(BiomeGenBase.forest)
+					|| currentBiome.equals(BiomeGenBase.forestHills)
+					|| currentBiome.equals(BiomeGenBase.plains)) {
+				this.spawnStructure(10, 100, world, random, x, y, z,
+						new WorldGenLightTree());
 			}
 		}
 		// Crops
@@ -172,26 +172,24 @@ public class ZaneWorldGen implements IWorldGenerator {
 		}
 		
 		// Light Ores
-		addLightOreSpawn(BlockList.lightDiamondOre, world, random, x, z, 16,
-				16, 2 + random.nextInt(6), ZaneConfig.oreLightDiamond, 4,
-				16);
-		addLightOreSpawn(BlockList.lightEmeraldOre, world, random, x, z, 16,
-				16, 0 + random.nextInt(3), ZaneConfig.oreLightEmerald, 6,
-				12);
-		addLightOreSpawn(BlockList.lightGoldOre, world, random, x, z, 16,
-				16, 2 + random.nextInt(4), ZaneConfig.oreLightGold, 6, 25);
-		addLightOreSpawn(BlockList.lightIronOre, world, random, x, z, 16,
-				16, 3 + random.nextInt(5), ZaneConfig.oreLightIron, 6, 40);
-		addLightOreSpawn(BlockList.lightLapisOre, world, random, x, z, 6,
-				16, 2 + random.nextInt(5), ZaneConfig.oreLightLapis, 6, 25);
-		addLightOreSpawn(BlockList.lightRedstoneOre, world, random, x, z,
-				16, 16, 2 + random.nextInt(5), ZaneConfig.oreLightRedstone,
-				6, 25);
-		addLightOreSpawn(BlockList.stariaOre, world, random, x, z, 16,
-				16, 2 + random.nextInt(6), ZaneConfig.oreLightStaria, 4,
-				16);
+		addLightOreSpawn(BlockList.lightDiamondOre, world, random, x, z, 16, 16,
+				2 + random.nextInt(6), ZaneConfig.oreLightDiamond, 4, 16);
+		addLightOreSpawn(BlockList.lightEmeraldOre, world, random, x, z, 16, 16,
+				0 + random.nextInt(3), ZaneConfig.oreLightEmerald, 6, 12);
+		addLightOreSpawn(BlockList.lightGoldOre, world, random, x, z, 16, 16,
+				2 + random.nextInt(4), ZaneConfig.oreLightGold, 6, 25);
+		addLightOreSpawn(BlockList.lightIronOre, world, random, x, z, 16, 16,
+				3 + random.nextInt(5), ZaneConfig.oreLightIron, 6, 40);
+		addLightOreSpawn(BlockList.lightLapisOre, world, random, x, z, 6, 16,
+				2 + random.nextInt(5), ZaneConfig.oreLightLapis, 6, 25);
+		addLightOreSpawn(BlockList.lightRedstoneOre, world, random, x, z, 16,
+				16, 2 + random.nextInt(5), ZaneConfig.oreLightRedstone, 6, 25);
+		addLightOreSpawn(BlockList.stariaOre, world, random, x, z, 16, 16,
+				2 + random.nextInt(6), ZaneConfig.oreLightStaria, 4, 16);
+		
+		this.spawnStructure(100, 1000, world, random, x, y, z,
+				new AngelFortress());
 	}
-	
 	
 	public void addOreSpawn(Block block, World world, Random random,
 			int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize,

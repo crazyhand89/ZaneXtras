@@ -3,6 +3,7 @@ package zaneextras.lib.treasure;
 import java.util.ArrayList;
 import java.util.Random;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -11,9 +12,11 @@ import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ChestGenHooks;
 import zaneextras.items.ItemList;
+import zaneextras.lib.helpers.ModHelper;
 
 public final class Treasures {
 	
+	public static Random rand = new Random();
 	public static ArrayList<String> chestTypes = new ArrayList<String>();
 	public static final WeightedRandomChestContent[] CTChestContents = new WeightedRandomChestContent[] {
 			new WeightedRandomChestContent(Items.iron_ingot, 2, 1, 5, 10),
@@ -29,6 +32,29 @@ public final class Treasures {
 		skeleBow.addEnchantment(Enchantment.infinity, 1);
 		ZaneChestGenHooks.addDungeonLoot(
 				ZaneChestGenHooks.getSkeletonInstance(), skeleBow, 5, 1, 1);
+		
+		ItemStack itemstack = new ItemStack(Items.book, 1, 0);
+		EnchantmentHelper.addRandomEnchantment(rand, itemstack, 30);
+		
+		ZaneChestGenHooks.addDungeonLoot(ZaneChestGenHooks.getFortressMagic(),
+				itemstack, 5, 1, 1);
+		
+		// if (ModHelper.useZollernExtras) {
+		// ItemStack zollernitem1 = new ItemStack(ZollernItems.shadowEssence,
+		// 1);
+		// ItemStack zollernitem2 = new ItemStack(ZollernItems.shadowBone, 1);
+		//
+		// ZaneChestGenHooks.addDungeonLoot(
+		// ZaneChestGenHooks.getFortressJail(), zollernitem1, 25, 1,
+		// 5);
+		// ZaneChestGenHooks.addDungeonLoot(
+		// ZaneChestGenHooks.getFortressJail(), zollernitem2, 25, 1,
+		// 5);
+		// }
+		
+		if (ModHelper.useZollernExtras) {
+			
+		}
 	}
 	
 	private static void addItems() {
@@ -69,10 +95,21 @@ public final class Treasures {
 	}
 	
 	public static void addChestTypes() {
+		// Skeleton Tower
 		chestTypes.add(ZaneChestGenHooks.ZANE_TOWER_TRAINING);
 		chestTypes.add(ZaneChestGenHooks.ZANE_TOWER_TREASURE);
 		chestTypes.add(ZaneChestGenHooks.ZANE_TOWER_MAGIC);
 		chestTypes.add(ZaneChestGenHooks.ZANE_SKELETON_KING);
+		
+		// Angel Fortress
+		chestTypes.add(ZaneChestGenHooks.ZANE_FORTRESS_POTION);
+		chestTypes.add(ZaneChestGenHooks.ZANE_FORTRESS_TRAINING);
+		chestTypes.add(ZaneChestGenHooks.ZANE_FORTRESS_TREASURE);
+		chestTypes.add(ZaneChestGenHooks.ZANE_FORTRESS_MAGIC);
+		chestTypes.add(ZaneChestGenHooks.ZANE_FORTRESS_CHURCH);
+		chestTypes.add(ZaneChestGenHooks.ZANE_FORTRESS_JAIL);
+		chestTypes.add(ZaneChestGenHooks.ZANE_FORTRESS_ARCHERY);
+		chestTypes.add(ZaneChestGenHooks.ZANE_ARCH_URIEL);
 	}
 	
 	public static String pickChestType() {

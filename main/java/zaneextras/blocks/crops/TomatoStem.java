@@ -54,8 +54,6 @@ public class TomatoStem extends BlockStem implements IGrowable {
 	@Override
 	public void updateTick(World p_149674_1_, int p_149674_2_, int p_149674_3_,
 			int p_149674_4_, Random p_149674_5_) {
-		// super.updateTick(p_149674_1_, p_149674_2_, p_149674_3_, p_149674_4_,
-		// p_149674_5_);
 		
 		if (p_149674_1_.getBlockLightValue(p_149674_2_, p_149674_3_ + 1,
 				p_149674_4_) >= 9) {
@@ -119,7 +117,7 @@ public class TomatoStem extends BlockStem implements IGrowable {
 									|| block == Blocks.dirt
 									|| block == Blocks.grass)) {
 						p_149674_1_.setBlock(j1, p_149674_3_, k1,
-								this.field_149877_a);
+								BlockList.tomatoBlock);
 					}
 				}
 			}
@@ -315,7 +313,7 @@ public class TomatoStem extends BlockStem implements IGrowable {
 	@Override
 	public Item getItemDropped(int p_149650_1_, Random p_149650_2_,
 			int p_149650_3_) {
-		return null;
+		return ItemList.tomatoSeeds;
 	}
 	
 	/**

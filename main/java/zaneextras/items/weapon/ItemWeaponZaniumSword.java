@@ -44,6 +44,7 @@ public class ItemWeaponZaniumSword extends ItemSword {
 	public boolean onLeftClickEntity(ItemStack par1ItemStack,
 			EntityPlayer par2EntityPlayer, Entity entity) {
 		super.onLeftClickEntity(par1ItemStack, par2EntityPlayer, entity);
+		
 		if (entity instanceof EntityLivingBase) {
 			EntityLivingBase living = (EntityLivingBase) entity;
 			living.addPotionEffect(new PotionEffect(Potion.wither.id, 400, 3));

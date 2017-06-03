@@ -212,11 +212,21 @@ item.zaneextras_foolstariasword.name=Fool Staria Rapier
 item.zaneextras_angelhalo.name=Angel's Halo
 item.zaneextras_purefeather.name=Pure Feather
 item.zaneextras_angelkey.name=Angel's Key
+item.zaneextras_angelbow.name=Angel Bow
+item.zaneextras_angelarrow.name=Angel Arrow
+item.zaneextras_lightingot.name=Angel Ingot
+item.zaneextras_lightnugget.name=Angel Nugget
+item.zaneextras_angelsword.name=Angel Sword
+item.zaneextras_urielsword.name=Uriel's Sword
 
 entity.zaneextras_hellsheep.name=Hell Sheep
 entity.zaneextras_skeletonking.name=Skeleton King
 entity.zaneextras_lightskeleton.name=Light Skeleton
 entity.zaneextras_lightzombie.name=Light Zombie
+entity.zaneextras_angelwarrior.name=Angel Warrior
+entity.zaneextras_angelarcher.name=Angel Archer
+entity.zaneextras_lightangel.name=Angel
+entity.zaneextras_uriel.name=Arch Angel Uriel
 
 zaneextras_barrier=Purify Barrier
 

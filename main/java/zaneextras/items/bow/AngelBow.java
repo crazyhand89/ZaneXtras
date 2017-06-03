@@ -18,30 +18,29 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowLooseEvent;
 import net.minecraftforge.event.entity.player.ArrowNockEvent;
 import zaneextras.items.ItemList;
-import zaneextras.items.arrow.EntityGoldenArrow;
+import zaneextras.items.arrow.EntityAngelArrow;
 import zaneextras.lib.ModInfo;
 import zaneextras.lib.ZaneTabs;
 import zaneextras.lib.helpers.ZaneKeyHelper;
 
-public class SkeletonKingBow extends Item {
+public class AngelBow extends Item {
 	public static final String[] bowPullIconNameArray = new String[] {
 			"pulling_0", "pulling_1", "pulling_2" };
 	@SideOnly(Side.CLIENT)
 	private IIcon[] iconArray;
 	private static final String __OBFID = "CL_00001777";
 	
-	public SkeletonKingBow() {
+	public AngelBow() {
 		this.maxStackSize = 1;
-		this.setMaxDamage(4123);
+		this.setMaxDamage(1000);
 		this.setCreativeTab(ZaneTabs.zTab);
-		this.setUnlocalizedName(ModInfo.MODID + "_skeletonkingbow");
-		this.setTextureName(ModInfo.MODID + ":skeletonkingbow");
-		this.bFull3D = true;
+		this.setUnlocalizedName(ModInfo.MODID + "_angelbow");
+		this.setTextureName(ModInfo.MODID + ":angelbow");
 	}
 	
 	@Override
 	public EnumRarity getRarity(ItemStack p_77613_1_) {
-		return EnumRarity.epic;
+		return EnumRarity.uncommon;
 	}
 	
 	/**
@@ -64,7 +63,7 @@ public class SkeletonKingBow extends Item {
 				|| EnchantmentHelper.getEnchantmentLevel(
 						Enchantment.infinity.effectId, p_77615_1_) > 0;
 		
-		if (flag || p_77615_3_.inventory.hasItem(ItemList.goldenArrow)) {
+		if (flag || p_77615_3_.inventory.hasItem(ItemList.angelArrow)) {
 			float f = j / 20.0F;
 			f = (f * f + f * 2.0F) / 3.0F;
 			
@@ -76,7 +75,7 @@ public class SkeletonKingBow extends Item {
 				f = 1.0F;
 			}
 			
-			EntityGoldenArrow entityarrow = new EntityGoldenArrow(p_77615_2_,
+			EntityAngelArrow entityarrow = new EntityAngelArrow(p_77615_2_,
 					p_77615_3_, f * 2.0F);
 			
 			if (f == 1.0F) {
@@ -110,7 +109,7 @@ public class SkeletonKingBow extends Item {
 			if (flag) {
 				entityarrow.canBePickedUp = 2;
 			} else {
-				p_77615_3_.inventory.consumeInventoryItem(ItemList.goldenArrow);
+				p_77615_3_.inventory.consumeInventoryItem(ItemList.angelArrow);
 			}
 			
 			if (!p_77615_2_.isRemote) {
@@ -156,7 +155,7 @@ public class SkeletonKingBow extends Item {
 		}
 		
 		if (p_77659_3_.capabilities.isCreativeMode
-				|| p_77659_3_.inventory.hasItem(ItemList.goldenArrow)) {
+				|| p_77659_3_.inventory.hasItem(ItemList.angelArrow)) {
 			p_77659_3_.setItemInUse(p_77659_1_,
 					this.getMaxItemUseDuration(p_77659_1_));
 		}
@@ -170,7 +169,7 @@ public class SkeletonKingBow extends Item {
 	 */
 	@Override
 	public int getItemEnchantability() {
-		return 20;
+		return 15;
 	}
 	
 	@Override
@@ -219,9 +218,10 @@ public class SkeletonKingBow extends Item {
 	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_,
 			List list, boolean p_77624_4_) {
 		if (ZaneKeyHelper.isCtrlKeyDown() || ZaneKeyHelper.isShiftKeyDown()) {
-			list.add(EnumChatFormatting.ITALIC + "A bow that once belonged");
-			list.add(EnumChatFormatting.ITALIC + "to the Skeleton King.");
-			list.add(EnumChatFormatting.ITALIC + "Now it is in your hands.");
+			list.add(EnumChatFormatting.ITALIC + "Arrows fired from this");
+			list.add(EnumChatFormatting.ITALIC + "bow cause EXPLOSIONS");
+			list.add(EnumChatFormatting.ITALIC + "if they miss your target");
+			
 		} else {
 			list.add("Hold SHIFT for");
 			list.add("more information.");

@@ -106,7 +106,7 @@ public class ZaneConfig {
 						+ "Light Biome Defualt Value: 201");
 		config.addCustomCategoryComment(CATEGORY_POTIONS,
 				"Change the Potion IDS here" + System.lineSeparator()
-						+ "Barrier Potion ID(151 By Default):");
+						+ "Barrier Potion ID(26 By Default):");
 		config.addCustomCategoryComment(CATEGORY_OPTIONS,
 				"Toggle different options here for different things"
 						+ System.lineSeparator()

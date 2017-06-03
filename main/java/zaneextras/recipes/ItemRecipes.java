@@ -116,6 +116,10 @@ public class ItemRecipes {
 			GameRegistry.addRecipe(new ItemStack(ItemList.angelKey, 1),
 					new Object[] { " A ", "AHA", " A ", 'A',
 							ItemList.pureFeather, 'H', ItemList.angelHalo});
+			
+			//Radiated Coal
+			GameRegistry.addRecipe(new ItemStack(ItemList.radiatedCoal, 8),
+					new Object[] { "ZZZ", "ZCZ", "ZZZ", 'C', Items.coal, 'Z', ItemList.zogiteIngot});
 		}
 	}
 }

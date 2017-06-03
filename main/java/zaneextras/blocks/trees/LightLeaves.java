@@ -14,6 +14,7 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
+import zaneextras.blocks.BlockList;
 import zaneextras.lib.ModInfo;
 import zaneextras.lib.ZaneTabs;
 
@@ -195,26 +196,29 @@ public class LightLeaves extends BlockLeavesBase implements IShearable {
 		world.setBlockToAir(x, y, z);
 	}
 	
-	// @Override
-	// public Item getItemDropped(int par1, Random par2Random, int par3) {
-	// Item droppedItem;
-	// int dropCheck = new Random().nextInt(2);
-	// switch (dropCheck) {
-	// case 0:
-	// droppedItem = ZollernItems.guava;
-	// break;
-	// case 1:
-	// droppedItem = Item.getItemFromBlock(ZollernBlocks.guavaSapling);
-	// break;
-	// default:
-	// droppedItem = Item.getItemFromBlock(ZollernBlocks.guavaSapling);
-	// break;
-	// case 2:
-	// droppedItem = ZollernItems.guava;
-	// break;
-	// }
-	// return droppedItem;
-	// }
+	 @Override
+	 public Item getItemDropped(int par1, Random par2Random, int par3) {
+		 
+		 Random rand = new Random();
+		 
+		 Item droppedItem;
+			int dropCheck = new Random().nextInt(2);
+			switch (dropCheck) {
+			case 0:
+				droppedItem = Item.getItemFromBlock(BlockList.lightLeaves);
+				break;
+			case 1:
+				droppedItem = Item.getItemFromBlock(BlockList.lightSapling);
+				break;
+			default:
+				droppedItem = Item.getItemFromBlock(BlockList.lightSapling);
+				break;
+			case 2:
+				droppedItem = Item.getItemFromBlock(BlockList.lightLeaves);
+				break;
+			}
+			return droppedItem;
+	 }
 	
 	@Override
 	public void dropBlockAsItemWithChance(World world, int x, int y, int z,

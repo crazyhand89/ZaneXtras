@@ -54,18 +54,22 @@ public class BlockList {
 			"raditeore", 3.0F, 3.0F, Block.soundTypeStone, 5);
 	public static final Block zogiteOre = new ZaneOreBlock(Material.rock,
 			"zogiteore", 3.0F, 3.0F, Block.soundTypeStone, 5);
-	public static final Block lightRedstoneOre = new ZaneOreLightBlock(Material.rock,
-			"lightredstoneore", 3.0F, 3.0F, Block.soundTypeStone, 2);
-	public static final Block lightLapisOre = new ZaneOreLightBlock(Material.rock,
-			"lightlapisore", 3.0F, 3.0F, Block.soundTypeStone, 2);
-	public static final Block lightDiamondOre = new ZaneOreLightBlock(Material.rock,
-			"lightdiamondore", 3.0F, 3.0F, Block.soundTypeStone, 2);
-	public static final Block lightGoldOre = new ZaneOreLightBlock(Material.rock,
-			"lightgoldore", 3.0F, 3.0F, Block.soundTypeStone, 2);
-	public static final Block lightEmeraldOre = new ZaneOreLightBlock(Material.rock,
-			"lightemeraldore", 3.0F, 3.0F, Block.soundTypeStone, 2);
-	public static final Block lightIronOre = new ZaneOreLightBlock(Material.rock,
-			"lightironore", 3.0F, 3.0F, Block.soundTypeStone, 2);
+	public static final Block lightRedstoneOre = new ZaneOreLightBlock(
+			Material.rock, "lightredstoneore", 3.0F, 3.0F, Block.soundTypeStone,
+			2);
+	public static final Block lightLapisOre = new ZaneOreLightBlock(
+			Material.rock, "lightlapisore", 3.0F, 3.0F, Block.soundTypeStone,
+			2);
+	public static final Block lightDiamondOre = new ZaneOreLightBlock(
+			Material.rock, "lightdiamondore", 3.0F, 3.0F, Block.soundTypeStone,
+			2);
+	public static final Block lightGoldOre = new ZaneOreLightBlock(
+			Material.rock, "lightgoldore", 3.0F, 3.0F, Block.soundTypeStone, 2);
+	public static final Block lightEmeraldOre = new ZaneOreLightBlock(
+			Material.rock, "lightemeraldore", 3.0F, 3.0F, Block.soundTypeStone,
+			2);
+	public static final Block lightIronOre = new ZaneOreLightBlock(
+			Material.rock, "lightironore", 3.0F, 3.0F, Block.soundTypeStone, 2);
 	public static final Block foolStaria = new FoolStariaOreBlock();
 	
 	// Crops
@@ -111,9 +115,8 @@ public class BlockList {
 	
 	// Light Blocks
 	public static final Block lightStone = new LightStoneBlock();
-	public static final Block lightStoneBrick = new ZaneLightBlock(
-			Material.rock, "lightstonebrick", 1.0F, 3.0F, Block.soundTypeStone,
-			1.0F);
+	public static final Block lightStoneBrick = new ZaneBlock(Material.rock,
+			"lightstonebrick", 1.0F, 3.0F, Block.soundTypeStone);
 	public static final Block lightCobbleStone = new ZaneLightBlock(
 			Material.rock, "lightcobblestone", 1.0F, 3.0F, Block.soundTypeStone,
 			1.0F);
@@ -123,7 +126,8 @@ public class BlockList {
 	
 	// Food blocks
 	public static final Block cheeseWheelBlock = new CheeseBlock();
-	public static final Block cheeseBlock = new ZaneBlock(Material.gourd, "cheeseblock", 1.0F, 2.0F, Block.soundTypeStone);
+	public static final Block cheeseBlock = new ZaneBlock(Material.gourd,
+			"cheeseblock", 1.0F, 2.0F, Block.soundTypeStone);
 	
 	// Torches
 	public static final Block redTorch = new RedTorch();
@@ -136,17 +140,25 @@ public class BlockList {
 	public static final Block lightSapling = new LightSapling();
 	
 	// Furnace
-	public static final Block hFurnace = new HFurnaceBlock(false).setCreativeTab(ZaneTabs.zTab);
+	public static final Block hFurnace = new HFurnaceBlock(false)
+			.setCreativeTab(ZaneTabs.zTab);
 	public static final Block hFurnaceActive = new HFurnaceBlock(true);
 	
-	public static final Block sFurnace = new SFurnaceBlock(false).setCreativeTab(ZaneTabs.zTab);
+	public static final Block sFurnace = new SFurnaceBlock(false)
+			.setCreativeTab(ZaneTabs.zTab);
 	public static final Block sFurnaceActive = new SFurnaceBlock(true);
 	
-	public static final Block starFurnace = new StarFurnaceBlock(false).setCreativeTab(ZaneTabs.zTab);
+	public static final Block starFurnace = new StarFurnaceBlock(false)
+			.setCreativeTab(ZaneTabs.zTab);
 	public static final Block starFurnaceActive = new StarFurnaceBlock(true);
 	
-	//Boss Blocks
-	public static final Block skeletonBlock = new SkeletonBossBlock(Material.iron, "skeletonblock", 1.0F, 1.0F, Block.soundTypePiston).setCreativeTab(null);
+	// Boss Blocks
+	public static final Block skeletonBlock = new SkeletonBossBlock(
+			Material.iron, "skeletonblock", 1.0F, 1.0F, Block.soundTypeMetal)
+					.setCreativeTab(null);
+	public static final Block urielBlock = new ArchAngelUrielBossBlock(
+			Material.iron, "urielblock", 1.0F, 1.0F, Block.soundTypeMetal)
+					.setCreativeTab(null);
 	
 	public static void init() {
 		addBlock(dhbBlock, "b1");
@@ -205,6 +217,7 @@ public class BlockList {
 		addBlock(starFurnaceActive, "b54");
 		addBlock(foolStaria, "b55");
 		addBlock(cheeseBlock, "b56");
+		addBlock(urielBlock, "b57");
 	}
 	
 	public static void addBlock(Block block, String name) {

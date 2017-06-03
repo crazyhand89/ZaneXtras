@@ -19,6 +19,14 @@ public class ZaneChestGenHooks extends ChestGenHooks {
 	public static final String ZANE_TOWER_TREASURE = "zaneTowerTreasure";
 	public static final String ZANE_TOWER_MAGIC = "zaneTowerMagic";
 	public static final String ZANE_SKELETON_KING = "zaneSkeletonKing";
+	public static final String ZANE_FORTRESS_TRAINING = "zaneFortressTraining";
+	public static final String ZANE_FORTRESS_CHURCH = "zaneFortressChurch";
+	public static final String ZANE_FORTRESS_JAIL = "zaneFortressJail";
+	public static final String ZANE_FORTRESS_MAGIC = "zaneFortressMagic";
+	public static final String ZANE_FORTRESS_POTION = "zaneFortressPotion";
+	public static final String ZANE_FORTRESS_TREASURE = "zaneFortressTreasure";
+	public static final String ZANE_FORTRESS_ARCHERY = "zaneFortressArchery";
+	public static final String ZANE_ARCH_URIEL = "zaneArchUriel";
 	
 	public static final WeightedRandomChestContent[] ZTTChestContents = new WeightedRandomChestContent[] {
 			new WeightedRandomChestContent(new ItemStack(ItemList.skyium), 3, 5,
@@ -98,12 +106,108 @@ public class ZaneChestGenHooks extends ChestGenHooks {
 			new WeightedRandomChestContent(new ItemStack(ItemList.zanium), 1, 3,
 					15) };
 	
+	public static final WeightedRandomChestContent[] ZAFAChestContents = new WeightedRandomChestContent[] {
+			new WeightedRandomChestContent(new ItemStack(ItemList.pureFeather),
+					1, 2, 15),
+			new WeightedRandomChestContent(new ItemStack(ItemList.angelBow), 1,
+					1, 20),
+			new WeightedRandomChestContent(new ItemStack(ItemList.barrierApple),
+					1, 2, 5),
+			new WeightedRandomChestContent(new ItemStack(ItemList.angelArrow),
+					4, 8, 90) };
+	
+	public static final WeightedRandomChestContent[] ZAFTChestContents = new WeightedRandomChestContent[] {
+			new WeightedRandomChestContent(new ItemStack(ItemList.pureFeather),
+					1, 2, 15),
+			new WeightedRandomChestContent(new ItemStack(ItemList.angelSword),
+					1, 1, 20),
+			new WeightedRandomChestContent(new ItemStack(ItemList.barrierApple),
+					1, 2, 5) };
+	
+	public static final WeightedRandomChestContent[] ZAFTrChestContents = new WeightedRandomChestContent[] {
+			new WeightedRandomChestContent(new ItemStack(ItemList.barrierApple),
+					1, 2, 15),
+			new WeightedRandomChestContent(new ItemStack(ItemList.angelSword),
+					1, 1, 15),
+			new WeightedRandomChestContent(new ItemStack(ItemList.angelKey), 1,
+					1, 2),
+			new WeightedRandomChestContent(new ItemStack(ItemList.angelArrow),
+					4, 8, 80),
+			new WeightedRandomChestContent(new ItemStack(ItemList.angelBow), 1,
+					1, 15),
+			new WeightedRandomChestContent(new ItemStack(ItemList.staria), 1, 3,
+					10),
+			new WeightedRandomChestContent(
+					new ItemStack(ItemList.empoweredStaria), 1, 1, 5),
+			new WeightedRandomChestContent(new ItemStack(ItemList.pureFeather),
+					1, 2, 10),
+			new WeightedRandomChestContent(new ItemStack(ItemList.angelHalo), 1,
+					2, 5), };
+	
+	public static final WeightedRandomChestContent[] ZAFJChestContents = new WeightedRandomChestContent[] {
+			new WeightedRandomChestContent(new ItemStack(Items.potato), 3, 6,
+					50),
+			new WeightedRandomChestContent(new ItemStack(Items.carrot), 3, 6,
+					50),
+			new WeightedRandomChestContent(new ItemStack(ItemList.barrierApple),
+					1, 1, 1) };
+	
+	public static final WeightedRandomChestContent[] ZAFCChestContents = new WeightedRandomChestContent[] {
+			new WeightedRandomChestContent(new ItemStack(ItemList.angelHalo), 1,
+					1, 10),
+			new WeightedRandomChestContent(new ItemStack(ItemList.pureFeather),
+					1, 2, 25),
+			new WeightedRandomChestContent(new ItemStack(ItemList.staria), 1, 2,
+					5),
+			new WeightedRandomChestContent(
+					new ItemStack(ItemList.empoweredStaria), 1, 1, 3),
+			new WeightedRandomChestContent(new ItemStack(ItemList.lightBone), 1,
+					3, 75) };
+	
+	public static final WeightedRandomChestContent[] ZAFPChestContents = new WeightedRandomChestContent[] {
+			new WeightedRandomChestContent(new ItemStack(ItemList.pureFeather),
+					1, 1, 10),
+			new WeightedRandomChestContent(new ItemStack(ItemList.ranch), 1, 1,
+					10),
+			new WeightedRandomChestContent(new ItemStack(Items.glowstone_dust),
+					1, 4, 10),
+			new WeightedRandomChestContent(new ItemStack(ItemList.french), 1, 1,
+					10),
+			new WeightedRandomChestContent(new ItemStack(ItemList.italian), 1,
+					1, 10) };
+	
+	public static final WeightedRandomChestContent[] ZAFMChestContents = new WeightedRandomChestContent[] {
+			new WeightedRandomChestContent(new ItemStack(ItemList.pureFeather),
+					1, 1, 10),
+			new WeightedRandomChestContent(new ItemStack(ItemList.angelHalo), 1,
+					1, 10),
+			new WeightedRandomChestContent(new ItemStack(Items.ender_eye), 1, 4,
+					5),
+			new WeightedRandomChestContent(
+					new ItemStack(Items.experience_bottle), 32, 64, 100),
+			new WeightedRandomChestContent(new ItemStack(Items.nether_star), 1,
+					1, 10) };
+	
+	public static final WeightedRandomChestContent[] ZAFUriel = new WeightedRandomChestContent[] {
+			new WeightedRandomChestContent(new ItemStack(ItemList.urielSword),
+					1, 1, 100),
+			new WeightedRandomChestContent(
+					new ItemStack(ItemList.empoweredStaria), 3, 6, 10) };
+	
 	private static final HashMap<String, ZaneChestGenHooks> chestInfo = new HashMap<String, ZaneChestGenHooks>();
 	
 	private static boolean hasInit = false;
 	
 	public static ZaneChestGenHooks getSkeletonInstance() {
 		return ZaneChestGenHooks.getInfo(ZANE_SKELETON_KING);
+	}
+	
+	public static ZaneChestGenHooks getFortressMagic() {
+		return ZaneChestGenHooks.getInfo(ZANE_FORTRESS_MAGIC);
+	}
+	
+	public static ZaneChestGenHooks getFortressJail() {
+		return ZaneChestGenHooks.getInfo(ZANE_FORTRESS_JAIL);
 	}
 	
 	static {
@@ -117,10 +221,21 @@ public class ZaneChestGenHooks extends ChestGenHooks {
 		
 		hasInit = true;
 		
+		// Skeleton Castle
 		addInfo(ZANE_TOWER_TRAINING, ZTTChestContents, 6, 7);
 		addInfo(ZANE_TOWER_TREASURE, ZTTrChestContents, 9, 12);
 		addInfo(ZANE_TOWER_MAGIC, ZTMChestContents, 6, 11);
 		addInfo(ZANE_SKELETON_KING, ZBossDrops, 2, 2);
+		
+		// Angel Fortress
+		addInfo(ZANE_FORTRESS_POTION, ZAFPChestContents, 3, 5);
+		addInfo(ZANE_FORTRESS_MAGIC, ZAFMChestContents, 3, 5);
+		addInfo(ZANE_FORTRESS_CHURCH, ZAFCChestContents, 3, 5);
+		addInfo(ZANE_FORTRESS_ARCHERY, ZAFAChestContents, 2, 5);
+		addInfo(ZANE_FORTRESS_TRAINING, ZAFTChestContents, 2, 5);
+		addInfo(ZANE_FORTRESS_TREASURE, ZAFTrChestContents, 3, 10);
+		addInfo(ZANE_FORTRESS_JAIL, ZAFJChestContents, 3, 7);
+		addInfo(ZANE_ARCH_URIEL, ZAFUriel, 1, 2);
 		
 		ItemStack skeleBow = new ItemStack(ItemList.skeleBow, 1);
 		skeleBow.addEnchantment(Enchantment.flame, 1);
