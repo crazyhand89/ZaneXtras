@@ -28,10 +28,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
+import zaneextras.interfaces.ILightEntity;
 import zaneextras.items.ItemList;
 import zaneextras.items.arrow.EntityAngelArrow;
 
-public class EntityAngelArcher extends EntityMob implements IRangedAttackMob {
+public class EntityAngelArcher extends EntityMob
+		implements IRangedAttackMob, ILightEntity {
 	private EntityAIArrowAttack aiArrowAttack = new EntityAIArrowAttack(this,
 			1.0D, 20, 60, 15.0F);
 	private EntityAIAttackOnCollide aiAttackOnCollide = new EntityAIAttackOnCollide(

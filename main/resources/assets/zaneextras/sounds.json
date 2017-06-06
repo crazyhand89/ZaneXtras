@@ -6,4 +6,20 @@
 	  "mob/hellsheep/say2"
     ]
   }
+  
+  "mob.angel.say": {
+    "category": "master",
+    "sounds": [
+      "mob/angel/say1",
+	  "mob/angel/say2"
+    ]
+  }
+  
+  "mob.angel.hurt": {
+    "category": "master",
+    "sounds": [
+      "mob/hellsheep/hurt1",
+	  "mob/hellsheep/hurt2"
+    ]
+  }
 }

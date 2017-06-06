@@ -62,6 +62,7 @@ tile.zaneextras_solidFurnace.name=Solid Furnace
 tile.zaneextras_skeletonblock.name=Skeleton King Spawner
 tile.zaneextras_foolstaria.name=Fool StariaOre
 tile.zaneextras_cheeseblock.name=Cheese Block
+tile.zaneextras_uriel_block.name=Arch Angel Uriel Spawner
 
 fluid.zaneextrasraditefluid=Molten Radite
 

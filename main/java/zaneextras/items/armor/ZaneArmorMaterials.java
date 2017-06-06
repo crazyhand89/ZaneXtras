@@ -16,9 +16,9 @@ public class ZaneArmorMaterials {
 	public static ArmorMaterial SKYIUM = EnumHelper.addArmorMaterial("Skyium",
 			70, new int[] { 3, 9, 6, 2 }, 80);
 	public static ArmorMaterial ZOGITE = EnumHelper.addArmorMaterial("Zogite",
-			150, new int[] { 6, 12, 9, 5 }, 95);
+			150, new int[] { 4, 10, 7, 3 }, 95);
 	public static ArmorMaterial RADITE = EnumHelper.addArmorMaterial("Radite",
-			150, new int[] { 6, 12, 9, 5 }, 95);
-	public static ArmorMaterial FOOL_STARIA = EnumHelper.addArmorMaterial("Fool Staria",
-			15, new int[] { 2, 7, 6, 2 }, 11);
+			150, new int[] { 4, 10, 7, 3 }, 95);
+	public static ArmorMaterial FOOL_STARIA = EnumHelper
+			.addArmorMaterial("Fool Staria", 15, new int[] { 2, 7, 6, 2 }, 11);
 }

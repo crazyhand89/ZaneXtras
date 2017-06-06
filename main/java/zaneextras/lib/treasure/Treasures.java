@@ -12,7 +12,6 @@ import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ChestGenHooks;
 import zaneextras.items.ItemList;
-import zaneextras.lib.helpers.ModHelper;
 
 public final class Treasures {
 	
@@ -39,22 +38,6 @@ public final class Treasures {
 		ZaneChestGenHooks.addDungeonLoot(ZaneChestGenHooks.getFortressMagic(),
 				itemstack, 5, 1, 1);
 		
-		// if (ModHelper.useZollernExtras) {
-		// ItemStack zollernitem1 = new ItemStack(ZollernItems.shadowEssence,
-		// 1);
-		// ItemStack zollernitem2 = new ItemStack(ZollernItems.shadowBone, 1);
-		//
-		// ZaneChestGenHooks.addDungeonLoot(
-		// ZaneChestGenHooks.getFortressJail(), zollernitem1, 25, 1,
-		// 5);
-		// ZaneChestGenHooks.addDungeonLoot(
-		// ZaneChestGenHooks.getFortressJail(), zollernitem2, 25, 1,
-		// 5);
-		// }
-		
-		if (ModHelper.useZollernExtras) {
-			
-		}
 	}
 	
 	private static void addItems() {

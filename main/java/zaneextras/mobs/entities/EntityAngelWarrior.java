@@ -31,9 +31,10 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
+import zaneextras.interfaces.ILightEntity;
 import zaneextras.items.ItemList;
 
-public class EntityAngelWarrior extends EntityMob {
+public class EntityAngelWarrior extends EntityMob implements ILightEntity {
 	
 	private final EntityAIBreakDoor field_146075_bs = new EntityAIBreakDoor(
 			this);

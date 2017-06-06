@@ -6,6 +6,7 @@ package zaneextras.worldgen;
 
 import java.util.Random;
 import net.minecraft.init.Blocks;
+import net.minecraft.tileentity.TileEntityMobSpawner;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zaneextras.blocks.BlockList;
@@ -1577,10 +1578,22 @@ public class AngelFortress extends WorldGenerator {
 		world.setBlock(i + 2, j + 34, k + 14, BlockList.lightStoneBrick);
 		world.setBlock(i + 2, j + 34, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 2, j + 35, k + 0, BlockList.lightStoneBrick);
-		world.setBlock(i + 2, j + 35, k + 2, Blocks.iron_ore);
+		world.setBlock(i + 2, j + 35, k + 2, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner1 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 2, j + 35, k + 2);
+			tileentitymobspawner1.func_145881_a()
+					.setEntityName("zaneextras_angelarcher");
+		}
 		world.setBlock(i + 2, j + 35, k + 4, BlockList.lightStoneBrick);
 		world.setBlock(i + 2, j + 35, k + 10, BlockList.lightStoneBrick);
-		world.setBlock(i + 2, j + 35, k + 12, Blocks.lapis_block);
+		world.setBlock(i + 2, j + 35, k + 12, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner1 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 2, j + 35, k + 12);
+			tileentitymobspawner1.func_145881_a()
+					.setEntityName("zaneextras_angelwarrior");
+		}
 		world.setBlock(i + 2, j + 35, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 2, j + 36, k + 0, BlockList.lightStoneBrick);
 		world.setBlock(i + 2, j + 36, k + 4, BlockList.lightStoneBrick);
@@ -1733,15 +1746,10 @@ public class AngelFortress extends WorldGenerator {
 		world.setBlock(i + 3, j + 0, k + 14, BlockList.lightStoneBrick);
 		world.setBlock(i + 3, j + 0, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 3, j + 1, k + 0, BlockList.lightStoneBrick);
-		world.setBlock(i + 3, j + 1, k + 1, Blocks.iron_ore);
-		world.setBlock(i + 3, j + 1, k + 7, Blocks.air);
-		world.setBlock(i + 3, j + 1, k + 14, Blocks.lapis_block);
 		world.setBlock(i + 3, j + 1, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 3, j + 2, k + 0, BlockList.lightStoneBrick);
 		world.setBlock(i + 3, j + 2, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 3, j + 3, k + 0, BlockList.lightStoneBrick);
-		world.setBlock(i + 3, j + 3, k + 1, Blocks.iron_ore);
-		world.setBlock(i + 3, j + 3, k + 14, Blocks.lapis_block);
 		world.setBlock(i + 3, j + 3, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 3, j + 4, k + 0, BlockList.lightStoneBrick);
 		world.setBlock(i + 3, j + 4, k + 15, BlockList.lightStoneBrick);
@@ -2312,8 +2320,6 @@ public class AngelFortress extends WorldGenerator {
 		world.setBlock(i + 4, j + 0, k + 14, BlockList.lightStoneBrick);
 		world.setBlock(i + 4, j + 0, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 4, j + 1, k + 0, BlockList.lightStoneBrick);
-		world.setBlock(i + 4, j + 1, k + 6, Blocks.air);
-		world.setBlock(i + 4, j + 1, k + 7, Blocks.air);
 		world.setBlock(i + 4, j + 1, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 4, j + 2, k + 0, BlockList.lightStoneBrick);
 		world.setBlock(i + 4, j + 2, k + 15, BlockList.lightStoneBrick);
@@ -2515,7 +2521,13 @@ public class AngelFortress extends WorldGenerator {
 		world.setBlock(i + 4, j + 42, k + 5, BlockList.lightStoneBrick);
 		world.setBlock(i + 4, j + 42, k + 7, Blocks.air);
 		world.setBlock(i + 4, j + 42, k + 9, BlockList.lightStoneBrick);
-		world.setBlock(i + 4, j + 42, k + 11, Blocks.iron_ore);
+		world.setBlock(i + 4, j + 42, k + 11, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner4 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 4, j + 42, k + 11);
+			tileentitymobspawner4.func_145881_a()
+					.setEntityName("zaneextras_angelarcher");
+		}
 		world.setBlock(i + 4, j + 42, k + 13, Blocks.bed);
 		world.setBlock(i + 4, j + 42, k + 14, Blocks.bed, 8, 3);
 		world.setBlock(i + 4, j + 42, k + 15, BlockList.lightStoneBrick);
@@ -2653,14 +2665,38 @@ public class AngelFortress extends WorldGenerator {
 		world.setBlock(i + 5, j + 0, k + 14, BlockList.lightStoneBrick);
 		world.setBlock(i + 5, j + 0, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 5, j + 1, k + 0, BlockList.lightStoneBrick);
-		world.setBlock(i + 5, j + 1, k + 1, Blocks.iron_ore);
-		world.setBlock(i + 5, j + 1, k + 14, Blocks.lapis_block);
+		world.setBlock(i + 5, j + 1, k + 1, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner5 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 5, j + 1, k + 1);
+			tileentitymobspawner5.func_145881_a()
+					.setEntityName("zaneextras_angelarcher");
+		}
+		world.setBlock(i + 5, j + 1, k + 14, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner1 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 5, j + 1, k + 14);
+			tileentitymobspawner1.func_145881_a()
+					.setEntityName("zaneextras_angelwarrior");
+		}
 		world.setBlock(i + 5, j + 1, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 5, j + 2, k + 0, BlockList.lightStoneBrick);
 		world.setBlock(i + 5, j + 2, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 5, j + 3, k + 0, BlockList.lightStoneBrick);
-		world.setBlock(i + 5, j + 3, k + 1, Blocks.iron_ore);
-		world.setBlock(i + 5, j + 3, k + 14, Blocks.lapis_block);
+		world.setBlock(i + 5, j + 3, k + 1, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner6 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 5, j + 3, k + 1);
+			tileentitymobspawner6.func_145881_a()
+					.setEntityName("zaneextras_angelarcher");
+		}
+		world.setBlock(i + 5, j + 3, k + 14, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner1 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 5, j + 3, k + 14);
+			tileentitymobspawner1.func_145881_a()
+					.setEntityName("zaneextras_angelwarrior");
+		}
 		world.setBlock(i + 5, j + 3, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 5, j + 4, k + 0, BlockList.lightStoneBrick);
 		world.setBlock(i + 5, j + 4, k + 15, BlockList.lightStoneBrick);
@@ -2691,9 +2727,21 @@ public class AngelFortress extends WorldGenerator {
 		world.setBlock(i + 5, j + 10, k + 14, BlockList.lightStoneBrick);
 		world.setBlock(i + 5, j + 10, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 5, j + 11, k + 0, BlockList.lightStoneBrick);
-		world.setBlock(i + 5, j + 11, k + 2, Blocks.lapis_block);
+		world.setBlock(i + 5, j + 11, k + 2, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner1 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 5, j + 11, k + 2);
+			tileentitymobspawner1.func_145881_a()
+					.setEntityName("zaneextras_angelwarrior");
+		}
 		world.setBlock(i + 5, j + 11, k + 7, Blocks.air);
-		world.setBlock(i + 5, j + 11, k + 13, Blocks.lapis_block);
+		world.setBlock(i + 5, j + 11, k + 13, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner1 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 5, j + 11, k + 13);
+			tileentitymobspawner1.func_145881_a()
+					.setEntityName("zaneextras_angelwarrior");
+		}
 		world.setBlock(i + 5, j + 11, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 5, j + 12, k + 0, BlockList.lightStoneBrick);
 		world.setBlock(i + 5, j + 12, k + 15, BlockList.lightStoneBrick);
@@ -3022,8 +3070,10 @@ public class AngelFortress extends WorldGenerator {
 		world.setBlock(i + 6, j + 0, k + 14, BlockList.lightStoneBrick);
 		world.setBlock(i + 6, j + 0, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 6, j + 1, k + 0, BlockList.lightStoneBrick);
-		world.setBlock(i + 6, j + 1, k + 6, Blocks.air);
-		world.setBlock(i + 6, j + 1, k + 8, Blocks.air);
+		world.setBlock(i + 9, j + 1, k + 15, BlockList.lightStoneBrick);
+		world.setBlock(i + 9, j + 2, k + 15, BlockList.lightStoneBrick);
+		world.setBlock(i + 9, j + 2, k + 0, BlockList.lightStoneBrick);
+		world.setBlock(i + 9, j + 3, k + 0, BlockList.lightStoneBrick);
 		world.setBlock(i + 6, j + 1, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 6, j + 2, k + 0, BlockList.lightStoneBrick);
 		world.setBlock(i + 6, j + 2, k + 15, BlockList.lightStoneBrick);
@@ -3102,7 +3152,13 @@ public class AngelFortress extends WorldGenerator {
 		world.setBlock(i + 6, j + 19, k + 0, BlockList.lightStoneBrick);
 		world.setBlock(i + 6, j + 19, k + 2, BlockList.lightStoneBrick);
 		world.setBlock(i + 6, j + 19, k + 3, Blocks.wool);
-		world.setBlock(i + 6, j + 19, k + 5, Blocks.iron_ore);
+		world.setBlock(i + 6, j + 19, k + 5, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner6 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 6, j + 19, k + 5);
+			tileentitymobspawner6.func_145881_a()
+					.setEntityName("zaneextras_angelarcher");
+		}
 		world.setBlock(i + 6, j + 19, k + 9, Blocks.air);
 		world.setBlock(i + 6, j + 19, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 6, j + 20, k + 0, BlockList.lightStoneBrick);
@@ -3147,11 +3203,21 @@ public class AngelFortress extends WorldGenerator {
 		world.setBlock(i + 6, j + 28, k + 0, BlockList.lightStoneBrick);
 		world.setBlock(i + 6, j + 28, k + 2, Blocks.air);
 		world.setBlock(i + 6, j + 28, k + 3, Blocks.air);
-		// angel warrior spawner
-		world.setBlock(i + 6, j + 28, k + 7, Blocks.lapis_block);
+		world.setBlock(i + 6, j + 28, k + 7, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner1 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 6, j + 28, k + 7);
+			tileentitymobspawner1.func_145881_a()
+					.setEntityName("zaneextras_angelwarrior");
+		}
 		world.setBlock(i + 6, j + 28, k + 8, Blocks.air);
 		world.setBlock(i + 6, j + 28, k + 11, Blocks.iron_bars);
-		world.setBlock(i + 6, j + 28, k + 13, Blocks.diamond_block);
+		world.setBlock(i + 6, j + 28, k + 13, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner1 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 6, j + 28, k + 13);
+			tileentitymobspawner1.func_145881_a().setEntityName("Zombie");
+		}
 		world.setBlock(i + 6, j + 28, k + 14, Blocks.nether_brick);
 		world.setBlock(i + 6, j + 28, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 6, j + 29, k + 0, BlockList.lightStoneBrick);
@@ -3361,17 +3427,41 @@ public class AngelFortress extends WorldGenerator {
 		world.setBlock(i + 7, j + 0, k + 14, BlockList.lightStoneBrick);
 		world.setBlock(i + 7, j + 0, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 7, j + 1, k + 0, BlockList.lightStoneBrick);
-		world.setBlock(i + 7, j + 1, k + 1, Blocks.iron_ore);
+		world.setBlock(i + 7, j + 1, k + 1, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner6 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 7, j + 1, k + 1);
+			tileentitymobspawner6.func_145881_a()
+					.setEntityName("zaneextras_angelarcher");
+		}
 		world.setBlock(i + 7, j + 1, k + 5, Blocks.air);
 		world.setBlock(i + 7, j + 1, k + 8, Blocks.air);
 		world.setBlock(i + 7, j + 1, k + 9, Blocks.air);
-		world.setBlock(i + 7, j + 1, k + 14, Blocks.lapis_block);
+		world.setBlock(i + 7, j + 1, k + 14, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner1 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 7, j + 1, k + 14);
+			tileentitymobspawner1.func_145881_a()
+					.setEntityName("zaneextras_angelwarrior");
+		}
 		world.setBlock(i + 7, j + 1, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 7, j + 2, k + 0, BlockList.lightStoneBrick);
 		world.setBlock(i + 7, j + 2, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 7, j + 3, k + 0, BlockList.lightStoneBrick);
-		world.setBlock(i + 7, j + 3, k + 1, Blocks.iron_ore);
-		world.setBlock(i + 7, j + 3, k + 14, Blocks.lapis_block);
+		world.setBlock(i + 7, j + 3, k + 1, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner7 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 7, j + 3, k + 1);
+			tileentitymobspawner7.func_145881_a()
+					.setEntityName("zaneextras_angelarcher");
+		}
+		world.setBlock(i + 7, j + 3, k + 14, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner1 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 7, j + 3, k + 14);
+			tileentitymobspawner1.func_145881_a()
+					.setEntityName("zaneextras_angelwarrior");
+		}
 		world.setBlock(i + 7, j + 3, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 7, j + 4, k + 0, BlockList.lightStoneBrick);
 		world.setBlock(i + 7, j + 4, k + 15, BlockList.lightStoneBrick);
@@ -3576,7 +3666,13 @@ public class AngelFortress extends WorldGenerator {
 		world.setBlock(i + 7, j + 42, k + 7, Blocks.air);
 		world.setBlock(i + 7, j + 42, k + 8, Blocks.air);
 		world.setBlock(i + 7, j + 42, k + 9, BlockList.lightStoneBrick);
-		world.setBlock(i + 7, j + 42, k + 11, Blocks.iron_ore);
+		world.setBlock(i + 7, j + 42, k + 11, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner7 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 7, j + 42, k + 11);
+			tileentitymobspawner7.func_145881_a()
+					.setEntityName("zaneextras_angelarcher");
+		}
 		world.setBlock(i + 7, j + 42, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 7, j + 43, k + 0, BlockList.lightStoneBrick);
 		world.setBlock(i + 7, j + 43, k + 9, BlockList.lightStoneBrick);
@@ -4039,16 +4135,6 @@ public class AngelFortress extends WorldGenerator {
 		world.setBlock(i + 9, j + 0, k + 14, BlockList.lightStoneBrick);
 		world.setBlock(i + 9, j + 0, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 9, j + 1, k + 0, BlockList.lightStoneBrick);
-		world.setBlock(i + 9, j + 1, k + 1, Blocks.iron_ore);
-		world.setBlock(i + 9, j + 1, k + 8, Blocks.air);
-		world.setBlock(i + 9, j + 1, k + 11, Blocks.air);
-		world.setBlock(i + 9, j + 1, k + 14, Blocks.lapis_block);
-		world.setBlock(i + 9, j + 1, k + 15, BlockList.lightStoneBrick);
-		world.setBlock(i + 9, j + 2, k + 0, BlockList.lightStoneBrick);
-		world.setBlock(i + 9, j + 2, k + 15, BlockList.lightStoneBrick);
-		world.setBlock(i + 9, j + 3, k + 0, BlockList.lightStoneBrick);
-		world.setBlock(i + 9, j + 3, k + 1, Blocks.iron_ore);
-		world.setBlock(i + 9, j + 3, k + 14, Blocks.lapis_block);
 		world.setBlock(i + 9, j + 3, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 9, j + 4, k + 0, BlockList.lightStoneBrick);
 		world.setBlock(i + 9, j + 4, k + 15, BlockList.lightStoneBrick);
@@ -4079,9 +4165,21 @@ public class AngelFortress extends WorldGenerator {
 		world.setBlock(i + 9, j + 10, k + 14, BlockList.lightStoneBrick);
 		world.setBlock(i + 9, j + 10, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 9, j + 11, k + 0, BlockList.lightStoneBrick);
-		world.setBlock(i + 9, j + 11, k + 2, Blocks.lapis_block);
+		world.setBlock(i + 9, j + 11, k + 2, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner1 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 9, j + 11, k + 2);
+			tileentitymobspawner1.func_145881_a()
+					.setEntityName("zaneextras_angelwarrior");
+		}
 		world.setBlock(i + 9, j + 11, k + 7, Blocks.air);
-		world.setBlock(i + 9, j + 11, k + 13, Blocks.lapis_block);
+		world.setBlock(i + 9, j + 11, k + 13, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner1 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 9, j + 11, k + 13);
+			tileentitymobspawner1.func_145881_a()
+					.setEntityName("zaneextras_angelwarrior");
+		}
 		world.setBlock(i + 9, j + 11, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 9, j + 12, k + 0, BlockList.lightStoneBrick);
 		world.setBlock(i + 9, j + 12, k + 6, Blocks.air);
@@ -4160,9 +4258,20 @@ public class AngelFortress extends WorldGenerator {
 		world.setBlock(i + 9, j + 28, k + 0, BlockList.lightStoneBrick);
 		world.setBlock(i + 9, j + 28, k + 3, Blocks.air);
 		world.setBlock(i + 9, j + 28, k + 4, Blocks.air);
-		world.setBlock(i + 9, j + 28, k + 8, Blocks.lapis_block);
+		world.setBlock(i + 9, j + 28, k + 8, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner1 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 9, j + 28, k + 8);
+			tileentitymobspawner1.func_145881_a()
+					.setEntityName("zaneextras_angelwarrior");
+		}
 		world.setBlock(i + 9, j + 28, k + 11, Blocks.iron_bars);
-		world.setBlock(i + 9, j + 28, k + 13, Blocks.lapis_block);
+		world.setBlock(i + 9, j + 28, k + 13, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner1 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 9, j + 28, k + 13);
+			tileentitymobspawner1.func_145881_a().setEntityName("Witch");
+		}
 		world.setBlock(i + 9, j + 28, k + 14, Blocks.nether_brick);
 		world.setBlock(i + 9, j + 28, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 9, j + 29, k + 0, BlockList.lightStoneBrick);
@@ -4306,7 +4415,7 @@ public class AngelFortress extends WorldGenerator {
 		world.setBlock(i + 9, j + 49, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 9, j + 50, k + 0, BlockList.lightStoneBrick);
 		world.setBlock(i + 9, j + 50, k + 1, Blocks.bedrock);
-		world.setBlock(i + 9, j + 50, k + 7, Blocks.coal_ore);
+		world.setBlock(i + 9, j + 50, k + 7, BlockList.urielBlock);
 		world.setBlock(i + 9, j + 50, k + 14, Blocks.bedrock);
 		world.setBlock(i + 9, j + 50, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 9, j + 51, k + 0, BlockList.lightStoneBrick);
@@ -4470,7 +4579,13 @@ public class AngelFortress extends WorldGenerator {
 		world.setBlock(i + 10, j + 19, k + 0, BlockList.lightStoneBrick);
 		world.setBlock(i + 10, j + 19, k + 2, BlockList.lightStoneBrick);
 		world.setBlock(i + 10, j + 19, k + 3, Blocks.wool);
-		world.setBlock(i + 10, j + 19, k + 5, Blocks.iron_ore);
+		world.setBlock(i + 10, j + 19, k + 5, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner9 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 10, j + 19, k + 5);
+			tileentitymobspawner9.func_145881_a()
+					.setEntityName("zaneextras_angelarcher");
+		}
 		world.setBlock(i + 10, j + 19, k + 9, Blocks.air);
 		world.setBlock(i + 10, j + 19, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 10, j + 20, k + 0, BlockList.lightStoneBrick);
@@ -4601,7 +4716,14 @@ public class AngelFortress extends WorldGenerator {
 		world.setBlock(i + 10, j + 42, k + 4, Blocks.bookshelf);
 		world.setBlock(i + 10, j + 42, k + 5, BlockList.lightStoneBrick);
 		world.setBlock(i + 10, j + 42, k + 9, BlockList.lightStoneBrick);
-		world.setBlock(i + 10, j + 42, k + 11, Blocks.lapis_block);
+		/* world.setBlock(i + 10, j + 42, k + 11, Blocks.lapis_block); */
+		world.setBlock(i + 10, j + 42, k + 11, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner1 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 10, j + 42, k + 11);
+			tileentitymobspawner1.func_145881_a()
+					.setEntityName("zaneextras_angelwarrior");
+		}
 		world.setBlock(i + 10, j + 42, k + 13, Blocks.bed);
 		world.setBlock(i + 10, j + 42, k + 14, Blocks.bed, 8, 3);
 		world.setBlock(i + 10, j + 42, k + 15, BlockList.lightStoneBrick);
@@ -5837,7 +5959,13 @@ public class AngelFortress extends WorldGenerator {
 		world.setBlock(i + 13, j + 18, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 13, j + 19, k + 0, BlockList.lightStoneBrick);
 		world.setBlock(i + 13, j + 19, k + 2, BlockList.lightStoneBrick);
-		world.setBlock(i + 13, j + 19, k + 5, Blocks.iron_ore);
+		world.setBlock(i + 13, j + 19, k + 5, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner9 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 13, j + 19, k + 5);
+			tileentitymobspawner9.func_145881_a()
+					.setEntityName("zaneextras_angelarcher");
+		}
 		world.setBlock(i + 13, j + 19, k + 13, Blocks.wool);
 		world.setBlock(i + 13, j + 19, k + 14, Blocks.wool);
 		world.setBlock(i + 13, j + 19, k + 15, BlockList.lightStoneBrick);
@@ -5957,7 +6085,6 @@ public class AngelFortress extends WorldGenerator {
 		int chest7X = i + 13;
 		int chest7Y = j + 42;
 		int chest7Z = k + 3;
-		// Enchantment Room
 		Treasures.spawnChest(world, rand, chest7X, chest7Y, chest7Z, false,
 				ZaneChestGenHooks.ZANE_FORTRESS_MAGIC);
 		
@@ -5965,7 +6092,13 @@ public class AngelFortress extends WorldGenerator {
 		world.setBlock(i + 13, j + 42, k + 5, BlockList.lightStoneBrick);
 		world.setBlock(i + 13, j + 42, k + 7, Blocks.air);
 		world.setBlock(i + 13, j + 42, k + 9, BlockList.lightStoneBrick);
-		world.setBlock(i + 13, j + 42, k + 11, Blocks.lapis_block);
+		world.setBlock(i + 13, j + 42, k + 11, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner1 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 13, j + 42, k + 11);
+			tileentitymobspawner1.func_145881_a()
+					.setEntityName("zaneextras_angelwarrior");
+		}
 		world.setBlock(i + 13, j + 42, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 13, j + 43, k + 0, BlockList.lightStoneBrick);
 		world.setBlock(i + 13, j + 43, k + 1, Blocks.bookshelf);
@@ -6374,10 +6507,22 @@ public class AngelFortress extends WorldGenerator {
 		world.setBlock(i + 14, j + 34, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 14, j + 35, k + 0, BlockList.lightStoneBrick);
 		world.setBlock(i + 14, j + 35, k + 1, Blocks.bookshelf);
-		world.setBlock(i + 14, j + 35, k + 4, Blocks.lapis_block);
+		world.setBlock(i + 14, j + 35, k + 4, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner1 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 14, j + 35, k + 4);
+			tileentitymobspawner1.func_145881_a()
+					.setEntityName("zaneextras_angelwarrior");
+		}
 		world.setBlock(i + 14, j + 35, k + 6, Blocks.air);
 		world.setBlock(i + 14, j + 35, k + 8, Blocks.air);
-		world.setBlock(i + 14, j + 35, k + 10, Blocks.iron_ore);
+		world.setBlock(i + 14, j + 35, k + 10, Blocks.mob_spawner);
+		if (!world.isRemote) {
+			TileEntityMobSpawner tileentitymobspawner9 = (TileEntityMobSpawner) world
+					.getTileEntity(i + 14, j + 35, k + 10);
+			tileentitymobspawner9.func_145881_a()
+					.setEntityName("zaneextras_angelarcher");
+		}
 		world.setBlock(i + 14, j + 35, k + 14, Blocks.bookshelf);
 		world.setBlock(i + 14, j + 35, k + 15, BlockList.lightStoneBrick);
 		world.setBlock(i + 14, j + 36, k + 0, BlockList.lightStoneBrick);

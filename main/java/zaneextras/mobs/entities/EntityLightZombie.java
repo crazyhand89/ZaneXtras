@@ -29,9 +29,10 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
+import zaneextras.interfaces.ILightEntity;
 import zaneextras.items.ItemList;
 
-public class EntityLightZombie extends EntityMob {
+public class EntityLightZombie extends EntityMob implements ILightEntity {
 	
 	private final EntityAIBreakDoor field_146075_bs = new EntityAIBreakDoor(
 			this);
@@ -58,19 +59,19 @@ public class EntityLightZombie extends EntityMob {
 		this.isImmuneToFire = true;
 	}
 	
-	 /**
-     * Gets how bright this entity is.
-     */
-    public float getBrightness(float p_70013_1_)
-    {
-        return 1.0F;
-    }
-    
-    @SideOnly(Side.CLIENT)
-    public int getBrightnessForRender(float p_70070_1_)
-    {
-        return 15728880;
-    }
+	/**
+	 * Gets how bright this entity is.
+	 */
+	@Override
+	public float getBrightness(float p_70013_1_) {
+		return 1.0F;
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public int getBrightnessForRender(float p_70070_1_) {
+		return 15728880;
+	}
 	
 	@Override
 	protected void applyEntityAttributes() {

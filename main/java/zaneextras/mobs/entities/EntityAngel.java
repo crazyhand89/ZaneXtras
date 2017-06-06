@@ -31,9 +31,11 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
+import zaneextras.interfaces.ILightEntity;
 import zaneextras.items.ItemList;
+import zaneextras.lib.ModInfo;
 
-public class EntityAngel extends EntityMob {
+public class EntityAngel extends EntityMob implements ILightEntity {
 	protected static final IAttribute field_110186_bp = (new RangedAttribute(
 			"zombie.spawnReinforcements", 0.0D, 0.0D, 1.0D))
 					.setDescription("Spawn Reinforcements Chance");
@@ -223,7 +225,7 @@ public class EntityAngel extends EntityMob {
 	 */
 	@Override
 	protected String getLivingSound() {
-		return "mob.zombie.say";
+		return ModInfo.MODID + ":mob.angel.say";
 	}
 	
 	/**
@@ -231,7 +233,7 @@ public class EntityAngel extends EntityMob {
 	 */
 	@Override
 	protected String getHurtSound() {
-		return "mob.zombie.hurt";
+		return ModInfo.MODID + ":mob.angel.hurt";
 	}
 	
 	/**
@@ -239,7 +241,7 @@ public class EntityAngel extends EntityMob {
 	 */
 	@Override
 	protected String getDeathSound() {
-		return "mob.zombie.death";
+		return ModInfo.MODID + ":mob.angel.death";
 	}
 	
 	@Override

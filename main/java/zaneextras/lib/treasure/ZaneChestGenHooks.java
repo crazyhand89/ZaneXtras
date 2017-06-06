@@ -150,6 +150,12 @@ public class ZaneChestGenHooks extends ChestGenHooks {
 			new WeightedRandomChestContent(new ItemStack(Items.carrot), 3, 6,
 					50),
 			new WeightedRandomChestContent(new ItemStack(ItemList.barrierApple),
+					1, 1, 1),
+			new WeightedRandomChestContent(new ItemStack(ItemList.ranchSalad),
+					1, 1, 1),
+			new WeightedRandomChestContent(new ItemStack(ItemList.frenchSalad),
+					1, 1, 1),
+			new WeightedRandomChestContent(new ItemStack(ItemList.italianSalad),
 					1, 1, 1) };
 	
 	public static final WeightedRandomChestContent[] ZAFCChestContents = new WeightedRandomChestContent[] {
@@ -192,7 +198,7 @@ public class ZaneChestGenHooks extends ChestGenHooks {
 			new WeightedRandomChestContent(new ItemStack(ItemList.urielSword),
 					1, 1, 100),
 			new WeightedRandomChestContent(
-					new ItemStack(ItemList.empoweredStaria), 3, 6, 10) };
+					new ItemStack(ItemList.empoweredStaria), 2, 5, 10) };
 	
 	private static final HashMap<String, ZaneChestGenHooks> chestInfo = new HashMap<String, ZaneChestGenHooks>();
 	
@@ -200,6 +206,10 @@ public class ZaneChestGenHooks extends ChestGenHooks {
 	
 	public static ZaneChestGenHooks getSkeletonInstance() {
 		return ZaneChestGenHooks.getInfo(ZANE_SKELETON_KING);
+	}
+	
+	public static ZaneChestGenHooks getUrielInstance() {
+		return ZaneChestGenHooks.getInfo(ZANE_ARCH_URIEL);
 	}
 	
 	public static ZaneChestGenHooks getFortressMagic() {

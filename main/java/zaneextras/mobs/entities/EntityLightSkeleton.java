@@ -30,10 +30,12 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import zaneextras.interfaces.ILightEntity;
 import zaneextras.items.ItemList;
 import zaneextras.items.arrow.EntityLightArrow;
 
-public class EntityLightSkeleton extends EntityMob implements IRangedAttackMob {
+public class EntityLightSkeleton extends EntityMob
+		implements IRangedAttackMob, ILightEntity {
 	private EntityAIArrowAttack aiArrowAttack = new EntityAIArrowAttack(this,
 			1.0D, 20, 60, 15.0F);
 	private EntityAIAttackOnCollide aiAttackOnCollide = new EntityAIAttackOnCollide(
@@ -60,19 +62,19 @@ public class EntityLightSkeleton extends EntityMob implements IRangedAttackMob {
 		this.isImmuneToFire = true;
 	}
 	
-	 /**
-     * Gets how bright this entity is.
-     */
-    public float getBrightness(float p_70013_1_)
-    {
-        return 1.0F;
-    }
-    
-    @SideOnly(Side.CLIENT)
-    public int getBrightnessForRender(float p_70070_1_)
-    {
-        return 15728880;
-    }
+	/**
+	 * Gets how bright this entity is.
+	 */
+	@Override
+	public float getBrightness(float p_70013_1_) {
+		return 1.0F;
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public int getBrightnessForRender(float p_70070_1_) {
+		return 15728880;
+	}
 	
 	@Override
 	protected void applyEntityAttributes() {
