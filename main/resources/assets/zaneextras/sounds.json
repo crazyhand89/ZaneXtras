@@ -19,5 +19,11 @@
       "mob/angel/hurt1",
 	  "mob/angel/hurt2"
     ]
+  },
+  "mob.angel.die": {
+    "category": "master",
+    "sounds": [
+      "mob/angel/die"
+    ]
   }
 }
