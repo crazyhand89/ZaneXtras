@@ -241,7 +241,7 @@ public class EntityAngel extends EntityMob implements ILightEntity {
 	 */
 	@Override
 	protected String getDeathSound() {
-		return ModInfo.MODID + ":mob.angel.death";
+		return ModInfo.MODID + ":mob.angel.die";
 	}
 	
 	@Override
