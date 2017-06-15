@@ -33,6 +33,7 @@ import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import zaneextras.interfaces.ILightEntity;
 import zaneextras.items.ItemList;
+import zaneextras.lib.ModInfo;
 
 public class EntityAngelWarrior extends EntityMob implements ILightEntity {
 	
@@ -167,7 +168,7 @@ public class EntityAngelWarrior extends EntityMob implements ILightEntity {
 	 */
 	@Override
 	protected String getLivingSound() {
-		return "mob.zombie.say";
+		return ModInfo.MODID + ":mob.angel.say";
 	}
 	
 	/**
@@ -175,7 +176,7 @@ public class EntityAngelWarrior extends EntityMob implements ILightEntity {
 	 */
 	@Override
 	protected String getHurtSound() {
-		return "mob.zombie.hurt";
+		return ModInfo.MODID + ":mob.angel.hurt";
 	}
 	
 	/**
@@ -183,7 +184,7 @@ public class EntityAngelWarrior extends EntityMob implements ILightEntity {
 	 */
 	@Override
 	protected String getDeathSound() {
-		return "mob.zombie.death";
+		return ModInfo.MODID + ":mob.angel.die";
 	}
 	
 	@Override

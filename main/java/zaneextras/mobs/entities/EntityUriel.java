@@ -26,14 +26,18 @@ import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
+import zaneextras.ZaneExtrasMain;
 import zaneextras.interfaces.ILightEntity;
 import zaneextras.items.ItemList;
+import zaneextras.lib.ModInfo;
+import zaneextras.lib.treasure.Treasures;
+import zaneextras.lib.treasure.ZaneChestGenHooks;
 
 public class EntityUriel extends EntityMob
 		implements IBossDisplayData, ILightEntity {
@@ -42,7 +46,7 @@ public class EntityUriel extends EntityMob
 			this);
 	private boolean field_146076_bu = false;
 	private int tick1 = 0;
-	private int tick2 = 0;
+	private int tick2 = 1000;
 	
 	public EntityUriel(World p_i1745_1_) {
 		super(p_i1745_1_);
@@ -129,8 +133,8 @@ public class EntityUriel extends EntityMob
 		if (!this.worldObj.isRemote) {
 			tick1++;
 			tick2++;
-			
-			if (tick2 >= 1200) {
+			// Wolfie wuz heer
+			if (tick2 >= 1000) {
 				EntityAngelWarrior warrior = new EntityAngelWarrior(
 						this.worldObj);
 				warrior.setLocationAndAngles(this.posX, this.posY, this.posZ, 0,
@@ -178,6 +182,7 @@ public class EntityUriel extends EntityMob
 			if (this.getHeldItem() == null && this.isBurning()
 					&& this.rand.nextFloat() < i * 0.3F) {
 				p_70652_1_.setFire(2 * i);
+				// the duck is a liar
 			}
 		}
 		
@@ -189,7 +194,7 @@ public class EntityUriel extends EntityMob
 	 */
 	@Override
 	protected String getLivingSound() {
-		return "mob.zombie.say";
+		return ModInfo.MODID + ":mob.angel.say";
 	}
 	
 	/**
@@ -197,7 +202,7 @@ public class EntityUriel extends EntityMob
 	 */
 	@Override
 	protected String getHurtSound() {
-		return "mob.zombie.hurt";
+		return ModInfo.MODID + ":mob.angel.hurt";
 	}
 	
 	/**
@@ -205,19 +210,13 @@ public class EntityUriel extends EntityMob
 	 */
 	@Override
 	protected String getDeathSound() {
-		return "mob.zombie.death";
+		return ModInfo.MODID + ":mob.uriel.die";
 	}
 	
 	@Override
 	protected void func_145780_a(int p_145780_1_, int p_145780_2_,
 			int p_145780_3_, Block p_145780_4_) {
 		this.playSound("mob.zombie.step", 0.15F, 1.0F);
-	}
-	
-	@Override
-	protected Item getDropItem() {
-		
-		return ItemList.lightNugget;
 	}
 	
 	/**
@@ -236,10 +235,10 @@ public class EntityUriel extends EntityMob
 		super.addRandomArmor();
 		
 		if (this.worldObj.difficultySetting == EnumDifficulty.HARD) {
-			ItemStack skySword = new ItemStack(ItemList.skyiumSword, 1);
-			this.setCurrentItemOrArmor(0, skySword);
+			ItemStack urielSword = new ItemStack(ItemList.urielSword, 1);
+			this.setCurrentItemOrArmor(0, urielSword);
 		} else {
-			ItemStack angelSword = new ItemStack(ItemList.angelSword, 1);
+			ItemStack angelSword = new ItemStack(ItemList.urielSword, 1);
 			
 			angelSword.addEnchantment(Enchantment.sharpness, 5);
 			
@@ -269,5 +268,27 @@ public class EntityUriel extends EntityMob
 		}
 		
 		return p_110161_1_;
+	}
+	
+	/**
+	 * Called when the mob's health reaches 0.
+	 */
+	@Override
+	public void onDeath(DamageSource p_70645_1_) {
+		super.onDeath(p_70645_1_);
+		
+		if (!this.worldObj.isRemote) {
+			
+			if (p_70645_1_.getEntity() instanceof EntityPlayer) {
+				EntityPlayer player = (EntityPlayer) p_70645_1_.getEntity();
+				
+				ZaneExtrasMain.proxy.sendChatMessage(player,
+						"I may have fallen, but I am not the last of the Arch Angels.");
+			}
+			
+			Treasures.spawnChest(this.worldObj, rand, (int) this.posX,
+					(int) this.posY, (int) this.posZ, false,
+					ZaneChestGenHooks.ZANE_ARCH_URIEL);
+		}
 	}
 }

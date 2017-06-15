@@ -78,7 +78,7 @@ public class ItemRecipes {
 							Items.iron_ingot });
 			
 			// Charged Staria Alternative
-			if (!ModHelper.useZollernExtras) {
+			if (!ModHelper.useZollernExtras && !ModHelper.useBigReactors) {
 				GameRegistry
 						.addRecipe(new ItemStack(ItemList.chargedStaria, 1),
 								new Object[] { "GGG", "GEG", "GGG", 'G',
@@ -87,9 +87,27 @@ public class ItemRecipes {
 			}
 			
 			// Charged Zanium Alternative
-			if (!ModHelper.useZollernExtras) {
+			if (!ModHelper.useZollernExtras && !ModHelper.useBigReactors) {
 				GameRegistry
 						.addRecipe(new ItemStack(ItemList.chargedZanium, 1),
+								new Object[] { "GGG", "GEG", "GGG", 'G',
+										Blocks.emerald_block, 'E',
+										ItemList.zanium });
+			}
+			
+			// Empowered Staria Alternative
+			if (!ModHelper.useZollernExtras && !ModHelper.useBigReactors) {
+				GameRegistry
+						.addRecipe(new ItemStack(ItemList.empoweredStaria, 1),
+								new Object[] { "GGG", "GEG", "GGG", 'G',
+										Blocks.emerald_block, 'E',
+										ItemList.staria });
+			}
+			
+			// Empowered Zanium Alternative
+			if (!ModHelper.useZollernExtras && !ModHelper.useBigReactors) {
+				GameRegistry
+						.addRecipe(new ItemStack(ItemList.empoweredZanium, 1),
 								new Object[] { "GGG", "GEG", "GGG", 'G',
 										Blocks.emerald_block, 'E',
 										ItemList.zanium });
@@ -112,14 +130,22 @@ public class ItemRecipes {
 							ItemList.zogiteIngot, 'R', ItemList.raditeIngot,
 							'S', ItemList.staria, 'E', Items.ender_eye });
 			
-			//Angel Key
-			GameRegistry.addRecipe(new ItemStack(ItemList.angelKey, 1),
-					new Object[] { " A ", "AHA", " A ", 'A',
-							ItemList.pureFeather, 'H', ItemList.angelHalo});
+			// Angel Key
+			GameRegistry
+					.addRecipe(new ItemStack(ItemList.angelKey, 1),
+							new Object[] { " A ", "AHA", " A ", 'A',
+									ItemList.pureFeather, 'H',
+									ItemList.angelHalo });
 			
-			//Radiated Coal
+			// Radiated Coal
 			GameRegistry.addRecipe(new ItemStack(ItemList.radiatedCoal, 8),
-					new Object[] { "ZZZ", "ZCZ", "ZZZ", 'C', Items.coal, 'Z', ItemList.zogiteIngot});
+					new Object[] { "ZZZ", "ZCZ", "ZZZ", 'C', Items.coal, 'Z',
+							ItemList.zogiteIngot });
+			
+			// Angel Ingot
+			GameRegistry.addRecipe(new ItemStack(ItemList.lightIngot, 1),
+					new Object[] { "AAA", "AAA", "AAA", 'A',
+							ItemList.lightNugget });
 		}
 	}
 }

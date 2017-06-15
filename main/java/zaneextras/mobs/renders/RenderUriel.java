@@ -37,7 +37,7 @@ public class RenderUriel extends RenderLiving {
 	protected ModelBiped field_82423_g;
 	protected ModelBiped field_82425_h;
 	private static final Map field_110859_k = Maps.newHashMap();
-	float f6 = 1.2F;
+	float f6 = 2.0F;
 	
 	public RenderUriel(ModelUriel par1ModelBase, float par2) {
 		super(par1ModelBase, par2);
@@ -196,8 +196,9 @@ public class RenderUriel extends RenderLiving {
 				GL11.glRotatef(20.0F, 1.0F, 0.0F, 0.0F);
 				GL11.glRotatef(45.0F, 0.0F, 1.0F, 0.0F);
 				GL11.glScalef(-f2, -f2, f2);
-			} else if (itemstack.getItem() == ItemList.urielSword) {
+			} else if (itemstack.getItem() == ItemList.lightBow) {
 				f2 = 0.625F;
+				/* GL11.glTranslatef(0.0F, 0.125F, 0.3125F); */
 				GL11.glTranslatef(0.0F, 0.125F, 0.3125F);
 				GL11.glRotatef(-20.0F, 0.0F, 1.0F, 0.0F);
 				GL11.glScalef(f2, -f2, f2);

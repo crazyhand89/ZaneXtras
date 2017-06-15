@@ -12,6 +12,7 @@ import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zaneextras.blocks.BlockList;
 import zaneextras.config.ZaneConfig;
+import zaneextras.lib.helpers.ModHelper;
 
 public class ZaneWorldGen implements IWorldGenerator {
 	
@@ -185,10 +186,30 @@ public class ZaneWorldGen implements IWorldGenerator {
 		addLightOreSpawn(BlockList.lightRedstoneOre, world, random, x, z, 16,
 				16, 2 + random.nextInt(5), ZaneConfig.oreLightRedstone, 6, 25);
 		addLightOreSpawn(BlockList.stariaOre, world, random, x, z, 16, 16,
-				2 + random.nextInt(6), ZaneConfig.oreLightStaria, 4, 16);
+				2 + random.nextInt(5), ZaneConfig.oreLightStaria, 4, 16);
 		
-		this.spawnStructure(100, 1000, world, random, x, y, z,
+		this.spawnStructure(ZaneConfig.angelFortress1,
+				ZaneConfig.angelFortress2, world, random, x, y, z,
 				new AngelFortress());
+		
+		if (ModHelper.useThermalFoundation) {
+			addLightOreSpawn(BlockList.lightCopperOre, world, random, x, z, 16,
+					16, 3 + random.nextInt(6), ZaneConfig.oreLightCopper, 4,
+					40);
+			addLightOreSpawn(BlockList.lightLeadOre, world, random, x, z, 16,
+					16, 1 + random.nextInt(5), ZaneConfig.oreLightLead, 4, 28);
+			addLightOreSpawn(BlockList.lightSilverOre, world, random, x, z, 16,
+					20, 2 + random.nextInt(3), ZaneConfig.oreLightSilver, 4,
+					16);
+			addLightOreSpawn(BlockList.lightPlatinumOre, world, random, x, z,
+					16, 16, 2 + random.nextInt(3), ZaneConfig.oreLightPlatnium,
+					4, 16);
+			addLightOreSpawn(BlockList.lightTinOre, world, random, x, z, 6, 16,
+					3 + random.nextInt(6), ZaneConfig.oreLightTin, 4, 40);
+			addLightOreSpawn(BlockList.lightNickelOre, world, random, x, z, 16,
+					16, 3 + random.nextInt(3), ZaneConfig.oreLightNickel, 4,
+					16);
+		}
 	}
 	
 	public void addOreSpawn(Block block, World world, Random random,

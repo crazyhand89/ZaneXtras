@@ -8,6 +8,7 @@ public class ZaneDSource extends DamageSource {
 	public static ZaneDSource deathChlorine = new ZaneDSource("chlorine");
 	public static ZaneDSource deathRadite = new ZaneDSource("radite");
 	public static ZaneDSource deathLight = new ZaneDSource("light");
+	public static ZaneDSource deathDark = new ZaneDSource("darkness");
 	
 	public ZaneDSource(String par1) {
 		super(par1);

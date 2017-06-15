@@ -3,7 +3,6 @@ package zaneextras.mobs.entities;
 import java.util.Calendar;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
@@ -31,6 +30,7 @@ import net.minecraft.world.World;
 import zaneextras.interfaces.ILightEntity;
 import zaneextras.items.ItemList;
 import zaneextras.items.arrow.EntityAngelArrow;
+import zaneextras.lib.ModInfo;
 
 public class EntityAngelArcher extends EntityMob
 		implements IRangedAttackMob, ILightEntity {
@@ -38,7 +38,6 @@ public class EntityAngelArcher extends EntityMob
 			1.0D, 20, 60, 15.0F);
 	private EntityAIAttackOnCollide aiAttackOnCollide = new EntityAIAttackOnCollide(
 			this, EntityPlayer.class, 1.2D, false);
-	private static final String __OBFID = "CL_00001697";
 	private int tick = 0;
 	
 	public EntityAngelArcher(World p_i1741_1_) {
@@ -102,7 +101,7 @@ public class EntityAngelArcher extends EntityMob
 	 */
 	@Override
 	protected String getLivingSound() {
-		return "mob.skeleton.say";
+		return ModInfo.MODID + ":mob.angel.say";
 	}
 	
 	/**
@@ -110,7 +109,7 @@ public class EntityAngelArcher extends EntityMob
 	 */
 	@Override
 	protected String getHurtSound() {
-		return "mob.skeleton.hurt";
+		return ModInfo.MODID + ":mob.angel.hurt";
 	}
 	
 	/**
@@ -118,13 +117,7 @@ public class EntityAngelArcher extends EntityMob
 	 */
 	@Override
 	protected String getDeathSound() {
-		return "mob.skeleton.death";
-	}
-	
-	@Override
-	protected void func_145780_a(int p_145780_1_, int p_145780_2_,
-			int p_145780_3_, Block p_145780_4_) {
-		this.playSound("mob.skeleton.step", 0.15F, 1.0F);
+		return ModInfo.MODID + ":mob.angel.die";
 	}
 	
 	/**

@@ -37,6 +37,7 @@ public class EntityLightZombie extends EntityMob implements ILightEntity {
 	private final EntityAIBreakDoor field_146075_bs = new EntityAIBreakDoor(
 			this);
 	private boolean field_146076_bu = false;
+	private int tick = 0;
 	
 	public EntityLightZombie(World p_i1745_1_) {
 		super(p_i1745_1_);
@@ -121,6 +122,14 @@ public class EntityLightZombie extends EntityMob implements ILightEntity {
 	@Override
 	public void onLivingUpdate() {
 		if (!this.worldObj.isRemote) {
+			
+			tick++;
+			
+			if (tick >= 60) {
+				this.heal(10);
+				tick = 0;
+			}
+			
 			float f = this.getBrightness(1.0F);
 			
 			if (f <= 0.5F && this.rand.nextFloat() * 30.0F > (f - 0.4F) * 2.0F
@@ -137,13 +146,10 @@ public class EntityLightZombie extends EntityMob implements ILightEntity {
 						new PotionEffect(Potion.weakness.id, 10000, 2));
 			} else {
 				
-				if (!this.isPotionActive(Potion.regeneration.id)
-						&& !this.isPotionActive(Potion.resistance.id)) {
+				if (!this.isPotionActive(Potion.resistance.id)) {
 					this.clearActivePotions();
 				}
 				this.clearActivePotions();
-				this.addPotionEffect(
-						new PotionEffect(Potion.regeneration.id, 10000, 1));
 				this.addPotionEffect(
 						new PotionEffect(Potion.resistance.id, 10000, 2));
 			}

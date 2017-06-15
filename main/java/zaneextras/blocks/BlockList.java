@@ -35,6 +35,7 @@ import zaneextras.fluid.FluidAcid;
 import zaneextras.fluid.FluidChlorine;
 import zaneextras.fluid.FluidRadite;
 import zaneextras.lib.ZaneTabs;
+import zaneextras.lib.helpers.ModHelper;
 
 public class BlockList {
 	
@@ -71,6 +72,22 @@ public class BlockList {
 	public static final Block lightIronOre = new ZaneOreLightBlock(
 			Material.rock, "lightironore", 3.0F, 3.0F, Block.soundTypeStone, 2);
 	public static final Block foolStaria = new FoolStariaOreBlock();
+	public static final Block lightCopperOre = new ZaneOreLightBlock(
+			Material.rock, "lightcopperore", 3.0F, 3.0F, Block.soundTypeStone,
+			2);
+	public static final Block lightTinOre = new ZaneOreLightBlock(Material.rock,
+			"lighttinore", 3.0F, 3.0F, Block.soundTypeStone, 2);
+	public static final Block lightSilverOre = new ZaneOreLightBlock(
+			Material.rock, "lightsilverore", 3.0F, 3.0F, Block.soundTypeStone,
+			2);
+	public static final Block lightPlatinumOre = new ZaneOreLightBlock(
+			Material.rock, "lightplatinumore", 3.0F, 3.0F, Block.soundTypeStone,
+			2);
+	public static final Block lightLeadOre = new ZaneOreLightBlock(
+			Material.rock, "lightleadore", 3.0F, 3.0F, Block.soundTypeStone, 2);
+	public static final Block lightNickelOre = new ZaneOreLightBlock(
+			Material.rock, "lightnickelore", 3.0F, 3.0F, Block.soundTypeStone,
+			2);
 	
 	// Crops
 	public static final Block sweetPotatoCrop = new CropSweetPotato();
@@ -218,6 +235,15 @@ public class BlockList {
 		addBlock(foolStaria, "b55");
 		addBlock(cheeseBlock, "b56");
 		addBlock(urielBlock, "b57");
+		
+		if (ModHelper.useThermalFoundation) {
+			addBlock(lightCopperOre, "b58");
+			addBlock(lightTinOre, "b59");
+			addBlock(lightPlatinumOre, "b60");
+			addBlock(lightSilverOre, "b61");
+			addBlock(lightLeadOre, "b62");
+			addBlock(lightNickelOre, "b63");
+		}
 	}
 	
 	public static void addBlock(Block block, String name) {

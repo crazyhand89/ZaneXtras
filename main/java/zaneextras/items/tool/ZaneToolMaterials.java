@@ -24,4 +24,6 @@ public class ZaneToolMaterials {
 			.addToolMaterial("Fool Staria", 2, 250, 6.0F, 2.0F, 14);
 	public static ToolMaterial ANGEL = EnumHelper.addToolMaterial("Angel", 1,
 			1600, 8.0F, 5.0F, 40);
+	public static ToolMaterial URIEL = EnumHelper.addToolMaterial("Angel", 5,
+			14453, 10.0F, 30.0F, 100);
 }

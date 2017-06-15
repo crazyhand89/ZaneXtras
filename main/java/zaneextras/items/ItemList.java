@@ -61,6 +61,7 @@ import zaneextras.items.weapon.ItemWeaponEmeraldSword;
 import zaneextras.items.weapon.ItemWeaponFoolStariaSword;
 import zaneextras.items.weapon.ItemWeaponSkyiumSword;
 import zaneextras.items.weapon.ItemWeaponStariaSword;
+import zaneextras.items.weapon.ItemWeaponUrielSword;
 import zaneextras.items.weapon.ItemWeaponZaniumSword;
 import zaneextras.items.weapon.ItemWeaponZograditeScythe;
 
@@ -373,8 +374,9 @@ public class ItemList {
 	public static final Item pureFeather = new ZaneItem("purefeather");
 	public static final Item angelHalo = new ItemRarity("angelhalo",
 			EnumRarity.epic);
-	public static final Item angelKey = new ZaneItem("angelkey");
-	public static final Item urielSword = new ZaneItem("urielsword");
+	public static final Item angelKey = new ItemRarity("angelkey",
+			EnumRarity.epic);
+	public static final Item urielSword = new ItemWeaponUrielSword();
 	public static final Item lightNugget = new ZaneItem("lightnugget");
 	
 	public static void init() {

@@ -3,6 +3,7 @@ package zaneextras.config;
 import java.io.File;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.common.config.Configuration;
+import zaneextras.lib.helpers.ModHelper;
 
 public class ZaneConfig {
 	
@@ -10,7 +11,7 @@ public class ZaneConfig {
 	public static String CATEGORY_CROPS = "Crops";
 	public static String CATEGORY_LIQUIDS = "Liquids";
 	public static String CATEGORY_STRUCTURES = "Structures";
-	public static String CATEGORY_BIOMEZS = "Biomes";
+	public static String CATEGORY_BIOMES = "Biomes";
 	public static String CATEGORY_DIMENSIONS = "Dimensions";
 	public static String CATEGORY_POTIONS = "Potion IDs";
 	public static String CATEGORY_OPTIONS = "Toggle Options";
@@ -44,6 +45,14 @@ public class ZaneConfig {
 	public static boolean butterIsYellorite;
 	public static int oreFoolStaria;
 	public static int oreLightStaria;
+	public static int angelFortress1;
+	public static int angelFortress2;
+	public static int oreLightCopper;
+	public static int oreLightNickel;
+	public static int oreLightTin;
+	public static int oreLightPlatnium;
+	public static int oreLightSilver;
+	public static int oreLightLead;
 	
 	public static Configuration config;
 	
@@ -71,6 +80,12 @@ public class ZaneConfig {
 						+ System.lineSeparator() + "Light Lapis: 7"
 						+ System.lineSeparator() + "Light Emerald: 4"
 						+ System.lineSeparator() + "Light Staria: 2"
+						+ System.lineSeparator() + "Light Ferrous: 4"
+						+ System.lineSeparator() + "Light Copper: 10"
+						+ System.lineSeparator() + "Light Tin: 10"
+						+ System.lineSeparator() + "Light Silver: 5"
+						+ System.lineSeparator() + "Light Lead: 7"
+						+ System.lineSeparator() + "Light Platnium: 3"
 						+ System.lineSeparator()
 						+ "Staria in Light Dimension: 5");
 		config.addCustomCategoryComment(CATEGORY_CROPS,
@@ -94,8 +109,12 @@ public class ZaneConfig {
 						+ System.lineSeparator()
 						+ "Meteroite Spawn Rate 1 Default Value: 5"
 						+ System.lineSeparator()
-						+ "Meteroite Spawn Rate 2 Default Value: 1000");
-		config.addCustomCategoryComment(CATEGORY_STRUCTURES,
+						+ "Meteroite Spawn Rate 2 Default Value: 1000"
+						+ System.lineSeparator()
+						+ "Angel Fortress Spawn Rate 1 Default Value: 2"
+						+ System.lineSeparator()
+						+ "Angel Fortress Spawn Rate 2 Default Value: 3000");
+		config.addCustomCategoryComment(CATEGORY_BIOMES,
 				"Change the IDs of Biomes and thier Spawn Rates Here"
 						+ System.lineSeparator());
 		config.addCustomCategoryComment(CATEGORY_DIMENSIONS,
@@ -113,7 +132,7 @@ public class ZaneConfig {
 						+ "Turn Damn Hard Butter into fuel");
 		
 		// Biome IDs
-		lightBiomeID = config.get(CATEGORY_STRUCTURES, "lightBiomeID", 200)
+		lightBiomeID = config.get(CATEGORY_BIOMES, "lightBiomeID", 200)
 				.getInt();
 		
 		// Dimension IDs
@@ -127,7 +146,7 @@ public class ZaneConfig {
 				.getInt();
 		oreSodiumSpawnRate = config.get(CATEGORY_ORES, "oreSodiumSpawnRate", 16)
 				.getInt();
-		oreStariaSpawnRate = config.get(CATEGORY_ORES, "oreStariaSpawnRate", 5)
+		oreStariaSpawnRate = config.get(CATEGORY_ORES, "oreStariaSpawnRate", 2)
 				.getInt();
 		oreSkyiumSpawnRate = config.get(CATEGORY_ORES, "oreSkyiumSpawnRate", 1)
 				.getInt();
@@ -142,8 +161,22 @@ public class ZaneConfig {
 		oreLightGold = config.get(CATEGORY_ORES, "lightGold", 7).getInt();
 		oreLightLapis = config.get(CATEGORY_ORES, "lightLapis", 7).getInt();
 		oreLightEmerald = config.get(CATEGORY_ORES, "lightEmerald", 4).getInt();
-		oreLightStaria = config.get(CATEGORY_ORES, "lightStaria", 2).getInt();
+		oreLightStaria = config.get(CATEGORY_ORES, "lightStaria", 5).getInt();
 		oreFoolStaria = config.get(CATEGORY_ORES, "oreFoolStaria", 8).getInt();
+		
+		if (ModHelper.useThermalFoundation) {
+			oreLightNickel = config.get(CATEGORY_ORES, "oreLightNickel", 4)
+					.getInt();
+			oreLightCopper = config.get(CATEGORY_ORES, "oreLightCopper", 10)
+					.getInt();
+			oreLightTin = config.get(CATEGORY_ORES, "oreLightTin", 10).getInt();
+			oreLightSilver = config.get(CATEGORY_ORES, "oreLightSilver", 5)
+					.getInt();
+			oreLightLead = config.get(CATEGORY_ORES, "oreLightLead", 7)
+					.getInt();
+			oreLightPlatnium = config.get(CATEGORY_ORES, "oreLightPlatnium", 3)
+					.getInt();
+		}
 		
 		// Crop Spawn Rates
 		cropSpawnRate = config.get(CATEGORY_CROPS, "cropSpawnRate", 20)
@@ -159,15 +192,19 @@ public class ZaneConfig {
 		
 		// Structures Spawn Rates
 		skyCastleSpawnRate1 = config
-				.get(CATEGORY_STRUCTURES, "skyCasteSpawnRate1", 70).getInt();
+				.get(CATEGORY_STRUCTURES, "skyCasteSpawnRate1", 100).getInt();
 		skyCastleSpawnRate2 = config
-				.get(CATEGORY_STRUCTURES, "skyCasteSpawnRate2", 5).getInt();
+				.get(CATEGORY_STRUCTURES, "skyCasteSpawnRate2", 1).getInt();
 		skyCastleSpawnRate3 = config
 				.get(CATEGORY_STRUCTURES, "skyCasteSpawnRate3", 100).getInt();
 		meteroiteChance1 = config
 				.get(CATEGORY_STRUCTURES, "meteroiteChance1", 5).getInt();
 		meteroiteChance2 = config
 				.get(CATEGORY_STRUCTURES, "meteroiteChance2", 1000).getInt();
+		angelFortress1 = config.get(CATEGORY_STRUCTURES, "angelFortress1", 2)
+				.getInt();
+		angelFortress2 = config.get(CATEGORY_STRUCTURES, "angelFortress2", 3000)
+				.getInt();
 		
 		// Potions IDs
 		potionBarrierID = config.get(CATEGORY_POTIONS, "potionBarrierID", 26)
@@ -175,7 +212,7 @@ public class ZaneConfig {
 		
 		// Toggle butter to fuel
 		butterIsYellorite = config
-				.get(CATEGORY_OPTIONS, "butterIsYellorite", true).getBoolean();
+				.get(CATEGORY_OPTIONS, "butterIsYellorite", false).getBoolean();
 		
 		config.save();
 	}

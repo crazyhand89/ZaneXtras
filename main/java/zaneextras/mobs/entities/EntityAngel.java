@@ -17,7 +17,6 @@ import net.minecraft.entity.ai.EntityAIMoveTowardsRestriction;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.IAttribute;
 import net.minecraft.entity.ai.attributes.RangedAttribute;
 import net.minecraft.entity.monster.EntityMob;
@@ -41,8 +40,6 @@ public class EntityAngel extends EntityMob implements ILightEntity {
 					.setDescription("Spawn Reinforcements Chance");
 	private static final UUID babySpeedBoostUUID = UUID
 			.fromString("B9766B59-9566-4402-BC1F-2EE2A276D836");
-	private static final AttributeModifier babySpeedBoostModifier = new AttributeModifier(
-			babySpeedBoostUUID, "Baby speed boost", 0.5D, 1);
 	private final EntityAIBreakDoor field_146075_bs = new EntityAIBreakDoor(
 			this);
 	/**

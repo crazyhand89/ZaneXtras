@@ -23,8 +23,8 @@ public class ArmorRecipes {
 			stariaHelmet.addEnchantment(Enchantment.respiration, 4);
 			stariaHelmet.addEnchantment(Enchantment.protection, 4);
 			
-			GameRegistry.addRecipe(stariaHelmet,
-					new Object[] { "SSS", "S S", "   ", 'S', ItemList.staria });
+			GameRegistry.addRecipe(stariaHelmet, new Object[] { "SSS", "S S",
+					"   ", 'S', ItemList.empoweredStaria });
 			
 			// Popping Chest, Staria
 			ItemStack stariaChestPlate = new ItemStack(
@@ -32,8 +32,8 @@ public class ArmorRecipes {
 			stariaChestPlate.addEnchantment(Enchantment.protection, 4);
 			stariaChestPlate.addEnchantment(Enchantment.blastProtection, 4);
 			
-			GameRegistry.addRecipe(stariaChestPlate,
-					new Object[] { "S S", "SSS", "SSS", 'S', ItemList.staria });
+			GameRegistry.addRecipe(stariaChestPlate, new Object[] { "S S",
+					"SSS", "SSS", 'S', ItemList.empoweredStaria });
 			
 			// Smooth Leggings, Staria
 			ItemStack stariaLeggings = new ItemStack(ItemList.stariaLeggings,
@@ -41,24 +41,24 @@ public class ArmorRecipes {
 			stariaLeggings.addEnchantment(Enchantment.protection, 4);
 			stariaLeggings.addEnchantment(Enchantment.projectileProtection, 4);
 			
-			GameRegistry.addRecipe(stariaLeggings,
-					new Object[] { "SSS", "S S", "S S", 'S', ItemList.staria });
+			GameRegistry.addRecipe(stariaLeggings, new Object[] { "SSS", "S S",
+					"S S", 'S', ItemList.empoweredStaria });
 			
 			// Dem bootys, Staria
 			ItemStack stariaBoots = new ItemStack(ItemList.stariaBoots, 1);
 			stariaBoots.addEnchantment(Enchantment.featherFalling, 4);
 			stariaBoots.addEnchantment(Enchantment.protection, 4);
 			
-			GameRegistry.addRecipe(stariaBoots,
-					new Object[] { "   ", "S S", "S S", 'S', ItemList.staria });
+			GameRegistry.addRecipe(stariaBoots, new Object[] { "   ", "S S",
+					"S S", 'S', ItemList.empoweredStaria });
 			
 			// Hard Hat, Zanium
 			ItemStack zaniumHelmet = new ItemStack(ItemList.zaniumHelmet, 1);
 			zaniumHelmet.addEnchantment(Enchantment.respiration, 4);
 			zaniumHelmet.addEnchantment(Enchantment.thorns, 4);
 			
-			GameRegistry.addRecipe(zaniumHelmet,
-					new Object[] { "ZZZ", "Z Z", "   ", 'Z', ItemList.zanium });
+			GameRegistry.addRecipe(zaniumHelmet, new Object[] { "ZZZ", "Z Z",
+					"   ", 'Z', ItemList.empoweredZanium });
 			
 			// Popping Chest, Zanium
 			ItemStack zaniumChestPlate = new ItemStack(
@@ -66,8 +66,8 @@ public class ArmorRecipes {
 			zaniumChestPlate.addEnchantment(Enchantment.blastProtection, 4);
 			zaniumChestPlate.addEnchantment(Enchantment.thorns, 4);
 			
-			GameRegistry.addRecipe(zaniumChestPlate,
-					new Object[] { "Z Z", "ZZZ", "ZZZ", 'Z', ItemList.zanium });
+			GameRegistry.addRecipe(zaniumChestPlate, new Object[] { "Z Z",
+					"ZZZ", "ZZZ", 'Z', ItemList.empoweredZanium });
 			
 			// Smooth Leggings, Zanium
 			ItemStack zaniumLeggings = new ItemStack(ItemList.zaniumLeggings,
@@ -75,16 +75,16 @@ public class ArmorRecipes {
 			zaniumLeggings.addEnchantment(Enchantment.thorns, 4);
 			zaniumLeggings.addEnchantment(Enchantment.projectileProtection, 4);
 			
-			GameRegistry.addRecipe(zaniumLeggings,
-					new Object[] { "ZZZ", "Z Z", "Z Z", 'Z', ItemList.zanium });
+			GameRegistry.addRecipe(zaniumLeggings, new Object[] { "ZZZ", "Z Z",
+					"Z Z", 'Z', ItemList.empoweredZanium });
 			
 			// Dem bootys, Zanium
 			ItemStack zaniumBoots = new ItemStack(ItemList.zaniumBoots, 1);
 			zaniumBoots.addEnchantment(Enchantment.featherFalling, 4);
 			zaniumBoots.addEnchantment(Enchantment.thorns, 4);
 			
-			GameRegistry.addRecipe(zaniumBoots,
-					new Object[] { "   ", "Z Z", "Z Z", 'Z', ItemList.zanium });
+			GameRegistry.addRecipe(zaniumBoots, new Object[] { "   ", "Z Z",
+					"Z Z", 'Z', ItemList.empoweredZanium });
 			
 			// Hard Hat, Butter
 			GameRegistry.addRecipe(new ItemStack(ItemList.butterHelmet, 1),
@@ -217,18 +217,20 @@ public class ArmorRecipes {
 			GameRegistry.addRecipe(new ItemStack(ItemList.foolStariaHelmet, 1),
 					new Object[] { "RRR", "R R", "   ", 'R',
 							ItemList.foolStaria });
-						
+			
 			// Popping Chest, Fool Staria
-			GameRegistry.addRecipe(new ItemStack(ItemList.foolStariaChestPlate, 1),
+			GameRegistry.addRecipe(
+					new ItemStack(ItemList.foolStariaChestPlate, 1),
 					new Object[] { "R R", "RRR", "RRR", 'R',
 							ItemList.foolStaria });
 			
 			// Smooth Leggings, Fool Staria
-			GameRegistry.addRecipe(new ItemStack(ItemList.foolStariaLeggings, 1),
+			GameRegistry.addRecipe(
+					new ItemStack(ItemList.foolStariaLeggings, 1),
 					new Object[] { "RRR", "R R", "R R", 'R',
 							ItemList.foolStaria });
-						
-			// Dem bootys, Fool Staria		
+			
+			// Dem bootys, Fool Staria
 			GameRegistry.addRecipe(new ItemStack(ItemList.foolStariaBoots, 1),
 					new Object[] { "   ", "R R", "R R", 'R',
 							ItemList.foolStaria });

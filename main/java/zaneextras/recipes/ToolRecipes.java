@@ -27,8 +27,10 @@ public class ToolRecipes {
 			stariaHoe.addEnchantment(Enchantment.baneOfArthropods, 3);
 			stariaHoe.addEnchantment(Enchantment.unbreaking, 3);
 			
-			GameRegistry.addRecipe(stariaHoe, new Object[] { "SSS", " G ",
-					"G  ", 'S', ItemList.staria, 'G', ItemList.glowStick });
+			GameRegistry.addRecipe(stariaHoe,
+					new Object[] { "SSS", " G ", "G  ", 'S',
+							ItemList.empoweredStaria, 'G',
+							ItemList.glowStick });
 			
 			// Axey Axe, Staria
 			ItemStack stariaAxe = new ItemStack(ItemList.stariaAxe, 1);
@@ -36,8 +38,10 @@ public class ToolRecipes {
 			stariaAxe.addEnchantment(Enchantment.efficiency, 3);
 			stariaAxe.addEnchantment(Enchantment.unbreaking, 3);
 			
-			GameRegistry.addRecipe(stariaAxe, new Object[] { "SS ", "SG ",
-					"SG ", 'S', ItemList.staria, 'G', ItemList.glowStick });
+			GameRegistry.addRecipe(stariaAxe,
+					new Object[] { "SS ", "SG ", "SG ", 'S',
+							ItemList.empoweredStaria, 'G',
+							ItemList.glowStick });
 			
 			// Harden Pick, Staria
 			ItemStack stariaPickaxe = new ItemStack(ItemList.stariaPickaxe, 1);
@@ -45,8 +49,10 @@ public class ToolRecipes {
 			stariaPickaxe.addEnchantment(Enchantment.efficiency, 5);
 			stariaPickaxe.addEnchantment(Enchantment.unbreaking, 3);
 			
-			GameRegistry.addRecipe(stariaPickaxe, new Object[] { "SSS", "SGS",
-					" G ", 'S', ItemList.staria, 'G', ItemList.glowStick });
+			GameRegistry.addRecipe(stariaPickaxe,
+					new Object[] { "SSS", "SGS", " G ", 'S',
+							ItemList.empoweredStaria, 'G',
+							ItemList.glowStick });
 			
 			// Slippery Spade, Staria
 			ItemStack stariaShovel = new ItemStack(ItemList.stariaShovel, 1);
@@ -54,8 +60,10 @@ public class ToolRecipes {
 			stariaShovel.addEnchantment(Enchantment.efficiency, 3);
 			stariaShovel.addEnchantment(Enchantment.unbreaking, 3);
 			
-			GameRegistry.addRecipe(stariaShovel, new Object[] { " S ", "SGS",
-					" G ", 'S', ItemList.staria, 'G', ItemList.glowStick });
+			GameRegistry.addRecipe(stariaShovel,
+					new Object[] { " S ", "SGS", " G ", 'S',
+							ItemList.empoweredStaria, 'G',
+							ItemList.glowStick });
 			
 		}
 	}
@@ -68,8 +76,10 @@ public class ToolRecipes {
 			zaniumHoe.addEnchantment(Enchantment.smite, 3);
 			zaniumHoe.addEnchantment(Enchantment.fireAspect, 1);
 			
-			GameRegistry.addRecipe(zaniumHoe, new Object[] { "ZZZ", " N ",
-					"N  ", 'Z', ItemList.zanium, 'N', ItemList.netherStick });
+			GameRegistry.addRecipe(zaniumHoe,
+					new Object[] { "ZZZ", " N ", "N  ", 'Z',
+							ItemList.empoweredZanium, 'N',
+							ItemList.netherStick });
 			
 			// Axey Axe, Zanium
 			ItemStack zaniumAxe = new ItemStack(ItemList.zaniumAxe, 1);
@@ -77,8 +87,10 @@ public class ToolRecipes {
 			zaniumAxe.addEnchantment(Enchantment.fireAspect, 1);
 			zaniumAxe.addEnchantment(Enchantment.efficiency, 3);
 			
-			GameRegistry.addRecipe(zaniumAxe, new Object[] { "ZZ ", "ZN ",
-					"ZN ", 'Z', ItemList.zanium, 'N', ItemList.netherStick });
+			GameRegistry.addRecipe(zaniumAxe,
+					new Object[] { "ZZ ", "ZN ", "ZN ", 'Z',
+							ItemList.empoweredZanium, 'N',
+							ItemList.netherStick });
 			
 			// Harden Pick, Zanium
 			ItemStack zaniumPickaxe = new ItemStack(ItemList.zaniumPickaxe, 1);
@@ -86,8 +98,10 @@ public class ToolRecipes {
 			zaniumPickaxe.addEnchantment(Enchantment.efficiency, 5);
 			zaniumPickaxe.addEnchantment(Enchantment.fireAspect, 1);
 			
-			GameRegistry.addRecipe(zaniumPickaxe, new Object[] { "ZZZ", "ZNZ",
-					" N ", 'Z', ItemList.zanium, 'N', ItemList.netherStick });
+			GameRegistry.addRecipe(zaniumPickaxe,
+					new Object[] { "ZZZ", "ZNZ", " N ", 'Z',
+							ItemList.empoweredZanium, 'N',
+							ItemList.netherStick });
 			
 			// Slippery Spade, Zanium
 			ItemStack zaniumShovel = new ItemStack(ItemList.zaniumShovel, 1);
@@ -95,8 +109,10 @@ public class ToolRecipes {
 			zaniumShovel.addEnchantment(Enchantment.efficiency, 3);
 			zaniumShovel.addEnchantment(Enchantment.fireAspect, 1);
 			
-			GameRegistry.addRecipe(zaniumShovel, new Object[] { " Z ", "ZNZ",
-					" N ", 'Z', ItemList.zanium, 'N', ItemList.netherStick });
+			GameRegistry.addRecipe(zaniumShovel,
+					new Object[] { " Z ", "ZNZ", " N ", 'Z',
+							ItemList.empoweredZanium, 'N',
+							ItemList.netherStick });
 		}
 	}
 	

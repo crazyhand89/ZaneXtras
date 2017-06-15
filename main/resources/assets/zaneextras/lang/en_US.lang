@@ -62,7 +62,13 @@ tile.zaneextras_solidFurnace.name=Solid Furnace
 tile.zaneextras_skeletonblock.name=Skeleton King Spawner
 tile.zaneextras_foolstaria.name=Fool StariaOre
 tile.zaneextras_cheeseblock.name=Cheese Block
-tile.zaneextras_uriel_block.name=Arch Angel Uriel Spawner
+tile.zaneextras_urielblock.name=Arch Angel Uriel Spawner
+tile.zaneextras_lightleadore.name=Light Lead Ore
+tile.zaneextras_lightplatinumore.name=Light Platinum Ore
+tile.zaneextras_lightnickelore.name=Light Ferrous Ore
+tile.zaneextras_lightsilverore.name=Light Silver Ore
+tile.zaneextras_lighttinore.name=Light Tin Ore
+tile.zaneextras_lightcopperore.name=Light Copper Ore
 
 fluid.zaneextrasraditefluid=Molten Radite
 
@@ -219,6 +225,8 @@ item.zaneextras_lightingot.name=Angel Ingot
 item.zaneextras_lightnugget.name=Angel Nugget
 item.zaneextras_angelsword.name=Angel Sword
 item.zaneextras_urielsword.name=Uriel's Sword
+item.zaneextras_empowered_staria.name=Empowered Staria
+item.zaneextras_empowered_zanium.name=Empowered Zanium
 
 entity.zaneextras_hellsheep.name=Hell Sheep
 entity.zaneextras_skeletonking.name=Skeleton King

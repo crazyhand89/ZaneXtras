@@ -22,8 +22,10 @@ public class WeaponRecipes {
 			stariaSword.addEnchantment(Enchantment.sharpness, 5);
 			stariaSword.addEnchantment(Enchantment.unbreaking, 3);
 			
-			GameRegistry.addRecipe(stariaSword, new Object[] { "  S", "GS ",
-					"GG ", 'S', ItemList.staria, 'G', ItemList.glowStick });
+			GameRegistry.addRecipe(stariaSword,
+					new Object[] { "  S", "GS ", "GG ", 'S',
+							ItemList.empoweredStaria, 'G',
+							ItemList.glowStick });
 			
 			// Swordy sword, Zanium
 			ItemStack zaniumSword = new ItemStack(ItemList.zaniumSword, 1);
@@ -31,8 +33,10 @@ public class WeaponRecipes {
 			zaniumSword.addEnchantment(Enchantment.sharpness, 5);
 			zaniumSword.addEnchantment(Enchantment.fireAspect, 1);
 			
-			GameRegistry.addRecipe(zaniumSword, new Object[] { "  Z", "NZ ",
-					"NN ", 'Z', ItemList.zanium, 'N', ItemList.netherStick });
+			GameRegistry.addRecipe(zaniumSword,
+					new Object[] { "  Z", "NZ ", "NN ", 'Z',
+							ItemList.empoweredZanium, 'N',
+							ItemList.netherStick });
 			
 			// Swordy sword, Butter
 			GameRegistry.addRecipe(new ItemStack(ItemList.butterSword, 1),
@@ -72,6 +76,13 @@ public class WeaponRecipes {
 			GameRegistry.addRecipe(new ItemStack(ItemList.foolStariaSword, 1),
 					new Object[] { " R ", " R ", " S ", 'R',
 							ItemList.foolStaria, 'S', Items.stick });
+			
+			// Swordy sword, Angel
+			GameRegistry
+					.addRecipe(new ItemStack(ItemList.angelSword, 1),
+							new Object[] { " R ", " R ", " S ", 'R',
+									ItemList.lightIngot, 'S',
+									ItemList.lightStick });
 		}
 	}
 	
@@ -123,6 +134,18 @@ public class WeaponRecipes {
 					new Object[] { " E ", "YLY", " F ", 'E', Items.iron_ingot,
 							'L', ItemList.lightStick, 'F', Items.feather, 'Y',
 							ItemList.lightBoneMeal });
+			
+			// Angel Bow and Arrows
+			GameRegistry
+					.addRecipe(new ItemStack(ItemList.angelBow, 1),
+							new Object[] { "YLS", "LYS", "YLS", 'S',
+									Items.string, 'L', ItemList.lightStick, 'Y',
+									ItemList.lightIngot });
+			
+			GameRegistry.addRecipe(new ItemStack(ItemList.angelArrow, 4),
+					new Object[] { " E ", " L ", " F ", 'E',
+							ItemList.lightIngot, 'L', ItemList.lightStick, 'F',
+							ItemList.pureFeather });
 		}
 	}
 }

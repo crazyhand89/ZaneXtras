@@ -8,10 +8,16 @@ public class ModHelper {
 	
 	public static boolean useZollernExtras = false;
 	public static boolean useBigReactors = false;
+	public static boolean useThermalFoundation = false;
+	public static boolean useThermalExpansion = false;
+	public static boolean useThermalDynamics = false;
 	
 	public static void detectMods() {
 		useZollernExtras = isModLoaded("zollernextras");
 		useBigReactors = isModLoaded("BigReactors");
+		useThermalFoundation = isModLoaded("ThermalFoundation");
+		useThermalExpansion = isModLoaded("ThermalExpansion");
+		useThermalDynamics = isModLoaded("ThermalDynamics");
 	}
 	
 	public static boolean isModLoaded(String modName) {

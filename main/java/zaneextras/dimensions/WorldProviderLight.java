@@ -7,8 +7,6 @@ import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraftforge.client.IRenderHandler;
-import zaneextras.ZaneExtrasMain;
 import zaneextras.biomes.ZaneBiomeList;
 
 public class WorldProviderLight extends WorldProvider {
@@ -29,10 +27,6 @@ public class WorldProviderLight extends WorldProvider {
 	@Override
 	public float getStarBrightness(float par1) {
 		return 1.5F;
-	}
-	
-	public int getSkyColorByTemp(float f) {
-		return 0xff0;
 	}
 	
 	@Override
@@ -75,7 +69,7 @@ public class WorldProviderLight extends WorldProvider {
 	
 	@Override
 	public boolean isSkyColored() {
-		return false;
+		return true;
 	}
 	
 	@Override
@@ -98,9 +92,14 @@ public class WorldProviderLight extends WorldProvider {
 		return 1.0F;
 	}
 	
-	@Override
-	@SideOnly(Side.CLIENT)
-	public IRenderHandler getSkyRenderer() {
-		return new SkyProviderLight(ZaneExtrasMain.proxy.getMinecraft());
+	public int getSkyColorByTemp(float f) {
+		return 0x44aa44;
 	}
+	
+	/*
+	 * @Override
+	 * 
+	 * @SideOnly(Side.CLIENT) public IRenderHandler getSkyRenderer() { return
+	 * new SkyProviderLight(ZaneExtrasMain.proxy.getMinecraft()); }
+	 */
 }

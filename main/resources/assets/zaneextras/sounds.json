@@ -1,29 +1,35 @@
 {
-"mob.hellsheep.say": {
-    "category": "master",
-    "sounds": [
+  "mob.hellsheep.say": {
+	"category": "master",
+	"sounds": [
       "mob/hellsheep/say1",
 	  "mob/hellsheep/say2"
-    ]
+	]
   },
   "mob.angel.say": {
-    "category": "master",
-    "sounds": [
-      "mob/angel/say1",
+	"category": "master",
+	"sounds": [
+	  "mob/angel/say1",
 	  "mob/angel/say2"
-    ]
+	]
   },
   "mob.angel.hurt": {
-    "category": "master",
-    "sounds": [
-      "mob/angel/hurt1",
+	"category": "master",
+	"sounds": [
+	  "mob/angel/hurt1",
 	  "mob/angel/hurt2"
-    ]
+	]
   },
   "mob.angel.die": {
-    "category": "master",
-    "sounds": [
-      "mob/angel/die"
-    ]
+	"category": "master",
+	"sounds": [
+	  "mob/angel/die"
+	]
+  },
+  "mob.uriel.die": {
+	"category": "master",
+	"sounds": [
+	  "mob/uriel/die"
+	]
   }
 }

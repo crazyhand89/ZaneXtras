@@ -8,6 +8,7 @@ import zaneextras.blocks.BlockList;
 import zaneextras.items.ItemList;
 import zaneextras.lib.helpers.ModHelper;
 import zollernextras.blocks.ZollernBlocks;
+import zollernextras.items.ZollernItems;
 
 public class ThermalExpansionRecipes {
 	
@@ -136,6 +137,32 @@ public class ThermalExpansionRecipes {
 						new ItemStack(Blocks.emerald_block, 2),
 						new ItemStack(ItemList.zanium),
 						new ItemStack(ItemList.chargedZanium));
+			}
+			
+			// Empowered Zanium
+			if (ModHelper.useZollernExtras) {
+				ZaneThermalExpansionHelper.addSmelterRecipe(5000,
+						new ItemStack(ZollernItems.chargiumIngot),
+						new ItemStack(ItemList.zanium),
+						new ItemStack(ItemList.empoweredZanium));
+			} else {
+				ZaneThermalExpansionHelper.addSmelterRecipe(5000,
+						new ItemStack(Blocks.emerald_block, 2),
+						new ItemStack(ItemList.zanium),
+						new ItemStack(ItemList.empoweredZanium));
+			}
+			
+			// Empowered Staria
+			if (ModHelper.useZollernExtras) {
+				ZaneThermalExpansionHelper.addSmelterRecipe(5000,
+						new ItemStack(ZollernItems.chargiumIngot),
+						new ItemStack(ItemList.staria),
+						new ItemStack(ItemList.empoweredStaria));
+			} else {
+				ZaneThermalExpansionHelper.addSmelterRecipe(5000,
+						new ItemStack(Blocks.emerald_block, 2),
+						new ItemStack(ItemList.staria),
+						new ItemStack(ItemList.empoweredStaria));
 			}
 			
 			ZaneThermalExpansionHelper.addSmelterRecipe(10000,

@@ -40,7 +40,7 @@ public class EntityLightSkeleton extends EntityMob
 			1.0D, 20, 60, 15.0F);
 	private EntityAIAttackOnCollide aiAttackOnCollide = new EntityAIAttackOnCollide(
 			this, EntityPlayer.class, 1.2D, false);
-	private static final String __OBFID = "CL_00001697";
+	private int tick = 0;
 	
 	public EntityLightSkeleton(World p_i1741_1_) {
 		super(p_i1741_1_);
@@ -145,6 +145,14 @@ public class EntityLightSkeleton extends EntityMob
 	@Override
 	public void onLivingUpdate() {
 		if (!this.worldObj.isRemote) {
+			
+			tick++;
+			
+			if (tick >= 60) {
+				this.heal(10);
+				tick = 0;
+			}
+			
 			float f = this.getBrightness(1.0F);
 			
 			if (f <= 0.5F && this.rand.nextFloat() * 30.0F > (f - 0.4F) * 2.0F
@@ -161,13 +169,10 @@ public class EntityLightSkeleton extends EntityMob
 						new PotionEffect(Potion.weakness.id, 10000, 2));
 			} else {
 				
-				if (!this.isPotionActive(Potion.regeneration.id)
-						&& !this.isPotionActive(Potion.resistance.id)) {
+				if (!this.isPotionActive(Potion.resistance.id)) {
 					this.clearActivePotions();
 				}
 				this.clearActivePotions();
-				this.addPotionEffect(
-						new PotionEffect(Potion.regeneration.id, 10000, 1));
 				this.addPotionEffect(
 						new PotionEffect(Potion.resistance.id, 10000, 2));
 			}
