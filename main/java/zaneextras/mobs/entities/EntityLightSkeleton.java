@@ -148,7 +148,7 @@ public class EntityLightSkeleton extends EntityMob
 			
 			tick++;
 			
-			if (tick >= 60) {
+			if (tick >= 100) {
 				this.heal(10);
 				tick = 0;
 			}

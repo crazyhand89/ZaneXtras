@@ -34,6 +34,8 @@ public class BlockLightGrass extends Block implements IGrowable {
 		this.setBlockTextureName("lightgrass");
 		this.setBlockName(ModInfo.MODID + "_lightgrass");
 		this.setLightLevel(1.0F);
+		this.setHardness(0.5F);
+		this.setStepSound(Block.soundTypeGrass);
 	}
 	
 	/**

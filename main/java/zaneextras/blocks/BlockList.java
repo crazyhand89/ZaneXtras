@@ -26,7 +26,7 @@ import zaneextras.blocks.ore.SkyiumOreBlock;
 import zaneextras.blocks.ore.SodiumOreBlock;
 import zaneextras.blocks.ore.StariaOreBlock;
 import zaneextras.blocks.ore.ZaneOreBlock;
-import zaneextras.blocks.ore.ZaneOreLightBlock;
+import zaneextras.blocks.ore.ZaneParticleLightOre;
 import zaneextras.blocks.ore.ZaniumOreBlock;
 import zaneextras.blocks.trees.LightLeaves;
 import zaneextras.blocks.trees.LightLog;
@@ -53,41 +53,43 @@ public class BlockList {
 	public static final Block skyiumOre = new SkyiumOreBlock();
 	public static final Block raditeOre = new ZaneOreBlock(Material.rock,
 			"raditeore", 3.0F, 3.0F, Block.soundTypeStone, 5);
-	public static final Block zogiteOre = new ZaneOreBlock(Material.rock,
-			"zogiteore", 3.0F, 3.0F, Block.soundTypeStone, 5);
-	public static final Block lightRedstoneOre = new ZaneOreLightBlock(
-			Material.rock, "lightredstoneore", 3.0F, 3.0F, Block.soundTypeStone,
-			2);
-	public static final Block lightLapisOre = new ZaneOreLightBlock(
-			Material.rock, "lightlapisore", 3.0F, 3.0F, Block.soundTypeStone,
-			2);
-	public static final Block lightDiamondOre = new ZaneOreLightBlock(
-			Material.rock, "lightdiamondore", 3.0F, 3.0F, Block.soundTypeStone,
-			2);
-	public static final Block lightGoldOre = new ZaneOreLightBlock(
-			Material.rock, "lightgoldore", 3.0F, 3.0F, Block.soundTypeStone, 2);
-	public static final Block lightEmeraldOre = new ZaneOreLightBlock(
-			Material.rock, "lightemeraldore", 3.0F, 3.0F, Block.soundTypeStone,
-			2);
-	public static final Block lightIronOre = new ZaneOreLightBlock(
-			Material.rock, "lightironore", 3.0F, 3.0F, Block.soundTypeStone, 2);
 	public static final Block foolStaria = new FoolStariaOreBlock();
-	public static final Block lightCopperOre = new ZaneOreLightBlock(
+	
+	// Light Dimension Ores
+	public static final Block lightCopperOre = new ZaneParticleLightOre(
 			Material.rock, "lightcopperore", 3.0F, 3.0F, Block.soundTypeStone,
 			2);
-	public static final Block lightTinOre = new ZaneOreLightBlock(Material.rock,
-			"lighttinore", 3.0F, 3.0F, Block.soundTypeStone, 2);
-	public static final Block lightSilverOre = new ZaneOreLightBlock(
+	public static final Block lightTinOre = new ZaneParticleLightOre(
+			Material.rock, "lighttinore", 3.0F, 3.0F, Block.soundTypeStone, 2);
+	public static final Block lightSilverOre = new ZaneParticleLightOre(
 			Material.rock, "lightsilverore", 3.0F, 3.0F, Block.soundTypeStone,
 			2);
-	public static final Block lightPlatinumOre = new ZaneOreLightBlock(
+	public static final Block lightPlatinumOre = new ZaneParticleLightOre(
 			Material.rock, "lightplatinumore", 3.0F, 3.0F, Block.soundTypeStone,
 			2);
-	public static final Block lightLeadOre = new ZaneOreLightBlock(
+	public static final Block lightLeadOre = new ZaneParticleLightOre(
 			Material.rock, "lightleadore", 3.0F, 3.0F, Block.soundTypeStone, 2);
-	public static final Block lightNickelOre = new ZaneOreLightBlock(
+	public static final Block lightNickelOre = new ZaneParticleLightOre(
 			Material.rock, "lightnickelore", 3.0F, 3.0F, Block.soundTypeStone,
 			2);
+	public static final Block zogiteOre = new ZaneOreBlock(Material.rock,
+			"zogiteore", 3.0F, 3.0F, Block.soundTypeStone, 5);
+	public static final Block lightRedstoneOre = new ZaneParticleLightOre(
+			Material.rock, "lightredstoneore", 3.0F, 3.0F, Block.soundTypeStone,
+			2);
+	public static final Block lightLapisOre = new ZaneParticleLightOre(
+			Material.rock, "lightlapisore", 3.0F, 3.0F, Block.soundTypeStone,
+			2);
+	public static final Block lightDiamondOre = new ZaneParticleLightOre(
+			Material.rock, "lightdiamondore", 3.0F, 3.0F, Block.soundTypeStone,
+			2);
+	public static final Block lightGoldOre = new ZaneParticleLightOre(
+			Material.rock, "lightgoldore", 3.0F, 3.0F, Block.soundTypeStone, 2);
+	public static final Block lightEmeraldOre = new ZaneParticleLightOre(
+			Material.rock, "lightemeraldore", 3.0F, 3.0F, Block.soundTypeStone,
+			2);
+	public static final Block lightIronOre = new ZaneParticleLightOre(
+			Material.rock, "lightironore", 3.0F, 3.0F, Block.soundTypeStone, 2);
 	
 	// Crops
 	public static final Block sweetPotatoCrop = new CropSweetPotato();
@@ -138,7 +140,7 @@ public class BlockList {
 			Material.rock, "lightcobblestone", 1.0F, 3.0F, Block.soundTypeStone,
 			1.0F);
 	public static final Block lightDirt = new ZaneLightBlock(Material.ground,
-			"lightdirt", 0.2F, 0.1F, Block.soundTypeGravel, 1.0F);
+			"lightdirt", 0.5F, 0.1F, Block.soundTypeGrass, 1.0F);
 	public static final Block lightGrassDirt = new BlockLightGrass();
 	
 	// Food blocks

@@ -266,8 +266,8 @@ public class TileEntityStarFurnace extends TileEntity
 		} else {
 			Item item = itemstack.getItem();
 			
-			if (item == ItemList.radiatedCoal)
-				return 12800;
+			if (item == ItemList.starCoal)
+				return 25600;
 			
 			if (ModHelper.useZollernExtras) {
 				if (item == ZollernItems.spcItem) {

@@ -6,6 +6,7 @@ import net.minecraft.entity.EntityList.EntityEggInfo;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.world.biome.BiomeGenBase;
+import zaneextras.biomes.ZaneBiomeList;
 import zaneextras.lib.ModInfo;
 import zaneextras.mobs.entities.EntityAngel;
 import zaneextras.mobs.entities.EntityAngelArcher;
@@ -28,12 +29,16 @@ public class MobList {
 				EnumCreatureType.monster, BiomeGenBase.hell);
 		
 		// Light Skeleton (Lightington?)
-		registerEntity(EntityLightSkeleton.class, "lightskeleton", 0xff4444,
-				0xe6e6e6);
+		registerEntity(EntityLightSkeleton.class, "lightskeleton", 0xffffe5,
+				0xffff4c);
+		EntityRegistry.addSpawn(EntityLightSkeleton.class, 11, 1, 3,
+				EnumCreatureType.monster, ZaneBiomeList.lightBiome);
 		
 		// Light Zombie
-		registerEntity(EntityLightZombie.class, "lightzombie", 0xe6e6e6,
-				0xff3333);
+		registerEntity(EntityLightZombie.class, "lightzombie", 0xffae19,
+				0xffff19);
+		EntityRegistry.addSpawn(EntityLightZombie.class, 11, 1, 3,
+				EnumCreatureType.monster, ZaneBiomeList.lightBiome);
 		
 		// Skeleton King
 		registerEntity(EntitySkeletonKing.class, "skeletonking", 0xff555,
@@ -41,6 +46,8 @@ public class MobList {
 		
 		// Angel
 		registerEntity(EntityAngel.class, "lightangel", 0xe7e6e6, 0xff3333);
+		EntityRegistry.addSpawn(EntityAngel.class, 11, 1, 2,
+				EnumCreatureType.monster, ZaneBiomeList.lightBiome);
 		
 		// Angel Warrior
 		registerEntity(EntityAngelWarrior.class, "angelwarrior", 0xe5e6e6,

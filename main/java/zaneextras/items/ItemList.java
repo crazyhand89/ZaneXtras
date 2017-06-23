@@ -73,7 +73,7 @@ public class ItemList {
 	public static final Item lightBone = new ZaneItem("lightbone");
 	public static final Item lightFlesh = new ItemFoodGlowingFlesh();
 	public static final Item lightBoneMeal = new ZaneItem("lightbonemeal");
-	public static final Item radiatedCoal = new ZaneItem("radiatedcoal");
+	public static final Item starCoal = new ZaneItem("starcoal");
 	
 	// ignots
 	public static final Item butterItem = new ItemRarity("damnhardbutteringot",
@@ -512,7 +512,7 @@ public class ItemList {
 		addItem(lightBoneMeal, "i130");
 		addItem(lightStick, "i131");
 		addItem(barrierApple, "i132");
-		addItem(radiatedCoal, "i133");
+		addItem(starCoal, "i133");
 		addItem(foolStaria, "i134");
 		addItem(foolStariaHelmet, "i135");
 		addItem(foolStariaChestPlate, "i136");

@@ -125,7 +125,7 @@ public class EntityLightZombie extends EntityMob implements ILightEntity {
 			
 			tick++;
 			
-			if (tick >= 60) {
+			if (tick >= 100) {
 				this.heal(10);
 				tick = 0;
 			}

@@ -236,12 +236,11 @@ public class EntityUriel extends EntityMob
 		
 		if (this.worldObj.difficultySetting == EnumDifficulty.HARD) {
 			ItemStack urielSword = new ItemStack(ItemList.urielSword, 1);
+			
+			urielSword.addEnchantment(Enchantment.sharpness, 5);
 			this.setCurrentItemOrArmor(0, urielSword);
 		} else {
 			ItemStack angelSword = new ItemStack(ItemList.urielSword, 1);
-			
-			angelSword.addEnchantment(Enchantment.sharpness, 5);
-			
 			this.setCurrentItemOrArmor(0, angelSword);
 		}
 	}

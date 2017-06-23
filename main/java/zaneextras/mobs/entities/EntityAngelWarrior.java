@@ -127,8 +127,8 @@ public class EntityAngelWarrior extends EntityMob implements ILightEntity {
 		if (!this.worldObj.isRemote) {
 			tick++;
 			
-			if (tick >= 60) {
-				this.heal(20);
+			if (tick >= 80) {
+				this.heal(15);
 				tick = 0;
 				
 				if (!this.isPotionActive(Potion.resistance.id)) {

@@ -138,9 +138,9 @@ public class ItemRecipes {
 									ItemList.angelHalo });
 			
 			// Radiated Coal
-			GameRegistry.addRecipe(new ItemStack(ItemList.radiatedCoal, 8),
-					new Object[] { "ZZZ", "ZCZ", "ZZZ", 'C', Items.coal, 'Z',
-							ItemList.zogiteIngot });
+			GameRegistry.addRecipe(new ItemStack(ItemList.starCoal, 8),
+					new Object[] { " S ", "SCS", " S ", 'C', Items.coal, 'S',
+							ItemList.staria });
 			
 			// Angel Ingot
 			GameRegistry.addRecipe(new ItemStack(ItemList.lightIngot, 1),

@@ -24,6 +24,10 @@ public class SmeltingRecipes {
 					0.5F);
 			addSmelting(ItemList.butterDust,
 					new ItemStack(ItemList.butterItem, 1), 0.5F);
+			addSmelting(BlockList.zogiteOre,
+					new ItemStack(ItemList.zograditeIgnot, 1), 0.5F);
+			addSmelting(BlockList.raditeOre,
+					new ItemStack(ItemList.raditeIngot, 1), 0.5F);
 		}
 	}
 	

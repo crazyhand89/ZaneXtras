@@ -1697,10 +1697,17 @@ public class WorldGenMeteroite extends WorldGenerator {
 		world.setBlock(i + 9, j + 13, k + 9, Blocks.air);
 		world.setBlock(i + 9, j + 13, k + 10, Blocks.air);
 		world.setBlock(i + 9, j + 13, k + 11, Blocks.air);
-		world.setBlock(i + 3, j + 6, k + 5, BlockList.stariaOre);
-		world.setBlock(i + 3, j + 6, k + 6, BlockList.stariaOre);
-		world.setBlock(i + 4, j + 6, k + 5, BlockList.stariaOre);
-		world.setBlock(i + 4, j + 6, k + 6, BlockList.stariaOre);
+		if (rand.nextInt(1) == 1) {
+			world.setBlock(i + 3, j + 6, k + 5, BlockList.stariaOre);
+			world.setBlock(i + 3, j + 6, k + 6, BlockList.stariaOre);
+			world.setBlock(i + 4, j + 6, k + 5, BlockList.stariaOre);
+			world.setBlock(i + 4, j + 6, k + 6, BlockList.stariaOre);
+		} else {
+			world.setBlock(i + 3, j + 6, k + 5, BlockList.zaniumOre);
+			world.setBlock(i + 3, j + 6, k + 6, BlockList.zaniumOre);
+			world.setBlock(i + 4, j + 6, k + 5, BlockList.zaniumOre);
+			world.setBlock(i + 4, j + 6, k + 6, BlockList.zaniumOre);
+		}
 		
 		return true;
 	}
