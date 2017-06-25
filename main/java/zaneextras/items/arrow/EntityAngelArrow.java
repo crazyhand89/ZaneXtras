@@ -337,7 +337,7 @@ public class EntityAngelArrow extends EntityArrow
 							if (shooter instanceof EntityAngelArcher) {
 								EntityAngelArcher angel = (EntityAngelArcher) shooter;
 								
-								angel.heal(20.0F);
+								angel.heal(8.0F);
 							}
 						}
 						

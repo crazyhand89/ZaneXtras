@@ -87,7 +87,7 @@ public class EntityAngelWarrior extends EntityMob implements ILightEntity {
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage)
 				.setBaseValue(7.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-				.setBaseValue(150.0D);
+				.setBaseValue(125.0D);
 	}
 	
 	@Override
@@ -127,13 +127,13 @@ public class EntityAngelWarrior extends EntityMob implements ILightEntity {
 		if (!this.worldObj.isRemote) {
 			tick++;
 			
-			if (tick >= 80) {
+			if (tick >= 200) {
 				this.heal(15);
 				tick = 0;
 				
 				if (!this.isPotionActive(Potion.resistance.id)) {
 					this.addPotionEffect(
-							new PotionEffect(Potion.resistance.id, 10000, 1));
+							new PotionEffect(Potion.resistance.id, 10000, 0));
 				}
 			}
 		}

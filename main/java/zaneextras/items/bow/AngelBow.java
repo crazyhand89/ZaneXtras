@@ -219,8 +219,7 @@ public class AngelBow extends Item {
 			List list, boolean p_77624_4_) {
 		if (ZaneKeyHelper.isCtrlKeyDown() || ZaneKeyHelper.isShiftKeyDown()) {
 			list.add(EnumChatFormatting.ITALIC + "Arrows fired from this");
-			list.add(EnumChatFormatting.ITALIC + "bow cause EXPLOSIONS");
-			list.add(EnumChatFormatting.ITALIC + "if they miss your target");
+			list.add(EnumChatFormatting.ITALIC + "will heal the user.");
 			
 		} else {
 			list.add("Hold SHIFT for");

@@ -79,7 +79,7 @@ public class EntityAngelArcher extends EntityMob
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed)
 				.setBaseValue(0.6D);
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-				.setBaseValue(150.0D);
+				.setBaseValue(100.0D);
 	}
 	
 	@Override
@@ -140,13 +140,13 @@ public class EntityAngelArcher extends EntityMob
 			
 			tick++;
 			
-			if (tick >= 80) {
+			if (tick >= 200) {
 				this.heal(15);
 				tick = 0;
 				
 				if (!this.isPotionActive(Potion.resistance.id)) {
 					this.addPotionEffect(
-							new PotionEffect(Potion.resistance.id, 10000, 1));
+							new PotionEffect(Potion.resistance.id, 10000, 0));
 				}
 			}
 		}

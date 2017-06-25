@@ -152,13 +152,13 @@ public class EntityUriel extends EntityMob
 				tick2 = 0;
 			}
 			
-			if (tick1 >= 60) {
-				this.heal(40);
+			if (tick1 >= 300) {
+				this.heal(75);
 				tick1 = 0;
 				
 				if (!this.isPotionActive(Potion.resistance.id)) {
 					this.addPotionEffect(
-							new PotionEffect(Potion.resistance.id, 10000, 2));
+							new PotionEffect(Potion.resistance.id, 10000, 1));
 				}
 			}
 		}
